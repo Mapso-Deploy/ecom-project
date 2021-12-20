@@ -25,11 +25,10 @@ export default class NavbarComp extends Component {
         <Nav.Link className="Nav px-5" href="#Explore"><Link to="/explore" className="Nav-Link">Explore</Link></Nav.Link>
         <Nav.Link className="Nav px-5" href="#Contact"><Link to="/contact" className="Nav-Link">Contact</Link></Nav.Link>
       </Nav>
-    </Navbar.Collapse>
-    <div class="cart-button">
-        <button class="snipcart-checkout">Cart</button>
-        <span class="snipcart-items-count"></span>
+      <div class="cart-button">
+        <button class="snipcart-checkout"> Cart <span class="snipcart-items-count"></span></button>
         </div>
+    </Navbar.Collapse>
   </Container>
 </Navbar>
             </div>
