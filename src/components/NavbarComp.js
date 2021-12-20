@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavDropdown, Container, Form, FormControl, Button } from 'react-bootstrap'
+import { Navbar, Nav, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import logo from "../logo.png"
 import "../styles.css"
@@ -10,7 +10,7 @@ export default class NavbarComp extends Component {
             <div>
                 <Navbar expand="lg" className="Top-Nav">
   <Container>
-    <Navbar.Brand href="#home"><Link to="/Products"><a href="" className="Logo"><img src={logo} style={{display: 'flex', alignItems:'left', height: '6vh', onLoad: 'fadeIn'}} /></a></Link></Navbar.Brand>
+    <Navbar.Brand href="#home"><Link to="/Products"><a href="www.mapso.co/products" className="Logo"><img src={logo} alt="logo" style={{display: 'flex', alignItems:'left', height: '6vh', onLoad: 'fadeIn'}} /></a></Link></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto px-5">
