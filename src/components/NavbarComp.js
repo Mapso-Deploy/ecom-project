@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Navbar, Nav, NavDropdown, Container, Form, FormControl, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import logo from "/Users/cozykev/Desktop/NucampFolder/Portfolio/React/Ecommerce Project/ecom-project/src/logo.png"
+import logo from "../logo.png"
 import "../styles.css"
 
 export default class NavbarComp extends Component {
