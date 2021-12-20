@@ -645,6 +645,17 @@ button.snipcart-button-secondary.snipcart-base-button.is-fit-content.is-icon-lef
 }
 @media only screen and (max-width: 600px){
 	/*Big smartphones [426px -> 600px]*/
+    div.Logo{
+        margin:auto;
+        justify-content:'center'; 
+        align-items:'center'; 
+        height: '100vh'
+    }
+
+    div.Logo img.Logo-hover {
+        height: auto;
+        width: 20px;
+    }
 }
 @media only screen and (max-width: 425px){
 	/*Small smartphones [325px -> 425px]*/
