@@ -4,10 +4,8 @@
 
 html, body {
     max-width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
-    margin: 0;
-    padding: 0;
 }
 
 
@@ -602,10 +600,8 @@ form.formspree {
     
     html, body {
         max-width: 100%;
-        min-height: 100vh;
+        height: 100vh;
         background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
-        margin: 0;
-        padding: 0;
     }
     
     .model {
@@ -845,12 +841,10 @@ form.formspree {
         height: 100%;
         object-fit: contain;
     }
-    html, body {
+    body {
         max-width: 100%;
-        min-height: 100vh;
+        height: 100vh;
         background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
-        margin: 0;
-        padding: 0;
     }
     
     .model {
