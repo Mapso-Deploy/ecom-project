@@ -820,7 +820,7 @@ button.snipcart-button-secondary.snipcart-base-button.is-fit-content.is-icon-lef
         margin:auto;
         justify-content:'center'; 
         align-items:'center'; 
-        height: '100vh'
+        height: '100%'
     }
 
     div.Logo img.Logo-hover {
