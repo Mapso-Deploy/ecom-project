@@ -4,7 +4,7 @@
 
 body {
     max-width: 100%;
-    height: 100vh;
+    max-height: 100vh;
     background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
 }
 
@@ -584,6 +584,98 @@ button.snipcart-button-secondary.snipcart-base-button.is-fit-content.is-icon-lef
 
 @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
+    body {
+        max-width: 100%;
+        max-height: 100vh;
+        height: 100%;
+        background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
+    }
+    
+    .model {
+        height: 28vh;
+        margin-left: -50px;
+        align-items: left;
+        justify-content: left;
+    }
+
+    p.divider {
+        display: inline;
+        width: 5%;
+        margin-left: -15px;
+    }
+    
+    .Center {
+        margin-left: -1px;
+        justify-content: left;
+        align-items: left;
+        align-content: left;
+    }
+
+    .buy-button-new {
+        background-color: #a7898900;
+        border: none;
+        color: #000;
+        font-family: PragmaticaW01-ExtendedBook;
+        font-size: .8rem;
+        margin-left: -45px;
+        text-align: left;
+        align-items: left;
+        justify-content: left;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        display: inline;
+        width: 40%;
+    }
+    
+    .buy-button-new:hover {
+        background-color: #30303000;
+        border: none;
+        color: lime;
+        font-family: PragmaticaW01-ExtendedBook;
+        font-size: .8rem;
+        margin-left: -45px;
+        text-align: left;
+        align-items: left;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        display: inline;
+        width: 40%;
+    }
+    
+    .btc-buy-button-new {
+        background-color: #ff9a164f;
+        border: none;
+        color: #000;
+        font-family: PragmaticaW01-ExtendedBook;
+        font-size: .8rem;
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        border-radius: 40px;
+        text-align: right;
+        align-items: right;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        display: inline;
+    }
+    
+    .btc-buy-button-new:hover {
+        background-color: #fd9917ab;
+        border: none;
+        color: #000;
+        font-family: PragmaticaW01-ExtendedBook;
+        font-size: .8rem;
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        border-radius: 40px;
+        text-align: right;
+        align-items: right;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        display: inline;
+    }
+    
     .model-container1 {
         /* display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -598,14 +690,15 @@ button.snipcart-button-secondary.snipcart-base-button.is-fit-content.is-icon-lef
         grid-auto-rows: auto; 
         grid-template-columns: auto auto auto auto; 
         grid-template-rows: auto; 
-        gap: 50px 50px; 
+        gap: 15px 15px; 
         grid-template-areas: 
             ". . . ."; 
         justify-content: left; 
         align-content: center; 
         justify-items: left; 
         align-items: center; 
-        padding: 25px;
+        padding: 5px;
+        padding-top: 10px;
         overflow: scroll;
     }
 
@@ -623,14 +716,15 @@ button.snipcart-button-secondary.snipcart-base-button.is-fit-content.is-icon-lef
         grid-auto-rows: auto; 
         grid-template-columns: auto auto auto auto; 
         grid-template-rows: auto; 
-        gap: 50px 50px; 
+        gap: 15px 15px; 
         grid-template-areas: 
             ". . . ."; 
         justify-content: left; 
         align-content: center; 
         justify-items: left; 
         align-items: center; 
-        padding: 25px;
+        padding: 5px;
+        padding-bottom: 10px;
         overflow: scroll;
     }
 
@@ -653,13 +747,26 @@ button.snipcart-button-secondary.snipcart-base-button.is-fit-content.is-icon-lef
     }
 
     div.Logo img.Logo-hover {
-        display: block;
-        max-width:230px;
-        max-height:95px;
-        width: auto;
-        height: auto;
+        width: 100px;
+        height: 100%;
+        object-fit: contain;
     }
 }
 @media only screen and (max-width: 425px){
 	/*Small smartphones [325px -> 425px]*/
+
+    div.Logo{
+        margin:auto;
+        justify-content:'center'; 
+        align-items:'center'; 
+        height: '100vh'
+    }
+
+    div.Logo img.Logo-hover {
+        width: 100px;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
 }
