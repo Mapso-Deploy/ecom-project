@@ -582,6 +582,22 @@ form.formspree {
 
 @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
+    div.Logo{
+        display: flex;
+        justify-content:'center'; 
+        align-items:'center'; 
+        height: '100vh'
+    }
+
+    div.Logo img.Logo-hover {
+        width: 121px;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    
+    
+    
     html, body {
         max-width: 100%;
         height: 100vh;
@@ -814,10 +830,10 @@ form.formspree {
 	/*Small smartphones [325px -> 425px]*/
 
     div.Logo{
-        margin:auto;
+        display: flex;
         justify-content:'center'; 
         align-items:'center'; 
-        height: '100%'
+        height: '100vh'
     }
 
     div.Logo img.Logo-hover {
