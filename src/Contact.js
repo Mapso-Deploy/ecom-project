@@ -10,7 +10,7 @@ function Contact() {
   return (
       <>
       <NavbarComp/>
-      <form onSubmit={handleSubmit} className="formspree" style={{padding:'0px 200px',display: 'flex',flexDirection: 'column'}}>
+      <form onSubmit={handleSubmit} className="formspree">
       <h2 style={{display: 'flex',alignText: 'middle',marginLeft: 'auto', marginRight: 'auto'}}>Inquires E-Form</h2>
       <label htmlFor="firstname">
         First Name:
