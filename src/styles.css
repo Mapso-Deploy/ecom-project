@@ -825,11 +825,19 @@ form.formspree {
         object-fit: contain;
     }
 
+    div.ms-auto.px-5.navbar-nav {
+        background-color: lightgrey;
+    }
+
     
 }
 @media only screen and (max-width: 425px){
 	/*Small smartphones [325px -> 425px]*/
 
+    div.ms-auto.px-5.navbar-nav {
+        background-color: lightgrey;
+    }
+    
     div.Logo{
         display: flex;
         justify-content:'center'; 
