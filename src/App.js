@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./Landing";
 import Products from "./Products";
+import MoreProducts from "./MoreProducts";
 import About from "./About";
 import Contact from "./Contact";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,6 +15,7 @@ function App() {
      <Switch>
       <Route exact path="/" component={Landing} />
       <Route exact path="/products" component={Products} />
+      <Route exact path="/more-products" component={MoreProducts} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
      </Switch>

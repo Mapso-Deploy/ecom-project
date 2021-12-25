@@ -41,7 +41,7 @@ export default function Products() {
             <Model1/>
             </div>
         </div>
-        <Link to="/more-products">More</Link>
+<Link to="/products">Back</Link>
         </MediaQuery>
         </>
     )
