@@ -819,6 +819,37 @@ form.formspree {
         z-index: 90;
         margin-top: 20px;
     }
+    button.snipcart-checkout {
+        background-color: rgba(82, 82, 82, 0.644);
+        border: solid .5px rgb(167, 167, 167);
+        color: #dddddd;
+        font-family: PragmaticaW01-ExtendedBook;
+        font-size: .8rem;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        text-align: center;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        width: 100%;
+    }
+    
+    button.snipcart-checkout:hover {
+        background-color: rgba(82, 82, 82, 0.781);
+        border: solid .5px lime;
+        color: lime;
+        font-family: PragmaticaW01-ExtendedBook;
+        font-size: .8rem;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        text-align: center;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        width: 100%;
+    }
 
 }
 @media only screen and (max-width: 600px){
