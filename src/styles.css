@@ -343,6 +343,12 @@ h6{
   }
 }
 
+.Logo-hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .Logo-hover:hover {
     opacity: 0.5;
     cursor: not-allowed;
