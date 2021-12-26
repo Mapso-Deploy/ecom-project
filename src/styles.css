@@ -8,7 +8,7 @@
 
 html, body {
     max-width: 100%;
-    height: 100%;
+    height: 100vh;
     background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
     font-family: PragmaticaW01-ExtendedBook !important;
 }
@@ -39,6 +39,7 @@ html, body {
     align-items: center; 
     padding: 25px;
     overflow: scroll;
+    margin-top: 25px;
 }
 
 .model-container2 {
@@ -329,9 +330,6 @@ h6{
 }
 
 .Logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 	animation: fadeIn 3s;
   	opacity: 1;
 }
