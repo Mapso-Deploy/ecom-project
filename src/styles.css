@@ -1,3 +1,7 @@
+@import url(//db.onlinewebfonts.com/c/d4b2c0b7bd08ceb4c05bf627b58a18d4?family=PragmaticaW01-ExtendedBook);
+
+@font-face {font-family: "PragmaticaW01-ExtendedBook"; src: url("//db.onlinewebfonts.com/t/d4b2c0b7bd08ceb4c05bf627b58a18d4.eot"); src: url("//db.onlinewebfonts.com/t/d4b2c0b7bd08ceb4c05bf627b58a18d4.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d4b2c0b7bd08ceb4c05bf627b58a18d4.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d4b2c0b7bd08ceb4c05bf627b58a18d4.woff") format("woff"), url("//db.onlinewebfonts.com/t/d4b2c0b7bd08ceb4c05bf627b58a18d4.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d4b2c0b7bd08ceb4c05bf627b58a18d4.svg#PragmaticaW01-ExtendedBook") format("svg"); }
+
 .model {
     height: 25vh;
 }
@@ -6,7 +10,7 @@ html, body {
     max-width: 100%;
     height: 100vh;
     background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
-    font-family: "/fonts/Pragmatica W01 Extended Book.otf" !important;
+    font-family: PragmaticaW01-ExtendedBook !important;
 }
 
 
