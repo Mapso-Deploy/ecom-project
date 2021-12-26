@@ -877,6 +877,39 @@ form.formspree {
     div.ms-auto.px-5.navbar-nav {
         background-color: lightgrey;
     }
+    .btc-buy-button-new {
+        background-color: #ff9a164f;
+        border: none;
+        color: #000;
+        font-family: PragmaticaW01-ExtendedBook;
+        font-size: .8rem;
+        width: 15px;
+        height: 15px;
+        margin-left: 5px;
+        border-radius: 30px;
+        text-align: right;
+        align-items: right;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        display: inline;
+    }
+    
+    .btc-buy-button-new:hover {
+        background-color: #fd9917ab;
+        border: none;
+        color: #000;
+        font-family: PragmaticaW01-ExtendedBook;
+        font-size: .8rem;
+        width: 15px;
+        height: 15px;
+        margin-left: 5px;
+        border-radius: 30px;
+        text-align: right;
+        align-items: right;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        display: inline;
+    }
 
     
 }
