@@ -325,8 +325,11 @@ h6{
     position: relative;
     top: 200px;
     z-index: 90;
-    opacity: hidden;
-    opacity: 0;
+    margin-bottom: -50px;
+    margin: -50px;
+    margin-top: -50px;
+    /* opacity: hidden; */
+    /* opacity: 0; */
 }
 
 .Logo {
