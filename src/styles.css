@@ -13,8 +13,46 @@ html, body {
     font-family: PragmaticaW01-ExtendedBook !important;
 }
 
+.verge {
+    height: 200vh;
+    width: 200vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
+.blog {
+    height: 108vh;
+    width: 100vw;
+    position: absolute;
+    top: -8vh;
+    left: 0;
+}
 
+.models-mapped{
+    display: inline-grid; 
+  grid-auto-rows: min-content; 
+  grid-template-columns: min-content min-content min-content min-content; 
+  gap: 0px 0px;
+  place-self: center;
+  place-items: center;
+}
+
+.models-mapped-container{
+    /* position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
+  /* position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    margin: auto;
+    margin-top: 100px;
+}
 
 .model-container1 {
     /* display: grid;
@@ -348,8 +386,12 @@ h6{
 
 .Logo-hover{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
+    position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .Logo-hover:hover {
@@ -371,7 +413,16 @@ h6{
     color: inherit;
 }
 
+.Nav-Link-Light {
+    text-decoration: none;
+    color: lightgray;
+}
+
 .Nav-Link:hover, .Nav-Link:focus, .Nav-Link:active {
+    color: lime;
+}
+
+.Nav-Link-Light:hover, .Nav-Link:focus, .Nav-Link:active {
     color: lime;
 }
 
@@ -598,14 +649,18 @@ form.formspree {
 @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
     div.Logo{
-        display: flex;
+        /* display: flex;
         justify-content:'center'; 
         align-items:'center'; 
-        height: '100vh'
+        height: '100vh' */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 
     div.Logo img.Logo-hover {
-        width: 121px;
+        width: 200px;
         height: 100%;
         object-fit: contain;
     }
@@ -704,57 +759,7 @@ form.formspree {
         display: inline;
     }
     
-    .model-container1 {
-        /* display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 300px;
-        margin: 180px;
-        overflow: scroll;
-        overflow-x: scroll; */
-        /* margin-top: 170px; */
-        display: grid; 
-        grid-auto-flow: column; 
-        grid-auto-columns: auto; 
-        grid-auto-rows: auto; 
-        grid-template-columns: auto auto auto auto; 
-        grid-template-rows: auto; 
-        gap: 15px 15px; 
-        grid-template-areas: 
-            ". . . ."; 
-        justify-content: left; 
-        align-content: center; 
-        justify-items: left; 
-        align-items: center; 
-        padding: 5px;
-        padding-top: 10px;
-        overflow: scroll;
-    }
-
-    .model-container2 {
-        /* display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 300px;
-        margin: 180px;
-        overflow: scroll;
-        overflow-x: scroll; */
-        /* margin-top: 170px; */
-        display: grid; 
-        grid-auto-flow: column; 
-        grid-auto-columns: auto; 
-        grid-auto-rows: auto; 
-        grid-template-columns: auto auto auto auto; 
-        grid-template-rows: auto; 
-        gap: 15px 15px; 
-        grid-template-areas: 
-            ". . . ."; 
-        justify-content: left; 
-        align-content: center; 
-        justify-items: left; 
-        align-items: center; 
-        padding: 5px;
-        padding-bottom: 10px;
-        overflow: scroll;
-    }
+    
 
     .model-container1::-webkit-scrollbar {
         display: none;
@@ -857,7 +862,7 @@ form.formspree {
 }
 @media only screen and (max-width: 600px){
 	/*Big smartphones [426px -> 600px]*/
-    body {
+    /* body {
         max-width: 100%;
         max-height: 100vh;
         background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
@@ -879,7 +884,25 @@ form.formspree {
 
     div.ms-auto.px-5.navbar-nav {
         background-color: lightgrey;
+    } */
+
+    div.Logo{
+        /* display: flex;
+        justify-content:'center'; 
+        align-items:'center'; 
+        height: '100vh' */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
+
+    div.Logo img.Logo-hover {
+        width: 200px;
+        height: 100%;
+        object-fit: contain;
+    }
+
     .btc-buy-button-new {
         background-color: #ff9a164f;
         border: none;
@@ -924,14 +947,18 @@ form.formspree {
     }
     
     div.Logo{
-        display: flex;
+        /* display: flex;
         justify-content:'center'; 
         align-items:'center'; 
-        height: '100vh'
+        height: '100vh' */
+        position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
     }
 
     div.Logo img.Logo-hover {
-        width: 131px;
+        width: 273px;
         height: 100%;
         object-fit: contain;
     }
@@ -1026,63 +1053,9 @@ form.formspree {
         display: inline;
     }
     
-    .model-container1 {
-        /* display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 300px;
-        margin: 180px;
-        overflow: scroll;
-        overflow-x: scroll; */
-        /* margin-top: 170px; */
-        display: grid; 
-        grid-auto-flow: column; 
-        grid-auto-columns: auto; 
-        grid-auto-rows: auto; 
-        grid-template-columns: auto auto auto auto; 
-        grid-template-rows: auto; 
-        gap: 15px 15px; 
-        grid-template-areas: 
-            ". . . ."; 
-        justify-content: left; 
-        align-content: center; 
-        justify-items: left; 
-        align-items: center; 
-        padding: 5px;
-        padding-top: 10px;
-        overflow: scroll;
-    }
-
-    .model-container2 {
-        /* display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 300px;
-        margin: 180px;
-        overflow: scroll;
-        overflow-x: scroll; */
-        /* margin-top: 170px; */
-        display: grid; 
-        grid-auto-flow: column; 
-        grid-auto-columns: auto; 
-        grid-auto-rows: auto; 
-        grid-template-columns: auto auto auto auto; 
-        grid-template-rows: auto; 
-        gap: 15px 15px; 
-        grid-template-areas: 
-            ". . . ."; 
-        justify-content: left; 
-        align-content: center; 
-        justify-items: left; 
-        align-items: center; 
-        padding: 5px;
-        padding-bottom: 10px;
-        overflow: scroll;
-    }
+    
 
     .model-container1::-webkit-scrollbar {
-        display: none;
-      }
-
-    .model-container2::-webkit-scrollbar {
         display: none;
       }
 
