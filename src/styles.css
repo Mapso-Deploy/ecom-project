@@ -900,9 +900,16 @@ form.formspree {
     }
 
     div.Logo img.Logo-hover {
-        width: 200px;
+        width: 190px;
         height: 100%;
         object-fit: contain;
+    }
+
+    .model {
+        height: 28vh;
+        margin-left: -50px;
+        align-items: center;
+        justify-content: center;
     }
 
     .models-mapped{
@@ -912,6 +919,10 @@ form.formspree {
       gap: 0px 0px;
       place-self: center;
       place-items: center;
+      justify-content: center;
+      align-items: center;
+      padding-left: 80px;
+      padding-right: 20px;
     }
     
     .models-mapped-container{
@@ -929,6 +940,7 @@ form.formspree {
         margin: auto;
         margin-top: 200px;
         overflow: scroll;
+        padding: 30px;
     }
 
     .btc-buy-button-new {
