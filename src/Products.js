@@ -3,15 +3,12 @@ import '@google/model-viewer';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComp from "./components/NavbarComp.js";
-import Model from "./components/Model1.js";
 import ModelsMapped from "./components/ModelsMapped.js";
-import MediaQuery from 'react-responsive'
-import { Link } from "react-router-dom"
 import { productData } from "./data/productData.js";
 
 
 export default function Products() {
-const showCount = 2
+const showCount = (window.screen.width >= 1280) ? 8 : 2;
 
 const [startIndex, setStartIndex] = useState(0);
 const [disablePrev, setDisablePrev] = useState(true);
@@ -42,7 +39,6 @@ function handlePrevious() {
     return (
         <>
         <NavbarComp/>
-        <MediaQuery minWidth={768}>
         <ModelsMapped products={productData.slice(startIndex, startIndex + showCount)}/>
         <div className="row">
             <div className="col-md-12 text-center p-4">
@@ -50,37 +46,6 @@ function handlePrevious() {
         <button className="btn" disabled={disableNext} onClick={() => handleNext()}>Next</button>
         </div>
         </div>
-        {/* <div>
-            <div>
-            <ModelsMapped item={productData}/> */}
-            {/* <Model item={productData[1]}/>
-            <Model item={productData[0]}/>
-            <Model item={productData[0]}/> */}
-            {/* </div>
-            <div className="model-container2"> */}
-            {/* <ModelsMapped item={productData}/> */}
-            {/* <Model item={productData[0]}/>
-            <Model item={productData[1]}/>
-            <Model item={productData[0]}/>
-            <Model item={productData[0]}/> */}
-            {/* </div>
-        </div> */}
-        </MediaQuery>
-        <MediaQuery maxWidth={768}>
-        <div className="models">
-            <div className="model-container1">
-            <Model item={productData[0]}/>
-            <Model item={productData[1]}/>
-            <Model item={productData[0]}/>
-            </div>
-            <div className="model-container2">
-            <Model item={productData[0]}/>
-            <Model item={productData[1]}/>
-            <Model item={productData[0]}/>
-            </div>
-        </div>
-        <Link to="/more-products">More</Link>
-        </MediaQuery>
         </>
     )
 }

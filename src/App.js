@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./Landing";
 import Products from "./Products";
-import MoreProducts from "./MoreProducts";
 import About from "./About";
 import Contact from "./Contact";
 import Explore from "./Explore";
@@ -17,7 +16,6 @@ function App() {
      <Switch>
       <Route exact path="/" component={Landing} />
       <Route exact path="/products" component={Products} />
-      <Route exact path="/more-products" component={MoreProducts} />
       <Route exact path="/explore" component={Explore} />
       <Route exact path="/blog" component={Blog} />
       <Route path="/about" component={About} />
