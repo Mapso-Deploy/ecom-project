@@ -16,7 +16,7 @@ export default function Model(props) {
                 <div class="update-bar"></div>
                 </div>
             </model-viewer>
-            <p style = {{ whiteSpace: "pre" }}>{product.name} {'    '} {product.price}</p>
+            <p style = {{ whiteSpace: "pre" }}>{product.name} {'    '} ${product.price}</p>
             <div class="buy-buttons">
                 <span>
                     <button class="buy-button-new snipcart-add-item"
@@ -49,3 +49,5 @@ export default function Model(props) {
         </>
     )
 }
+
+
