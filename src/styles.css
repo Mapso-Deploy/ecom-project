@@ -11,6 +11,7 @@ html, body {
     height: 100vh;
     background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
     font-family: PragmaticaW01-ExtendedBook !important;
+    overflow: hidden;
 }
 
 .verge {
@@ -829,9 +830,9 @@ form.formspree {
         margin-top: 20px;
     }
     button.snipcart-checkout {
-        background-color: rgba(82, 82, 82, 0.644);
+        background-color: rgba(82, 82, 82, 0);
         border: solid .5px rgb(167, 167, 167);
-        color: #dddddd;
+        color: #555555;
         font-family: PragmaticaW01-ExtendedBook;
         font-size: .8rem;
         padding-right: 10px;
@@ -845,7 +846,7 @@ form.formspree {
     }
     
     button.snipcart-checkout:hover {
-        background-color: rgba(82, 82, 82, 0.781);
+        background-color: rgba(82, 82, 82, 0);
         border: solid .5px lime;
         color: lime;
         font-family: PragmaticaW01-ExtendedBook;
@@ -902,6 +903,32 @@ form.formspree {
         width: 200px;
         height: 100%;
         object-fit: contain;
+    }
+
+    .models-mapped{
+        display: inline-grid; 
+      grid-auto-rows: min-content; 
+      grid-template-columns: min-content min-content min-content min-content; 
+      gap: 0px 0px;
+      place-self: center;
+      place-items: center;
+    }
+    
+    .models-mapped-container{
+        /* position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); */
+      /* position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        display: flex;
+      justify-content: left;
+      align-items: center;
+        margin: auto;
+        margin-top: 200px;
+        overflow: scroll;
     }
 
     .btc-buy-button-new {
@@ -967,14 +994,58 @@ form.formspree {
         max-width: 100%;
         max-height: 100vh;
         background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
+        overflow: hidden;
+        position: fixed;
     }
     
     .model {
         height: 28vh;
         margin-left: -50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .models-mapped{
+        display: inline-grid; 
+      grid-auto-rows: min-content; 
+      grid-template-columns: min-content min-content min-content min-content; 
+      gap: 0px 0px;
+      place-self: center;
+      place-items: center;
+      justify-content: center;
+      align-items: center;
+      padding-left: 80px;
+      padding-right: 20px;
+    }
+    
+    .models-mapped-container{
+        /* position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); */
+      /* position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        display: flex;
+      justify-content: left;
+      align-items: center;
+        margin: auto;
+        margin-top: 200px;
+        overflow: scroll;
+    }
+
+    /* .Title {
+        margin: auto;
         align-items: left;
         justify-content: left;
+    } */
+
+
+    p.product-info{
+margin-right: 50px;
     }
+
 
     p.divider {
         display: inline;

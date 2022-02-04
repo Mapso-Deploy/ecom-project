@@ -8,7 +8,7 @@ import { productData } from "./data/productData.js";
 
 
 export default function Products() {
-const showCount = (window.screen.width >= 1280) ? 8 : 2;
+const showCount = (window.screen.width >= 1280) ? 8 : 4;
 
 const [startIndex, setStartIndex] = useState(0);
 const [disablePrev, setDisablePrev] = useState(true);
