@@ -26,8 +26,17 @@ html, body {
     height: 108vh;
     width: 100vw;
     position: absolute;
-    top: -8vh;
+    top: 0vh;
     left: 0;
+    overflow: hidden;
+}
+
+.iframe{
+    position:relative; 
+  top:-9vh;
+  border:0;
+width:100vw;
+height: 110vh;
 }
 
 .models-mapped{
@@ -981,15 +990,20 @@ form.formspree {
     }
 
     .blog {
-        height: 109.5vh;
+        /* height: 109.5vh;
         width: 100vw;
         position: absolute;
         top: -9.5vh;
         left: 0;
-        overflow: hidden;
+        overflow: hidden; */
     }
+div.AppLogoPad{
+display: none;
+}
+ 
 
-    
+
+
 }
 @media only screen and (max-width: 425px){
 	/*Small smartphones [325px -> 425px]*/
