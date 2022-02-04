@@ -587,7 +587,10 @@ form.formspree {
     display: flex;
     flex-direction: column;
     margin: auto;
-    padding: 50px;
+    padding: 150px;
+    /* margin-top: 150px; */
+    top: 50%;
+  
 }
 
 .formspree button {
