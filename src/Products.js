@@ -27,7 +27,7 @@ useEffect(() => {
     } else {
         setDisablePrev(false);
     }
-}, [startIndex]);  
+}, [startIndex]);  // eslint-disable-line react-hooks/exhaustive-deps
 
 function handleNext() {
     setStartIndex(startIndex + showCount);
