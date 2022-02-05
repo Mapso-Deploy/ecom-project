@@ -1207,7 +1207,7 @@ form.formspree {
         width: 18px;
         height: 18px;
         margin-left: 15px;
-        padding-left: 2px;
+        padding-left: 0px;
         border-radius: 35px;
         text-align: center;
         align-items: center;
