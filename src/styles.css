@@ -708,6 +708,27 @@ form.formspree {
         align-content: left;
     }
 
+
+    .blog {
+        height: 132vh;
+        width: 100vw;
+        position: absolute;
+        top: -30vh;
+        left: 0;
+        overflow: hidden;
+    }
+    
+    .iframe{
+        position:relative; 
+      top:-10vh;
+      border:0;
+    width:100vw;
+    height: 150vh;
+    }
+
+
+
+
     .buy-button-new {
         background-color: #a7898900;
         border: none;
@@ -990,16 +1011,21 @@ form.formspree {
     }
 
     .blog {
-        /* height: 109.5vh;
+        height: 132vh;
         width: 100vw;
         position: absolute;
-        top: -9.5vh;
+        top: -30vh;
         left: 0;
-        overflow: hidden; */
+        overflow: hidden;
     }
-div.AppLogoPad{
-display: none;
-}
+    
+    .iframe{
+        position:relative; 
+      top:-10vh;
+      border:0;
+    width:100vw;
+    height: 150vh;
+    }
  
 
 
@@ -1164,6 +1190,24 @@ margin-right: 50px;
     }
     
     
+    .blog {
+        height: 132vh;
+        width: 100vw;
+        position: absolute;
+        top: -30vh;
+        left: 0;
+        overflow: hidden;
+    }
+    
+    .iframe{
+        position:relative; 
+      top:-10vh;
+      border:0;
+    width:100vw;
+    height: 150vh;
+    }
+
+
 
     .model-container1::-webkit-scrollbar {
         display: none;

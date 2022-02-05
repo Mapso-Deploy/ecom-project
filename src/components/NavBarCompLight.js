@@ -11,7 +11,7 @@ export default class NavbarCompLight extends Component {
                 <Navbar expand="lg" className="Top-Nav-Light">
   <Container>
     <Navbar.Brand href="#home"><NavLink to="/Products" activeStyle={{color: "lime"}}><a href="www.mapso.co/products" className="Logo"><img src={logo} alt="logo" style={{display: 'flex', alignItems:'left', height: '6vh', onLoad: 'fadeIn'}} /></a></NavLink></Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-dark" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto px-5">
       {/* <NavDropdown title="Explore" id="basic-nav-dropdown" className="Nav px-4">
