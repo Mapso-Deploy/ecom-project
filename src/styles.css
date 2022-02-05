@@ -721,8 +721,15 @@ form.formspree {
         margin: auto;
         margin-top: 100px;
         overflow: scroll;
-        padding: 50px;
     }
+
+
+    p.product-info{
+        margin-right: 50px;
+        text-align: center;
+            }
+
+
 
     p.divider {
         display: inline;
@@ -795,12 +802,12 @@ form.formspree {
         color: #000;
         font-family: PragmaticaW01-ExtendedBook;
         font-size: .8rem;
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         margin-left: 5px;
         border-radius: 40px;
-        text-align: right;
-        align-items: right;
+        text-align: center;
+        align-items: center;
         text-decoration: none;
         transition: all .2s ease-in-out;
         display: inline;
@@ -812,12 +819,12 @@ form.formspree {
         color: #000;
         font-family: PragmaticaW01-ExtendedBook;
         font-size: .8rem;
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         margin-left: 5px;
         border-radius: 40px;
-        text-align: right;
-        align-items: right;
+        text-align: center;
+        align-items: center;
         text-decoration: none;
         transition: all .2s ease-in-out;
         display: inline;
@@ -1015,12 +1022,11 @@ form.formspree {
                 border: none;
                 color: #000;
                 font-family: PragmaticaW01-ExtendedBook;
-                font-size: .7rem;
-                width: 15px;
-                height: 15px;
+                font-size: .8rem;
+                width: 18px;
+                height: 18px;
                 margin-left: 5px;
                 border-radius: 40px;
-                padding-left: 0px;
                 text-align: center;
                 align-items: center;
                 text-decoration: none;
@@ -1033,11 +1039,10 @@ form.formspree {
                 border: none;
                 color: #000;
                 font-family: PragmaticaW01-ExtendedBook;
-                font-size: .7rem;
-                width: 15px;
-                height: 15px;
+                font-size: .8rem;
+                width: 18px;
+                height: 18px;
                 margin-left: 5px;
-                padding-left: 0px;
                 border-radius: 40px;
                 text-align: center;
                 align-items: center;
@@ -1197,12 +1202,11 @@ form.formspree {
         border: none;
         color: #000;
         font-family: PragmaticaW01-ExtendedBook;
-        font-size: .7rem;
-        width: 15px;
-        height: 15px;
+        font-size: .8rem;
+        width: 18px;
+        height: 18px;
         margin-left: 5px;
         border-radius: 40px;
-        padding-left: 0px;
         text-align: center;
         align-items: center;
         text-decoration: none;
@@ -1215,11 +1219,10 @@ form.formspree {
         border: none;
         color: #000;
         font-family: PragmaticaW01-ExtendedBook;
-        font-size: .7rem;
-        width: 15px;
-        height: 15px;
+        font-size: .8rem;
+        width: 18px;
+        height: 18px;
         margin-left: 5px;
-        padding-left: 0px;
         border-radius: 40px;
         text-align: center;
         align-items: center;
