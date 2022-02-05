@@ -695,6 +695,35 @@ form.formspree {
         justify-content: left;
     }
 
+    .models-mapped{
+        display: inline-grid; 
+      grid-auto-rows: min-content; 
+      grid-template-columns: min-content min-content min-content min-content; 
+      gap: 0px 0px;
+      place-self: center;
+      place-items: center;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .models-mapped-container{
+        /* position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); */
+      /* position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        display: flex;
+      justify-content: left;
+      align-items: center;
+        margin: auto;
+        margin-top: 100px;
+        overflow: scroll;
+        padding: 50px;
+    }
+
     p.divider {
         display: inline;
         width: 5%;
@@ -976,39 +1005,46 @@ form.formspree {
         padding: 30px;
     }
 
-    .btc-buy-button-new {
-        background-color: #ff9a164f;
-        border: none;
-        color: #000;
-        font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        width: 15px;
-        height: 15px;
-        margin-left: 5px;
-        border-radius: 30px;
-        text-align: right;
-        align-items: right;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        display: inline;
-    }
-    
-    .btc-buy-button-new:hover {
-        background-color: #fd9917ab;
-        border: none;
-        color: #000;
-        font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        width: 15px;
-        height: 15px;
-        margin-left: 5px;
-        border-radius: 30px;
-        text-align: right;
-        align-items: right;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        display: inline;
-    }
+    p.product-info{
+        margin-right: 50px;
+        text-align: center;
+            }
+
+            .btc-buy-button-new {
+                background-color: #ff9a164f;
+                border: none;
+                color: #000;
+                font-family: PragmaticaW01-ExtendedBook;
+                font-size: .7rem;
+                width: 15px;
+                height: 15px;
+                margin-left: 5px;
+                border-radius: 40px;
+                padding-left: 0px;
+                text-align: center;
+                align-items: center;
+                text-decoration: none;
+                transition: all .2s ease-in-out;
+                display: inline;
+            }
+            
+            .btc-buy-button-new:hover {
+                background-color: #fd9917ab;
+                border: none;
+                color: #000;
+                font-family: PragmaticaW01-ExtendedBook;
+                font-size: .7rem;
+                width: 15px;
+                height: 15px;
+                margin-left: 5px;
+                padding-left: 0px;
+                border-radius: 40px;
+                text-align: center;
+                align-items: center;
+                text-decoration: none;
+                transition: all .2s ease-in-out;
+                display: inline;
+            }
 
     .blog {
         height: 132vh;
@@ -1107,8 +1143,9 @@ form.formspree {
 
 
     p.product-info{
-margin-right: 50px;
-    }
+        margin-right: 50px;
+        text-align: center;
+            }
 
 
     p.divider {
@@ -1160,13 +1197,14 @@ margin-right: 50px;
         border: none;
         color: #000;
         font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        width: 20px;
-        height: 20px;
+        font-size: .7rem;
+        width: 15px;
+        height: 15px;
         margin-left: 5px;
         border-radius: 40px;
-        text-align: right;
-        align-items: right;
+        padding-left: 0px;
+        text-align: center;
+        align-items: center;
         text-decoration: none;
         transition: all .2s ease-in-out;
         display: inline;
@@ -1177,13 +1215,14 @@ margin-right: 50px;
         border: none;
         color: #000;
         font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        width: 20px;
-        height: 20px;
+        font-size: .7rem;
+        width: 15px;
+        height: 15px;
         margin-left: 5px;
+        padding-left: 0px;
         border-radius: 40px;
-        text-align: right;
-        align-items: right;
+        text-align: center;
+        align-items: center;
         text-decoration: none;
         transition: all .2s ease-in-out;
         display: inline;
