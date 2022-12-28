@@ -5,7 +5,8 @@ export const productData = [{
     description: "Product: graphic tee. Medium-bodied sourced cotton, constructed from scratch/ hand sewn. Triple stitched. Premium-quality. Oversized.",
     image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
     custom1Name: "Size",
-    options: ["XS", "S", "M", "L", "XL", "XXL"]
+    options: ["XS", "S", "M", "L", "XL", "XXL"],
+    crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 },
 {
     id: 1,
@@ -14,7 +15,8 @@ export const productData = [{
     description: "Product: graphic tee. Medium-bodied sourced cotton, constructed from scratch/ hand sewn. Triple stitched. Premium-quality. Oversized.",
     image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
     custom1Name: "Size",
-    options: ["XS", "S", "M", "L", "XL", "XXL"]
+    options: ["XS", "S", "M", "L", "XL", "XXL"],
+    crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 },
 {
     id: 2,
@@ -23,7 +25,8 @@ export const productData = [{
     description: "Product: graphic tee. Medium-bodied sourced cotton, constructed from scratch/ hand sewn. Triple stitched. Premium-quality. Oversized.",
     image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
     custom1Name: "Size",
-    options: ["XS", "S", "M", "L", "XL", "XXL"]
+    options: ["XS", "S", "M", "L", "XL", "XXL"],
+    crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 },
 {
     id: 3,
@@ -32,7 +35,8 @@ export const productData = [{
     description: "Product: graphic tee. Medium-bodied sourced cotton, constructed from scratch/ hand sewn. Triple stitched. Premium-quality. Oversized.",
     image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
     custom1Name: "Size",
-    options: ["XS", "S", "M", "L", "XL", "XXL"]
+    options: ["XS", "S", "M", "L", "XL", "XXL"],
+    crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 },
 {
     id: 4,
@@ -41,5 +45,6 @@ export const productData = [{
     description: "Product: graphic tee. Medium-bodied sourced cotton, constructed from scratch/ hand sewn. Triple stitched. Premium-quality. Oversized.",
     image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
     custom1Name: "Size",
-    options: ["XS", "S", "M", "L", "XL", "XXL"]
+    options: ["XS", "S", "M", "L", "XL", "XXL"],
+    crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 }]

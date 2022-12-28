@@ -32,13 +32,7 @@ export default function Model(props) {
                    <p class="divider">|</p>
                     </span>
                     <span>
-                    <form class="buy-button" method="POST" action="https://btcpaymerchant.com/apps/32ji79KDmguSoduz9hDnEEgNBSXD/pos">
-                    <input type="hidden" name="email" value="customer@example.com" />
-                    <input type="hidden" name="orderId" value="CustomOrderId" />
-                    <input type="hidden" name="notificationUrl" value="https://example.com/callbacks" />
-                    <input type="hidden" name="redirectUrl" value="https://example.com/thanksyou" />
-                    <button class="btc-buy-button-new" type="submit" name="choiceKey" value="fuck 12 tee">₿</button>
-                    </form>
+                    <button class="btc-buy-button-new"><a class="buy-with-crypto" href={product.crypto}>₿</a></button>
                     </span>
                 </div>
                 </div>

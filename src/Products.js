@@ -8,7 +8,7 @@ import { productData } from "./data/productData.js";
 
 
 export default function Products() {
-const showCount = (window.screen.width >= 1280) ? 8 : 4;
+const showCount = (window.screen.width >= 1280) ? 8 : 2;
 
 const [startIndex, setStartIndex] = useState(0);
 const [disablePrev, setDisablePrev] = useState(true);
@@ -42,9 +42,9 @@ function handlePrevious() {
         <ModelsMapped products={productData.slice(startIndex, startIndex + showCount)}/>
         <div className="row">
             <div className="col-md-12 text-center p-4">
-        <button className="btn" disabled={disablePrev} onClick={() => handlePrevious()}>Previous</button>
-        <button className="btn" disabled={disableNext} onClick={() => handleNext()}>Next</button>
-        </div>
+                <button className="btn" disabled={disablePrev} onClick={() => handlePrevious()}>Previous</button>
+                <button className="btn" disabled={disableNext} onClick={() => handleNext()}>Next</button>
+            </div>
         </div>
         </>
     )

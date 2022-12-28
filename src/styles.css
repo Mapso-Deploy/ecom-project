@@ -231,6 +231,16 @@ height: 110vh;
     display: inline;
 }
 
+.buy-with-crypto {
+    text-decoration: none;
+    color: #000;
+}
+
+.buy-with-crypto:hover {
+    text-decoration: none;
+    color: #000;
+}
+
 form.buy-button {
     display: inline;
     width: 20%;
