@@ -36,6 +36,7 @@ function handlePrevious() {
     setStartIndex(startIndex - showCount);
 }
 
+
     return (
         <>
         <NavbarComp/>
