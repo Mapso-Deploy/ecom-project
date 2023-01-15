@@ -1125,43 +1125,6 @@ form.formspree {
     width:100vw;
     height: 150vh;
     }
-    .animated-gif{
-        width: 70%;
-        height: auto;
-        display: 'flex';  
-        justify-content:'center'; 
-        align-items: center; 
-        animation: fadeIn 5s;
-        -webkit-animation: fadeIn 5s;
-        -moz-animation: fadeIn 5s;
-        -o-animation: fadeIn 5s;
-        -ms-animation: fadeIn 5s;
-      }
-      
-      @keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-      
-        @-moz-keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        
-        @-webkit-keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        
-        @-o-keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        
-        @-ms-keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
     .animated-gif-box{
         width: 150%;
         height: auto;
@@ -1445,43 +1408,6 @@ form.formspree {
         transition: all .2s ease-in-out;
         width: 100%;
     }
-    .animated-gif{
-        width: 70%;
-        height: auto;
-        display: 'flex';  
-        justify-content:'center'; 
-        align-items: center; 
-        animation: fadeIn 5s;
-        -webkit-animation: fadeIn 5s;
-        -moz-animation: fadeIn 5s;
-        -o-animation: fadeIn 5s;
-        -ms-animation: fadeIn 5s;
-      }
-      
-      @keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-      
-        @-moz-keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        
-        @-webkit-keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        
-        @-o-keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        
-        @-ms-keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
     .animated-gif-box{
         width: 150%;
         height: auto;
