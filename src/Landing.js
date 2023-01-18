@@ -15,7 +15,9 @@ export default function landing() {
                 <ReactFreezeframe src={Mapso} className="animated-gif"/>
             </Link>
             </div>
-            <a href="/home"> <img src={logo} alt="mobile logo" className="mobile-logo" /> </a>
+            <div className="mobile-logo-box">
+            <a href="/home"> <img src={logo} alt="mobile logo" /> </a>
+            </div>
         </div> 
     )
 }

@@ -84,7 +84,7 @@ height: 110vh;
     justify-content:'center'; 
     align-items: center; 
   }
-  .mobile-logo{
+  .mobile-logo-box{
     display: none;
   }
 
@@ -996,7 +996,7 @@ form.formspree {
         justify-content:'center'; 
         align-items: center;
       }
-    .mobile-logo{
+    .mobile-logo-box{
         display: none;
       }
 
@@ -1147,10 +1147,18 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
+        width: 20%;
+        height: auto;
+        display: 'flex';  
+        justify-content:'center'; 
+        align-items: center; 
+      }
+
+      .mobile-logo-box{
         display: inline-block;  
         justify-content:'center'; 
         align-items:'center'; 
-        height: '40vh'; 
+        height: '40%'; 
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
@@ -1472,10 +1480,17 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
+        width: 20%;
+        height: auto;
+        display: 'flex';  
+        justify-content:'center'; 
+        align-items: center; 
+      }
+      .mobile-logo-box{
         display: inline-block;  
         justify-content:'center'; 
         align-items:'center'; 
-        height: '40vh'; 
+        height: '40%'; 
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
