@@ -1147,7 +1147,7 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
-        width: '20vh';
+        width: '20%';
         height: auto;
         display: 'flex';  
         justify-content:'center'; 
@@ -1155,7 +1155,7 @@ form.formspree {
       }
 
       .mobile-logo-box{
-        display: flex;  
+        display: inline;  
         justify-content:'center'; 
         align-items:'center';
         height: '70%'; 
@@ -1480,14 +1480,14 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
-        width: '20vh';
+        width: '20%';
         height: auto;
         display: 'flex';  
         justify-content:'center'; 
         align-items: center; 
       }
       .mobile-logo-box{
-        display: flex;  
+        display: inline;  
         justify-content:'center'; 
         align-items:'center';
         height: '70%'; 
