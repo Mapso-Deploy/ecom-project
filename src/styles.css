@@ -1147,10 +1147,10 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
-        display: 'flex';  
+        display: inline-block;  
         justify-content:'center'; 
         align-items:'center'; 
-        height: '10vh'; 
+        height: '40vh'; 
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
@@ -1472,10 +1472,10 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
-        display: 'flex';  
+        display: inline-block;  
         justify-content:'center'; 
         align-items:'center'; 
-        height: '10vh'; 
+        height: '40vh'; 
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
