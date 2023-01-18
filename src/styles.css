@@ -1157,9 +1157,8 @@ form.formspree {
       .mobile-logo-box{
         display: flex;  
         justify-content:'center'; 
-        align-items:'center';
-        max-width: 100%; 
-        height: auto;
+        align-items:'center'; 
+        height: 10vh;
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
@@ -1491,8 +1490,7 @@ form.formspree {
         display: flex;  
         justify-content:'center'; 
         align-items:'center';
-        max-width: 100%;
-        height: auto;
+        height: 10vh;
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
