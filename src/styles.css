@@ -11,8 +11,12 @@ html, body {
     height: 100vh;
     background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
     font-family: PragmaticaW01-ExtendedBook !important;
+    scrollbar-width: none;
     overflow: hidden;
 }
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 .verge {
     height: 200vh;
@@ -718,6 +722,7 @@ form.formspree {
   .model-container2::-webkit-scrollbar {
     display: none;
   }
+
 
 @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
