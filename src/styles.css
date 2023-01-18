@@ -1147,7 +1147,7 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
-        width: '40vh';
+        width: 10vh;
         height: auto;
         display: 'flex';  
         justify-content:'center'; 
@@ -1158,7 +1158,7 @@ form.formspree {
         display: flex;  
         justify-content:'center'; 
         align-items:'center';
-        max-width: 10vh; 
+        max-width: 100%; 
         height: auto;
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
@@ -1481,7 +1481,7 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
-        width: '40vh';
+        width: 10vh;
         height: auto;
         display: 'flex';  
         justify-content:'center'; 
@@ -1491,7 +1491,7 @@ form.formspree {
         display: flex;  
         justify-content:'center'; 
         align-items:'center';
-        max-width: 10vh;
+        max-width: 100%;
         height: auto;
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
