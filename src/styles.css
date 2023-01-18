@@ -1004,13 +1004,13 @@ form.formspree {
         transition: all .2s ease-in-out;
         width: 100%;
     }
-    /* .animated-gif-box{
-        width: 150%;
+    .animated-gif-box{
+        width: 40%;
         height: auto;
         display: 'flex';  
         justify-content:'center'; 
-        align-items: center;
-      } */
+        align-items: center; 
+      }
     .mobile-logo-box{
         display: none;
       }
