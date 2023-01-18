@@ -17,6 +17,16 @@ html, body {
 body::-webkit-scrollbar {
     display: none;
   }
+  ::-webkit-scrollbar {
+    display: none;
+}
+.models-mapped-container::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari and Opera */
+}
+.models-mapped-container{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 
 .verge {
     height: 200vh;
