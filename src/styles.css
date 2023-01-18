@@ -1158,7 +1158,8 @@ form.formspree {
         display: flex;  
         justify-content:'center'; 
         align-items:'center';
-        height: '10vh'; 
+        max-width: 100%; 
+        height: auto;
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
@@ -1490,7 +1491,8 @@ form.formspree {
         display: flex;  
         justify-content:'center'; 
         align-items:'center';
-        height: '10vh'; 
+        max-width: 100%;
+        height: auto;
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
