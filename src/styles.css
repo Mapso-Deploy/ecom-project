@@ -1147,7 +1147,7 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
-        width: 40vh;
+        width: 30vh;
         height: auto;
         display: 'flex';  
         justify-content:'center'; 
@@ -1474,7 +1474,7 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
-        width: 40vh;
+        width: 30vh;
         height: auto;
         display: 'flex';  
         justify-content:'center'; 
