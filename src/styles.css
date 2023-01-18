@@ -1147,7 +1147,7 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
-        width: 10vh;
+        width: 30vh;
         height: auto;
         display: 'flex';  
         justify-content:'center'; 
@@ -1158,7 +1158,7 @@ form.formspree {
         display: flex;  
         justify-content:'center'; 
         align-items:'center'; 
-        height: 50vh;
+        height: 30vh;
         animation: fadeIn 5s;
   -webkit-animation: fadeIn 5s;
   -moz-animation: fadeIn 5s;
@@ -1475,7 +1475,7 @@ form.formspree {
         display: none;
       }
       .mobile-logo{
-        width: 10vh;
+        width: 30vh;
         height: auto;
         display: 'flex';  
         justify-content:'center'; 
@@ -1485,7 +1485,7 @@ form.formspree {
         display: flex;  
         justify-content:'center'; 
         align-items:'center';
-        height: 50vh;
+        height: 30vh;
         animation: fadeIn 5s;
   -webkit-animation: fadeIn 5s;
   -moz-animation: fadeIn 5s;
