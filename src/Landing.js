@@ -1,5 +1,6 @@
 import React from 'react'
 import Mapso from "./MapsoEnergy4.gif"
+import logo from "./mapso.gif"
 import { Link } from "react-router-dom"
 import './styles.css';
 import ReactFreezeframe from "react-freezeframe";
@@ -14,6 +15,7 @@ export default function landing() {
                 <ReactFreezeframe src={Mapso} className="animated-gif"/>
             </Link>
             </div>
+            <a href="/home"> <img src={logo} alt="mobile logo" className="mobile-logo" /> </a>
         </div> 
     )
 }

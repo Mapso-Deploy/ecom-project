@@ -84,6 +84,9 @@ height: 110vh;
     justify-content:'center'; 
     align-items: center; 
   }
+  .mobile-logo{
+    display: none;
+  }
 
 .models-mapped{
     display: inline-grid; 
@@ -1126,11 +1129,19 @@ form.formspree {
     height: 150vh;
     }
     .animated-gif-box{
-        width: 150%;
+        /* width: 150%;
         height: auto;
         display: 'flex';  
         justify-content:'center'; 
-        align-items: center; 
+        align-items: center;  */
+        display: none;
+      }
+      .mobile-logo{
+        display: 'flex';  
+        justify-content:'center'; 
+        align-items:'center'; 
+        height: '10vh'; 
+        on-load: 'fadeIn';
       }
 
 
@@ -1409,11 +1420,19 @@ form.formspree {
         width: 100%;
     }
     .animated-gif-box{
-        width: 150%;
+        /* width: 150%;
         height: auto;
         display: 'flex';  
         justify-content:'center'; 
-        align-items: center; 
+        align-items: center;  */
+        display: none;
+      }
+      .mobile-logo{
+        display: 'flex';  
+        justify-content:'center'; 
+        align-items:'center'; 
+        height: '10vh'; 
+        on-load: 'fadeIn';
       }
 
 }
