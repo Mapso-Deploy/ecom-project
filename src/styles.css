@@ -125,7 +125,7 @@ height: 110vh;
   align-items: center;
     margin: auto;
     margin-top: 150px;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .model-container1 {
@@ -795,7 +795,7 @@ form.formspree {
         margin: auto;
         margin-top: 100px;
         padding-left: 50px;
-        overflow: scroll;
+        overflow: hidden;
     }
 
 
