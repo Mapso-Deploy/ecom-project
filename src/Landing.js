@@ -16,7 +16,7 @@ export default function landing() {
             </Link>
             </div>
             <div className="mobile-logo-box">
-            <a href="/home"> <img src={logo} alt="mobile logo" /> </a>
+            <a href="/home"> <img src={logo} alt="mobile logo" className="mobile-logo" /> </a>
             </div>
         </div> 
     )
