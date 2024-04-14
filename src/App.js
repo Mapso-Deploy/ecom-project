@@ -5,6 +5,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Explore from "./Explore";
 import Blog from "./Blog";
+import ProductDetail from "./components/ProductDetail";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import NavbarComp from "./components/NavbarComp.js";
 
@@ -20,6 +21,7 @@ function App() {
       <Route exact path="/blog" component={Blog} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route exact path="/products/:productId" component={ProductDetail} />
      </Switch>
     </div>
     </Router>

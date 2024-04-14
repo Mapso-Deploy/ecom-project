@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'; // Import Link
 
 export default function Model(props) {
     console.log('model props',props)
@@ -16,7 +17,9 @@ export default function Model(props) {
                 <div class="update-bar"></div>
                 </div>
             </model-viewer>
+            <Link to={`/products/${product.id}`}> {/* Wrap product name with Link */}
             <p className="product-info" style = {{ whiteSpace: "pre" }}>{product.name} {'    '} ${product.price}</p>
+            </Link>
             <div className="buy-buttons">
                 <span>
                     <button class="buy-button-new snipcart-add-item"
@@ -43,5 +46,7 @@ export default function Model(props) {
         </>
     )
 }
+
+
 
 
