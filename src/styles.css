@@ -810,6 +810,16 @@ z-index: 1;
   }
 
 
+  a.product-info-link{
+    text-decoration: none;
+    color: inherit;
+        }
+
+  a.product-info-link:hover{
+    text-decoration: none;
+    color: lime;
+        }
+
 
 
 
@@ -887,8 +897,6 @@ z-index: 1;
         margin-right: 50px;
         text-align: center;
             }
-
-
 
     p.divider {
         display: inline;

@@ -17,7 +17,7 @@ export default function Model(props) {
                 <div class="update-bar"></div>
                 </div>
             </model-viewer>
-            <Link to={`/products/${product.id}`}> {/* Wrap product name with Link */}
+            <Link to={`/products/${product.id}`} className="product-info-link"> {/* Wrap product name with Link */}
             <p className="product-info" style = {{ whiteSpace: "pre" }}>{product.name} {'    '} ${product.price}</p>
             </Link>
             <div className="buy-buttons">
