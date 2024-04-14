@@ -47,7 +47,7 @@ const ProductDetail = () => {
           max-camera-orbit="auto 90deg 7.699m"
           min-field-of-view="45deg"
           max-field-of-view="45deg"
-          style={{ '--poster-color': 'transparent', height: '400px', width: '35%'}}
+          style={{ '--poster-color': 'transparent', height: '400px', width: '100%'}}
           loading="eager"
           className="product-3d-model"
         ></model-viewer>
