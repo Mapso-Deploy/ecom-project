@@ -29,7 +29,7 @@ const ProductDetail = () => {
 
   return (
     
-    <div>
+    <div className="product-detail-container-new">
     <NavbarComp/>
     <div className="product-detail-container">
       <div className="product-content">
@@ -51,7 +51,7 @@ const ProductDetail = () => {
           loading="eager"
           className="product-3d-model"
         ></model-viewer>
-        <div className="product-details" style={{marginTop: '70px', paddingRight: '135px'}}>
+        <div className="product-details">
         <h2 className="product-title">{product.name}</h2>
           <p className="product-price">${product.price}</p>
           <p className="product-description">{product.description}</p>
