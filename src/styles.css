@@ -1163,7 +1163,10 @@ z-index: 1;
 
     div.ms-auto.px-5.navbar-nav {
         background-color: lightgrey;
-    } 
+    }
+    .cart-button {
+        background-color: lightgrey;
+    }
 
     div.Logo{
         /* display: flex;
@@ -1410,6 +1413,9 @@ z-index: 1;
 	/*Small smartphones [325px -> 425px]*/
 
     div.ms-auto.px-5.navbar-nav {
+        background-color: lightgrey;
+    }
+    .cart-button {
         background-color: lightgrey;
     }
     
