@@ -718,9 +718,8 @@ form.formspree {
     display: flex;
     flex-direction: column;
     margin: auto;
+    margin-top: -150px;
     padding: 150px;
-    /* margin-top: 150px; */
-    top: 50%;
   
 }
 
@@ -755,7 +754,7 @@ form.formspree {
 .formspree textarea {
     background-color: lightgrey;
     color: rgb(51, 51, 51);
-    padding: 100px;
+    padding: 50px;
     border: none;
     border-radius: 5px;
     font-family: PragmaticaW01-ExtendedBook, sans-serif;
@@ -1063,8 +1062,8 @@ z-index: 1;
         display: flex;
         flex-direction: column;
         margin: auto;
-        margin-top: 50px;
-        padding: 15px;
+        margin-top: 0px;
+        padding: 100px;
     }
     
     .formspree button {
@@ -1487,6 +1486,11 @@ z-index: 1;
     width: 70%;
 }
 
+form.formspree {
+    margin-top: 100px;
+    padding: 15px;
+}
+
 
 
 }
@@ -1706,7 +1710,7 @@ z-index: 1;
         display: flex;
         flex-direction: column;
         margin: auto;
-        margin-top: 50px;
+        margin-top: 25px;
         padding: 15px;
     }
     
@@ -1945,5 +1949,6 @@ z-index: 1;
     display: inline;
     width: 70%;
 }
+
 
 }
