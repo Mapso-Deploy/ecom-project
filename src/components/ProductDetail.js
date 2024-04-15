@@ -56,7 +56,7 @@ const ProductDetail = () => {
           <p className="product-price">${product.price}</p>
           <p className="product-description">{product.description}</p>
           {/* Other details */}
-          <div className="buy-buttons">
+          <div className="buy-buttons-product-details">
                 <span>
                     <button class="buy-button-product-details snipcart-add-item"
                     data-item-id={product.id}
