@@ -1490,6 +1490,7 @@ z-index: 1;
 form.formspree {
     margin-top: 150px;
     padding: 15px;
+    z-index: 0;
 }
 
 
