@@ -1354,7 +1354,7 @@ z-index: 1;
   }
 
   .product-title {
-    text-align: left;
+    text-align: center;
     margin-bottom: 2rem;
   }
   
@@ -1420,7 +1420,7 @@ z-index: 1;
     text-decoration: none;
     transition: all .2s ease-in-out;
     display: inline;
-    width: 30%;
+    width: 70%;
 }
 
 .buy-button-product-details:hover{
@@ -1436,7 +1436,7 @@ z-index: 1;
     text-decoration: none;
     transition: all .2s ease-in-out;
     display: inline;
-    width: 30%;
+    width: 70%;
 }
 
 
