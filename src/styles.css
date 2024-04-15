@@ -1439,6 +1439,7 @@ z-index: 1;
     width: 100%; /* Increase width */
     height: 100%; /* Increase height */
     margin-bottom: 50px;
+    margin-top: 50px;
   }
 
 .product-carousel .carousel-item img {
@@ -1910,7 +1911,8 @@ z-index: 1;
     /* margin-top: -50%vh; */
     padding: 0px;
     margin: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
   }
   .buy-button-product-details{
     background-color: #3c3c3c00;
