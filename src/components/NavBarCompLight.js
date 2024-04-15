@@ -22,9 +22,10 @@ export default class NavbarCompLight extends Component {
           <NavDropdown.Item href="#action/3.4">Archive</NavDropdown.Item>
         </NavDropdown> */}
         <Nav.Link className="Nav px-5" href="#Products"><NavLink to="/products" className="Nav-Link-Light" activeStyle={{color: "lime"}}>Products</NavLink></Nav.Link>
-        <Nav.Link className="Nav px-5" href="#Explore"><NavLink to="/explore" className="Nav-Link-Light" activeStyle={{color: "lime"}}>Explore</NavLink></Nav.Link>
+        {/* <Nav.Link className="Nav px-5" href="#Explore"><NavLink to="/explore" className="Nav-Link-Light" activeStyle={{color: "lime"}}>Explore</NavLink></Nav.Link> */}
         <Nav.Link className="Nav px-5" href="#Blog"><NavLink to="/blog" className="Nav-Link-Light" activeStyle={{color: "lime"}}>Blog</NavLink></Nav.Link>
         <Nav.Link className="Nav px-5" href="#Contact"><NavLink to="/contact" className="Nav-Link-Light" activeStyle={{color: "lime"}}>Contact</NavLink></Nav.Link>
+        <button class="my-account-light px-5 snipcart-customer-signin">Account</button>
       </Nav>
       <div class="cart-button">
         <button class="snipcart-checkout"> Cart <span class="snipcart-items-count"></span></button>

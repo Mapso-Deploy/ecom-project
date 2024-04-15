@@ -195,6 +195,24 @@ height: 110vh;
     font-size: .8rem;
     z-index: 1;
 }
+.my-account {
+    /* padding: 0 21px; */
+    font-family: PragmaticaW01-ExtendedBook;
+    font-size: .8rem;
+    z-index: 1;
+    background: none;
+    border: none;
+    color: rgba(0,0,0,.55);
+}
+.my-account-light {
+    /* padding: 0 21px; */
+    font-family: PragmaticaW01-ExtendedBook;
+    font-size: .8rem;
+    z-index: 1;
+    background: none;
+    border: none;
+    color: lightgray;
+}
 
 .buy-button {
     background-color: #a7898900;
