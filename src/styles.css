@@ -1403,8 +1403,40 @@ z-index: 1;
   .product-details {
     flex: 1;
     /* margin-top: -50%vh; */
+    padding: 0px;
+    margin: 0px;
   }
+  .buy-button-product-details{
+    background-color: #3c3c3c00;
+    border: none;
+    color: #000;
+    font-family: PragmaticaW01-ExtendedBook;
+    font-size: 1rem;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    display: inline;
+    width: 30%;
+}
 
+.buy-button-product-details:hover{
+    background-color: #3c3c3c00;
+    border: none;
+    color: lime;
+    font-family: PragmaticaW01-ExtendedBook;
+    font-size: 1rem;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    display: inline;
+    width: 30%;
+}
 
 
 
@@ -1806,5 +1838,36 @@ z-index: 1;
     padding: 0px;
     margin: 0px;
   }
+  .buy-button-product-details{
+    background-color: #3c3c3c00;
+    border: none;
+    color: #000;
+    font-family: PragmaticaW01-ExtendedBook;
+    font-size: 1rem;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    display: inline;
+    width: 70%;
+}
+
+.buy-button-product-details:hover{
+    background-color: #3c3c3c00;
+    border: none;
+    color: lime;
+    font-family: PragmaticaW01-ExtendedBook;
+    font-size: 1rem;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    display: inline;
+    width: 70%;
+}
 
 }
