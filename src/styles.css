@@ -1405,6 +1405,7 @@ z-index: 1;
     /* margin-top: -50%vh; */
     padding: 0px;
     margin: 0px;
+    margin-bottom: 20px;
   }
   .buy-button-product-details{
     background-color: #3c3c3c00;
@@ -1837,6 +1838,7 @@ z-index: 1;
     /* margin-top: -50%vh; */
     padding: 0px;
     margin: 0px;
+    margin-bottom: 20px;
   }
   .buy-button-product-details{
     background-color: #3c3c3c00;
