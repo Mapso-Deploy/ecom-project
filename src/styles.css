@@ -686,8 +686,9 @@ form.formspree {
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 0px;
+    margin-top: -25px;
     padding: 150px;
+    z-index: 0;
   
 }
 
