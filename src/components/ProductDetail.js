@@ -56,6 +56,24 @@ const ProductDetail = () => {
           <p className="product-price">${product.price}</p>
           <p className="product-description">{product.description}</p>
           {/* Other details */}
+          <div className="buy-buttons">
+                <span>
+                    <button class="buy-button-product-details snipcart-add-item"
+                    data-item-id={product.id}
+                    data-item-price={product.price}
+                    data-item-description={product.description}
+                    data-item-image={product.image}
+                    data-item-name={product.name}
+                    data-item-custom1-name={product.custom1Name}
+                    data-item-custom1-options={product.options} >
+                    Add to cart
+                    </button> 
+                   <p class="divider">|</p>
+                    </span>
+                    <span>
+                    <button class="btc-buy-button-new"><a class="buy-with-crypto" href={product.crypto}>₿</a></button>
+                    </span>
+                </div>
         </div>
       </div>
       {/* Your add to cart button and other information */}
