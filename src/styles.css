@@ -1236,7 +1236,7 @@ z-index: 1;
         background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
         /* overflow: hidden;
         position: fixed; */
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
     .model {
@@ -1544,7 +1544,7 @@ z-index: 1;
         background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
         /* overflow: hidden;
         position: fixed; */
-        overflow: scroll;
+        overflow-y: scroll;
     }
     
     .model {

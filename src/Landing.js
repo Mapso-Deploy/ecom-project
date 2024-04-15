@@ -8,7 +8,7 @@ import ReactFreezeframe from "react-freezeframe";
 
 export default function landing() {
     return (
-        <div className="Logo" style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
+        <div className="Logo" style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh', overflow: 'hidden'}}>
         {/* <a href="/home"> <img src={logo} style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '10vh', onLoad: 'fadeIn'}} /> </a> */}
             <div className="animated-gif-box"> 
             <Link to="/Products">
