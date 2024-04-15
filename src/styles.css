@@ -850,7 +850,9 @@ z-index: 1;
     text-decoration: none;
     color: lime;
         }
-
+.product-carousel-mobile{
+    display: none;
+}
 
 
 
@@ -1390,6 +1392,7 @@ z-index: 1;
 }
 
 .product-carousel-mobile {
+    display: block;
     width: 100%; /* Increase width */
     height: 100%; /* Increase height */
   }
@@ -1823,6 +1826,7 @@ z-index: 1;
 }
 
 .product-carousel-mobile {
+    display: block;
     width: 100%; /* Increase width */
     height: 100%; /* Increase height */
   }

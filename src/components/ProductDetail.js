@@ -76,6 +76,9 @@ const ProductDetail = () => {
                 </div>
         </div>
       </div>
+      <Carousel className="product-carousel-mobile" fade={true} style={{height: '100%'}}>
+        {carouselItems}
+      </Carousel>
       {/* Your add to cart button and other information */}
     </div>
     </div>
