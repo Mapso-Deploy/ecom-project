@@ -1165,6 +1165,16 @@ z-index: 1;
 
     div.ms-auto.px-5.navbar-nav {
         background-color: lightgrey;
+        color: rgba(0,0,0,.55);
+    }
+    a.Nav-Link-Light{
+        color: rgba(0,0,0,.55);
+    }
+    a.Nav-Link-Light:hover{
+        color: lime;
+    }
+    a.Nav-Link-Light:active{
+        color: lime;
     }
     .cart-button {
         background-color: lightgrey;
@@ -1395,6 +1405,7 @@ z-index: 1;
     display: block;
     width: 100%; /* Increase width */
     height: 100%; /* Increase height */
+    margin-bottom: 50px;
   }
 
 .product-carousel .carousel-item img {
@@ -1450,6 +1461,16 @@ z-index: 1;
 
     div.ms-auto.px-5.navbar-nav {
         background-color: lightgrey;
+        color: rgba(0,0,0,.55);
+    }
+    a.Nav-Link-Light{
+        color: rgba(0,0,0,.55);
+    }
+    a.Nav-Link-Light:hover{
+        color: lime;
+    }
+    a.Nav-Link-Light:active{
+        color: lime;
     }
     .cart-button {
         background-color: lightgrey;
@@ -1829,6 +1850,7 @@ z-index: 1;
     display: block;
     width: 100%; /* Increase width */
     height: 100%; /* Increase height */
+    margin-bottom: 50px;
   }
 
 .product-carousel .carousel-item img {
