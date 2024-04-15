@@ -1183,6 +1183,7 @@ z-index: 1;
     div.ms-auto.px-5.navbar-nav {
         background-color: lightgrey;
         color: rgba(0,0,0,.55);
+        z-index: 1000;
     }
     .my-account{
         padding: 10px;
@@ -1500,6 +1501,7 @@ form.formspree {
     div.ms-auto.px-5.navbar-nav {
         background-color: lightgrey;
         color: rgba(0,0,0,.55);
+        z-index: 1000;
     }
     .my-account{
         padding: 10px;
