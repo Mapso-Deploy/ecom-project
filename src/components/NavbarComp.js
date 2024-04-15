@@ -25,7 +25,7 @@ export default class NavbarComp extends Component {
         {/* <Nav.Link className="Nav px-5" href="#Explore"><NavLink to="/explore" className="Nav-Link" activeStyle={{color: "lime"}}>Explore</NavLink></Nav.Link> */}
         <Nav.Link className="Nav px-5" href="#Blog"><NavLink to="/blog" className="Nav-Link" activeStyle={{color: "lime"}}>Blog</NavLink></Nav.Link>
         <Nav.Link className="Nav px-5" href="#Contact"><NavLink to="/contact" className="Nav-Link" activeStyle={{color: "lime"}}>Contact</NavLink></Nav.Link>
-        <button class="my-account px-5 snipcart-customer-signin">Account</button>
+        {/* <button class="my-account px-5 snipcart-customer-signin">Account</button> */}
       </Nav>
       <div class="cart-button">
         <button class="snipcart-checkout"> Cart <span class="snipcart-items-count"></span></button>
