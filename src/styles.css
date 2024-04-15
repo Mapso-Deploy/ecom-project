@@ -1203,7 +1203,15 @@ z-index: 1;
     }
     .cart-button {
         background-color: lightgrey;
+        padding: 10px;
+        border: none;
     }
+    .cart-button:hover {
+        background-color: lightgrey;
+        padding: 10px;
+        color: lime;
+    }
+
 
     div.Logo{
         /* display: flex;
@@ -1505,6 +1513,13 @@ z-index: 1;
     }
     .cart-button {
         background-color: lightgrey;
+        padding: 10px;
+        border: none;
+    }
+    .cart-button:hover {
+        background-color: lightgrey;
+        padding: 10px;
+        color: lime;
     }
     
     div.Logo{
