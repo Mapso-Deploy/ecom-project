@@ -44,7 +44,7 @@ export default function Landing() {
           alt="Mobile logo"
           onClick={handleMobileLogoClick}
           onTouchEnd={() => setIsMobileLogoHovered(false)}
-          style={{ width:'700px',overflow: 'hidden' }}  // Adjust the size for mobile logo as needed
+          style={{ width:'600px',overflow: 'hidden', paddingBottom:'25px' }}  // Adjust the size for mobile logo as needed
         />
       </div>
     </div>
