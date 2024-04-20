@@ -1391,6 +1391,14 @@ margin-top: 150px;
         align-items: center;  */
         display: none;
       }
+      .animated-gif-box2{
+        /* width: 150%;
+        height: auto;
+        display: 'flex';  
+        justify-content:'center'; 
+        align-items: center;  */
+        display: none;
+      }
       .mobile-logo{
         width: 30vh;
         height: auto;
@@ -1854,6 +1862,15 @@ form.formspree {
         align-items: center;  */
         display: none;
       }
+      .animated-gif-box2{
+        /* width: 150%;
+        height: auto;
+        display: 'flex';  
+        justify-content:'center'; 
+        align-items: center;  */
+        display: none;
+      }
+
       .mobile-logo{
         width: 30vh;
         height: auto;

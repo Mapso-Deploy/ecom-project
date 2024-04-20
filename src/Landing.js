@@ -36,7 +36,7 @@ export default function Landing() {
             onMouseLeave={() => setIsMobileLogoHovered(false)}
             onTouchStart={() => setIsMobileLogoHovered(true)}
             onTouchEnd={() => setIsMobileLogoHovered(false)}
-            style={{ width: '100px', height: '100px' }}  // Adjust the size for mobile logo as needed
+            style={{ height: '150px' }}  // Adjust the size for mobile logo as needed
           />
         </Link>
       </div>
