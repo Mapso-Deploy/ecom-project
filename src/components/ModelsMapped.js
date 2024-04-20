@@ -1,24 +1,24 @@
 import React from 'react'
-import { Link } from 'react-router-dom'; // Import Link
-// import { Link, useHistory } from 'react-router-dom'; // Import Link
+// import { Link } from 'react-router-dom'; // Import Link
+import { Link, useHistory } from 'react-router-dom'; // Import Link
 
 
 export default function Model(props) {
 
 
-    // const history = useHistory(); // Use history to programmatically navigate
-    // let clickStart = 0; // Track when the mouse is pressed
+    const history = useHistory(); // Use history to programmatically navigate
+    let clickStart = 0; // Track when the mouse is pressed
 
-    // const handleMouseDown = () => {
-    //     clickStart = new Date().getTime(); // Record time when mouse is pressed
-    // };
+    const handleMouseDown = () => {
+        clickStart = new Date().getTime(); // Record time when mouse is pressed
+    };
 
-    // const handleMouseUp = (productId) => {
-    //     const clickDuration = new Date().getTime() - clickStart; // Calculate click duration
-    //     if (clickDuration < 200) { // If the duration is less than 200 milliseconds, treat as a click
-    //         history.push(`/products/${productId}`); // Navigate to product details
-    //     }
-    // };
+    const handleMouseUp = (productId) => {
+        const clickDuration = new Date().getTime() - clickStart; // Calculate click duration
+        if (clickDuration < 200) { // If the duration is less than 200 milliseconds, treat as a click
+            history.push(`/products/${productId}`); // Navigate to product details
+        }
+    };
 
 
     console.log('model props',props)
@@ -38,8 +38,8 @@ export default function Model(props) {
             poster={product.poster} 
             style={{ '--poster-color': 'transparent' }}
             loading="eager" auto-rotate
-            // onmousedown={handleMouseDown}
-            // onmouseup={() => handleMouseUp(product.id)}
+            onMouseDown={handleMouseDown}
+            onMouseUp={() => handleMouseUp(product.id)}
             >
                 <div class="progress-bar hide" slot="progress-bar">
                 <div class="update-bar"></div>
