@@ -12,6 +12,10 @@ export default function Landing() {
   const mobileStaticLogo = "https://cdn.glitch.global/f341fe61-4868-4d79-bad9-1a5804bea407/Mapso%20(Energy)%204.png?v=1713580027089"; // Static version for mobile logo
   const mobileAnimatedLogo = "https://cdn.glitch.global/f341fe61-4868-4d79-bad9-1a5804bea407/Mapso%20(Energy)%204.gif?v=1713577237481"; // Animated version for mobile logo
 
+  const handleDesktopLogoClick = () => {
+    history.push('/Products');
+  };
+
   const handleMobileLogoClick = () => {
     setIsMobileLogoHovered(true);
     setTimeout(() => {
@@ -30,7 +34,8 @@ export default function Landing() {
           onMouseLeave={() => setIsDesktopLogoHovered(false)}
           onTouchStart={() => setIsDesktopLogoHovered(true)}
           onTouchEnd={() => setIsDesktopLogoHovered(false)}
-          // style={{ width: '200px', height: '200px' }}  // Adjust the size as needed
+          onClick={handleDesktopLogoClick} // Added click event handler for desktop logo
+          //style={{ width: '200px', height: '200px' }}  // Adjust the size as needed
         />
       </div>
       <div className="mobile-logo-box">
