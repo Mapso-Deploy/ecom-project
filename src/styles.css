@@ -1480,6 +1480,7 @@ z-index: 1;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 0%;
+    margin-top: 80px;
   }
   
   .product-3d-model {
@@ -1501,7 +1502,7 @@ z-index: 1;
     display: block;
     width: 100%; /* Increase width */
     height: 100%; /* Increase height */
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     margin-top: 50px;
   }
 
@@ -1525,7 +1526,7 @@ z-index: 1;
     font-family: PragmaticaW01-ExtendedBook;
     font-size: 1rem;
     padding: 5px;
-    margin-right: 10px;
+    margin-right: 30px;
     text-align: center;
     align-items: center;
     text-decoration: none;
@@ -1541,7 +1542,7 @@ z-index: 1;
     font-family: PragmaticaW01-ExtendedBook;
     font-size: 1rem;
     padding: 5px;
-    margin-right: 10px;
+    margin-right: 30px;
     text-align: center;
     align-items: center;
     text-decoration: none;
@@ -1945,6 +1946,7 @@ z-index: 1;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 0%;
+    margin-top: 50px;
   }
   
   .product-3d-model {
@@ -1966,7 +1968,7 @@ z-index: 1;
     display: block;
     width: 100%; /* Increase width */
     height: 100%; /* Increase height */
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
 
 .product-carousel .carousel-item img {
@@ -1990,7 +1992,7 @@ z-index: 1;
     font-family: PragmaticaW01-ExtendedBook;
     font-size: 1rem;
     padding: 5px;
-    margin-right: 10px;
+    margin-right: 30px;
     text-align: center;
     align-items: center;
     text-decoration: none;
@@ -2006,7 +2008,7 @@ z-index: 1;
     font-family: PragmaticaW01-ExtendedBook;
     font-size: 1rem;
     padding: 5px;
-    margin-right: 10px;
+    margin-right: 30px;
     text-align: center;
     align-items: center;
     text-decoration: none;
