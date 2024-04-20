@@ -1235,6 +1235,12 @@ margin-top: 150px;
         color: rgba(0,0,0,.55);
         z-index: 1000;
     }
+
+    .Top-Nav{
+        z-index: 1000;
+    }
+
+
     .my-account{
         padding: 10px;
     }
