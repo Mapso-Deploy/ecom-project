@@ -930,25 +930,23 @@ margin-top: 150px;
 
 @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
-    div.Logo{
-        /* display: flex;
-        justify-content:'center'; 
-        align-items:'center'; 
-        height: '100vh' */
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
 
-    div.Logo img.Logo-hover {
-        width: 200px;
-        height: 100%;
-        object-fit: contain;
-    }
-    
-    
-    
+    .animated-gif-box{
+        /* width: 150%;
+        height: auto;
+        display: 'flex';  
+        justify-content:'center'; 
+        align-items: center;  */
+        display: none;
+      }
+      .animated-gif-box2{
+        /* width: 150%;
+        height: auto;
+        display: 'flex';  
+        justify-content:'center'; 
+        align-items: center;  */
+        display: none;
+      }
     
     html, body {
         max-width: 100%;
@@ -1203,9 +1201,16 @@ margin-top: 150px;
         justify-content:'center'; 
         align-items: center; 
       } */
-    .mobile-logo-box{
-        display: none;
-      }
+      .mobile-logo-box{
+        display: flex;  
+        justify-content:'center'; 
+        align-items:'center'; 
+        animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
 
 }
 @media only screen and (max-width: 600px){
@@ -1568,6 +1573,11 @@ form.formspree {
         color: rgba(0,0,0,.55);
         z-index: 1000;
     }
+
+    .Top-Nav{
+        z-index: 1000;
+    }
+
     .my-account{
         padding: 10px;
     }
