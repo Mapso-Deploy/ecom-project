@@ -16,7 +16,7 @@ export default function Landing() {
     setIsMobileLogoHovered(true);
     setTimeout(() => {
       history.push('/Products');
-    }, 1400); // Delay in milliseconds before navigating
+    }, 2100); // Delay in milliseconds before navigating
   };
 
   return (
