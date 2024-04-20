@@ -4,6 +4,7 @@ export const productData = [{
     price: "70.00",
     description: "Product: graphic tee. Medium-bodied sourced cotton, constructed from scratch/ hand sewn. Triple stitched. Premium-quality. Oversized.",
     image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
+    poster:"https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fposter.png?v=1627186159279",
     images: [ // Add an images array
     "https://i.ibb.co/s6bhDzs/5c2cda56a97bc40295eb8328.png",
     "https://i.ibb.co/PYFZWnD/5c2cda69a97bc40295eb832a.png"],
@@ -17,6 +18,7 @@ export const productData = [{
     price: "110.00",
     description: "Product: graphic tee. Medium-bodied sourced cotton, constructed from scratch/ hand sewn. Triple stitched. Premium-quality. Oversized.",
     image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
+    poster:"https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fposter.png?v=1627186159279",
     images: [ // Add an images array
     "https://example.com/image1.jpg",
     "https://example.com/image2.jpg",
@@ -31,6 +33,7 @@ export const productData = [{
     price: "200.00",
     description: "Product: graphic tee. Medium-bodied sourced cotton, constructed from scratch/ hand sewn. Triple stitched. Premium-quality. Oversized.",
     image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
+    poster:"https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fposter.png?v=1627186159279",
     images: [ // Add an images array
     "https://example.com/image1.jpg",
     "https://example.com/image2.jpg",
@@ -45,6 +48,7 @@ export const productData = [{
     price: "310.00",
     description: "Product: graphic tee. Medium-bodied sourced cotton, constructed from scratch/ hand sewn. Triple stitched. Premium-quality. Oversized.",
     image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
+    poster:"https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fposter.png?v=1627186159279",
     images: [ // Add an images array
     "https://example.com/image1.jpg",
     "https://example.com/image2.jpg",
@@ -59,6 +63,7 @@ export const productData = [{
     price: "50.00",
     description: "Product: graphic tee. Medium-bodied sourced cotton, constructed from scratch/ hand sewn. Triple stitched. Premium-quality. Oversized.",
     image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
+    poster:"https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fposter.png?v=1627186159279",
     images: [ // Add an images array
     "https://example.com/image1.jpg",
     "https://example.com/image2.jpg",

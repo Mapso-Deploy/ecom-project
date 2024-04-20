@@ -47,10 +47,15 @@ const ProductDetail = () => {
           max-camera-orbit="auto 90deg 7.699m"
           min-field-of-view="45deg"
           max-field-of-view="45deg"
+          poster={product.poster} 
           style={{ '--poster-color': 'transparent', height: '400px', zIndex: '2'}}
           loading="eager"
           className="product-3d-model"
-        ></model-viewer>
+        >
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+                </div>
+        </model-viewer>
         <div className="product-details">
         <h2 className="product-title">{product.name}</h2>
           <p className="product-price">${product.price}</p>

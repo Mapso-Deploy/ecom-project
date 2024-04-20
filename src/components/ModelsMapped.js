@@ -1,7 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'; // Import Link
+// import { Link, useHistory } from 'react-router-dom'; // Import Link
+
 
 export default function Model(props) {
+
+
+    // const history = useHistory(); // Use history to programmatically navigate
+    // let clickStart = 0; // Track when the mouse is pressed
+
+    // const handleMouseDown = () => {
+    //     clickStart = new Date().getTime(); // Record time when mouse is pressed
+    // };
+
+    // const handleMouseUp = (productId) => {
+    //     const clickDuration = new Date().getTime() - clickStart; // Calculate click duration
+    //     if (clickDuration < 200) { // If the duration is less than 200 milliseconds, treat as a click
+    //         history.push(`/products/${productId}`); // Navigate to product details
+    //     }
+    // };
+
+
     console.log('model props',props)
     return (
         <>
@@ -11,8 +30,17 @@ export default function Model(props) {
         <div className="Title" key={product.id}>
             {/* <h6>{props.item.name}</h6> */}
             <div className="Center">
-            <model-viewer class="model" interaction-prompt="none" data-js-focus-visible src= "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544" camera-controls min-camera-orbit="auto 90deg auto" max-camera-orbit="auto 90deg 7.699m" min-field-of-view="45deg" max-field-of-view="45deg" camera-orbit="-90deg 90deg 7.699m" poster="https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fposter.png?v=1627186159279" style={{ '--poster-color': 'transparent' }}
-          loading="eager" auto-rotate>
+            <model-viewer class="model" interaction-prompt="none" data-js-focus-visible 
+            src={product.image}
+            alt={product.name} 
+            camera-controls min-camera-orbit="auto 90deg auto" max-camera-orbit="auto 90deg 7.699m" 
+            min-field-of-view="45deg" max-field-of-view="45deg" camera-orbit="-90deg 90deg 7.699m" 
+            poster={product.poster} 
+            style={{ '--poster-color': 'transparent' }}
+            loading="eager" auto-rotate
+            // onmousedown={handleMouseDown}
+            // onmouseup={() => handleMouseUp(product.id)}
+            >
                 <div class="progress-bar hide" slot="progress-bar">
                 <div class="update-bar"></div>
                 </div>
