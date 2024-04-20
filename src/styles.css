@@ -1205,6 +1205,7 @@ margin-top: 150px;
         display: flex;  
         justify-content:'center'; 
         align-items:'center'; 
+        overflow: hidden;
         animation: fadeIn 5s;
   -webkit-animation: fadeIn 5s;
   -moz-animation: fadeIn 5s;
@@ -1234,6 +1235,15 @@ margin-top: 150px;
         height: 100%;
         object-fit: contain;
     }*/
+
+    body {
+        width: 100vw;
+        max-width: 100%;
+        max-height: 100vh;
+        background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
+        overflow: hidden;
+    }
+
 
     div.ms-auto.px-5.navbar-nav {
         background-color: lightgrey;
@@ -1273,23 +1283,6 @@ margin-top: 150px;
         color: lime;
     }
 
-
-    div.Logo{
-        /* display: flex;
-        justify-content:'center'; 
-        align-items:'center'; 
-        height: '100vh' */
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    div.Logo img.Logo-hover {
-        width: 190px;
-        height: 100%;
-        object-fit: contain;
-    }
 
     body {
         max-width: 100%;
@@ -1422,6 +1415,7 @@ margin-top: 150px;
         display: flex;  
         justify-content:'center'; 
         align-items:'center'; 
+        overflow: hidden;
         animation: fadeIn 5s;
   -webkit-animation: fadeIn 5s;
   -moz-animation: fadeIn 5s;
@@ -1604,22 +1598,7 @@ form.formspree {
         color: lime;
     }
     
-    div.Logo{
-        /* display: flex;
-        justify-content:'center'; 
-        align-items:'center'; 
-        height: '100vh' */
-        position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-    }
 
-    div.Logo img.Logo-hover {
-        width: 273px;
-        height: 100%;
-        object-fit: contain;
-    }
     body {
         max-width: 100%;
         max-height: 100vh;
@@ -1888,7 +1867,7 @@ form.formspree {
       }
 
       .mobile-logo{
-        width: 30vh;
+        width: 40%;
         height: auto;
         display: 'flex';  
         justify-content:'center'; 

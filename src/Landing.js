@@ -38,13 +38,13 @@ export default function Landing() {
           //style={{ width: '200px', height: '200px' }}  // Adjust the size as needed
         />
       </div>
-      <div className="mobile-logo-box">
+      <div className="mobile-logo-box" style={{overflow: 'hidden'}}>
         <img
           src={isMobileLogoHovered ? mobileAnimatedLogo : mobileStaticLogo}
           alt="Mobile logo"
           onClick={handleMobileLogoClick}
           onTouchEnd={() => setIsMobileLogoHovered(false)}
-          style={{ height: '150px' }}  // Adjust the size for mobile logo as needed
+          style={{ width:'700px',overflow: 'hidden' }}  // Adjust the size for mobile logo as needed
         />
       </div>
     </div>
