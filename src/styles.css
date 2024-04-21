@@ -397,17 +397,7 @@ p.divider {
     z-index: 90;
 } */
 
-.snipcart-modal__container { 
-    z-index: 1000;
-}
 
-.snipcart-cart-summary-side .snipcart-cart__secondary-header {
-    z-index: 1000;
-}
-
-.snipcart-cart-header {
-    z-index: 1000;
-}
 
 .Top-Nav {
     position: fixed;
@@ -417,37 +407,6 @@ p.divider {
     z-index: 10;
 }
 
-button.snipcart-checkout {
-    background-color: rgba(82, 82, 82, 0);
-    border: solid .5px rgb(167, 167, 167);
-    color: #555555;
-    font-family: PragmaticaW01-ExtendedBook;
-    font-size: .8rem;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    text-align: center;
-    text-decoration: none;
-    transition: all .2s ease-in-out;
-    width: 100%;
-}
-
-button.snipcart-checkout:hover {
-    background-color: rgba(82, 82, 82, 0);
-    border: solid .5px lime;
-    color: lime;
-    font-family: PragmaticaW01-ExtendedBook;
-    font-size: .8rem;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    text-align: center;
-    text-decoration: none;
-    transition: all .2s ease-in-out;
-    width: 100%;
-}
 
 .navbar-light .navbar-toggler {
     color: rgba(0,0,0,.55);
@@ -574,159 +533,233 @@ h6{
 }
 
 
+
+/* Snipcart */
+
+
+.snipcart-modal__container { 
+    z-index: 1000;
+}
+
 .snipcart-cart-summary-side .snipcart-cart__secondary-header {
     z-index: 1000;
-    background-color: grey;
-    font-family: PragmaticaW01-ExtendedBook, sans-serif;
+}
+
+.snipcart-cart-header {
+    z-index: 1000;
+}
+
+button.snipcart-checkout {
+    background-color: rgba(82, 82, 82, 0);
+    border: solid .5px rgb(167, 167, 167);
+    color: #555555;
+    font-family: PragmaticaW01-ExtendedBook;
+    font-size: .8rem;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     text-align: center;
-    color: lime;
-    text-decoration-style: double;
-}
-
-.snipcart-cart--edit .snipcart-cart__content .snipcart-cart__footer {
-    background-color: grey;
-}
-
-button.snipcart-cart__footer-buttons .snipcart-button-link, .snipcart-cart__footer-buttons .snipcart-button-primary {
-    margin-top: 16px;
-    color: lime;
-    padding: 5px;
-    background-color: rgb(0, 102, 255);
-}
-
-button.snipcart-base-button.is-icon-right .snipcart-base-button__label {
-    color: lime;
-    background-color: rgb(0, 102, 255);
-}
-
-div.snipcart-base-button__wrapper {
-    color: lime;
-    background-color: rgb(0, 102, 255);
-}
-
-div.snipcart-base-button__icon{
-    color: lime;
-    background-color: rgb(0, 102, 255);
-}
-
-div.snipcart-base-button__icon svg.snipcart__icon{
-    color: lime;
-    background-color: rgb(0, 102, 255);
-}
-
-.snipcart-button-primary:hover {
-    color: lime;
-    color: var(--color-buttonPrimary-hover,rgba(255, 255, 255, 0));
-    border-color: transparent;;
-    background-color: #0d59f2;
-    background-color: var(--bgColor-buttonPrimary-hover,#0d59f2);
-    box-shadow: none;
-}
-
-button.snipcart-cart__footer-buttons, .snipcart-button-primary {
-    color: lime;
-    background-color: rgb(0, 102, 255);
-}
-
-button.snipcart-base-button.is-icon-right .snipcart-base-button__label {
-    background-color: rgb(0, 102, 255);
-    padding: 10px;
-}
-
-button.snipcart-button-primary.snipcart-submit.snipcart-base-button.is-icon-right {
-    color: lime;
-    background-color: rgb(0, 102, 255);
-}
-
-button.snipcart-button-secondary.snipcart-base-button.is-fit-content.is-icon-left {
-    color: lime;
-    background-color: rgb(0, 102, 255);
-}
-
-button.snipcart-button-secondary.snipcart-base-button.is-fit-content.is-icon-left div.snipcart-base-button__label{
-    color: lime;
-    background-color: rgb(0, 102, 255);
-}
-
-/* .snipcart-base-button {
-    background-color: rgb(0, 102, 255);
-} */
-
-/* .snipcart-base-button__label {
-    background-color: rgb(0, 102, 255);
-} */
-
-.snipcart-cart-summary-side .snipcart-cart__content {
-    overflow: hidden;
-    flex-grow: 1;
-}
-
-.snipcart__box {
-    background-color: rgb(128, 128, 128);
-}
-
-.snipcart-empty-cart  {
-    background-color: grey;
-    color:lime
-}
-
-.snipcart-cart__content {
-    background-color: rgba(128, 128, 128, 0.37);
-}
-
-.snipcart-button-secondary {
-    background-color: black;
-    color: lime;
-}
-
-.snipcart-button-primary:hover {
-    background-color: rgba(0, 0, 0, 0);
-    color: lime;
-} 
-
-.snipcart-layout__content--side {
-    min-height: 100%;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
     width: 100%;
-    background-color: rgba(128, 128, 128, 0.233);
 }
 
-.snipcart-cart-summary-side .snipcart-cart__content {
-    overflow: hidden;
-    flex-grow: 1;
-    background-color: rgba(128, 128, 128, 0.212);
-}
-
-.snipcart-cart--edit .snipcart-item-list {
-    margin-bottom: 0;
-    background-color: rgba(128, 128, 128, 0.301);
-}
-
-.snipcart-item-quantity__quantity {
-    background-color: lightgrey;
-    background: grey;
-}
-
-.snipcart-item-quantity__quantity:hover {
-    background-color: lightgrey;
-    background: grey;
-}
-
-.snipcart * {
-    font-family: PragmaticaW01-ExtendedBook, sans-serif;
+button.snipcart-checkout:hover {
+    background-color: rgba(82, 82, 82, 0);
+    border: solid .5px lime;
     color: lime;
-    background-color: grey;
+    font-family: PragmaticaW01-ExtendedBook;
+    font-size: .8rem;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    width: 100%;
 }
 
-.snipcart:hover {
-    background-color: black;
-    background: black;
+#snipcart {
+    /* ----------------- 
+        Colors
+    ----------------- */
+    --color-default: lime;
+    --color-alt: hsl(0, 0%, 50%);
+    --color-icon: lime;
+    --color-success: hsl(144, 50%, 55%);
+    --color-error: hsl(6, 55%, 60%);
+
+    --color-link: hsl(0, 0%, 82%);
+    --color-link-hover: lime;
+    --color-link-active: var(--color-link);
+    --color-link-focus: var(--color-link);
+
+    --color-input: var(--color-default);
+    --color-input-hover: var(--color-input);
+    --color-input-focus: var(--color-input);
+    --color-input-checked: var(--color-input);
+    --color-input-disabled: var(--color-alt);
+    --color-input-error: var(--color-error);
+    --color-inputLabel: var(--color-default);
+    --color-inputLabel-hover: var(--color-inputLabel);
+    --color-inputLabel-focus: var(--color-inputLabel);
+    --color-inputIcon: var(--color-alt);
+    --color-inputIcon-hover: var(--color-default);
+    --color-inputIcon-focus: var(--color-inputIcon);
+    --color-inputIcon-checked: var(--color-default);
+    --color-inputIcon-error: var(--color-error);
+    --color-inputPlaceholder: var(--color-alt);
+
+    --color-buttonPrimary: var(--color-default);
+    --color-buttonPrimary-hover: grey;
+    --color-buttonPrimary-active: var(--color-buttonPrimary);
+    --color-buttonPrimary-focus: var(--color-buttonPrimary);
+    --color-buttonPrimary-disabled: var(--color-alt);
+    --color-buttonPrimary-success: var(--color-buttonPrimary);
+    --color-buttonPrimary-error: var(--color-buttonPrimary);
+
+    --color-buttonSecondary: var(--color-icon);
+    --color-buttonSecondary-hover: hsl(200, 90%, 50%);
+    --color-buttonSecondary-active: var(--color-buttonSecondary);
+    --color-buttonSecondary-focus: var(--color-buttonSecondary);
+    --color-buttonSecondary-disabled: hsl(210, 10%, 25%);
+    --color-buttonSecondary-success: var(--color-success);
+    --color-buttonSecondary-error: var(--color-error);
+
+    --color-buttonDanger: var(--color-error);
+    --color-buttonDanger-hover: hsl(6, 55%, 70%);
+    --color-buttonDanger-active: var(--color-buttonDanger);
+    --color-buttonDanger-focus: var(--color-buttonDanger);
+    --color-buttonDanger-disabled: hsl(210, 10%, 25%);
+    --color-buttonDanger-success: var(--color-default);
+    --color-buttonDanger-error: var(--color-default);
+
+    --color-badge: var(--color-link);
+    --color-badge-active: var(--color-link);
+    --color-badge-disabled: var(--color-alt);
+
+    /* ----------------- 
+        Border colors
+    ----------------- */
+    --borderColor-default: hsla(0, 0%, 100%, 10%);
+    --borderColor-error: hsl(6, 55%, 30%);
+
+    --borderColor-link: currentColor;
+    --borderColor-link-hover: currentColor;
+    --borderColor-link-active: currentColor;
+    --borderColor-link-focus: currentColor;
+
+    --borderColor-input: hsla(0, 0%, 100%, 10%);
+    --borderColor-input-hover: rgb(96, 96, 96);
+    --borderColor-input-focus: var(--borderColor-input-hover);
+    --borderColor-input-checked: var(--borderColor-input-hover);
+    --borderColor-input-disabled: hsl(210, 10%, 20%);
+    --borderColor-input-error: var(--borderColor-error);
+
+    --borderColor-buttonPrimary: transparent;
+    --borderColor-buttonPrimary-hover: transparent;
+    --borderColor-buttonPrimary-focus: transparent;
+    --borderColor-buttonPrimary-disabled: transparent;
+    --borderColor-buttonPrimary-success: transparent;
+    --borderColor-buttonPrimary-error: transparent;
+
+    --borderColor-buttonSecondary: transparent;
+    --borderColor-buttonSecondary-hover: transparent;
+    --borderColor-buttonSecondary-focus: transparent;
+    --borderColor-buttonSecondary-disabled: transparent;
+    --borderColor-buttonSecondary-success: transparent;
+    --borderColor-buttonSecondary-error: transparent;
+
+    --borderColor-badge: transparent;
+    --borderColor-badge-active: transparent;
+    --borderColor-badge-disabled: transparent;
+
+    /* ----------------- 
+        Background colors
+    ----------------- */
+    --bgColor-default: grey;
+    --bgColor-alt: rgb(105, 105, 105);
+    --bgColor-success: rgb(115, 115, 115);
+    --bgColor-error: hsl(0, 0%, 43%);
+    --bgColor-info: hsl(0, 0%, 23%);
+
+    --bgColor-modal: hsl(0, 0%, 24%);
+    --bgColor-modalVeil: hsla(0, 0%, 33%, 0.75);
+
+    --bgColor-link: none;
+    --bgColor-link-hover: none;
+    --bgColor-link-active: none;
+    --bgColor-link-focus: hsl(210, 55%, 10%);
+
+    --bgColor-input: rgb(108, 108, 108);
+    --bgColor-input-hover: var(--bgColor-input);
+    --bgColor-input-focus: var(--bgColor-input);
+    --bgColor-input-checked: var(--borderColor-input-hover);
+    --bgColor-input-disabled: hsl(210, 10%, 14%);
+    --bgColor-input-error: var(--bgColor-input);
+    --bgColor-input-autofill: hsl(210, 60%, 15%);
+
+    --bgColor-buttonPrimary: hwb(227 6% 6%);
+    --bgColor-buttonPrimary-hover: lime;
+    --bgColor-buttonPrimary-active: var(--bgColor-buttonPrimary);
+    --bgColor-buttonPrimary-focus: var(--bgColor-buttonPrimary);
+    --bgColor-buttonPrimary-disabled: hsl(210, 10%, 25%);
+    --bgColor-buttonPrimary-success: hsl(144, 66%, 30%);
+    --bgColor-buttonPrimary-error: hsl(6, 60%, 35%);
+
+    /* --bgColor-buttonSecondary: var(--bgColor-info); */
+    --bgColor-buttonSecondary: rgb(157, 157, 157);
+    --bgColor-buttonSecondary-hover: lime;
+    --bgColor-buttonSecondary-active: var(--bgColor-buttonSecondary);
+    --bgColor-buttonSecondary-focus: var(--bgColor-buttonSecondary);
+    --bgColor-buttonSecondary-disabled: hsl(210, 10%, 9%);
+    --bgColor-buttonSecondary-success: var(--bgColor-success);
+    --bgColor-buttonSecondary-error: var(--bgColor-error);
+
+    --bgColor-buttonDanger: var(--bgColor-error);
+    --bgColor-buttonDanger-hover: hsl(6, 50%, 18%);
+    --bgColor-buttonDanger-active: var(--bgColor-buttonDanger);
+    --bgColor-buttonDanger-focus: var(--bgColor-buttonDanger);
+    --bgColor-buttonDanger-disabled: hsl(210, 10%, 9%);
+    --bgColor-buttonDanger-success: hsl(144, 66%, 30%);
+    --bgColor-buttonDanger-error: hsl(6, 60%, 35%);
+
+    --bgColor-badge: hsl(0, 0%, 28%);
+    --bgColor-badge-active: lime;
+    --bgColor-badge-disabled: hsl(210, 10%, 11%);
+
+    /* ----------------- 
+        Shadows
+    ----------------- */
+
+    --shadow-default: 0px 20px 24px -20px hsla(0, 0%, 25%, 0.5);
+    --shadow-tooltip: 0px 8px 16px hsla(220, 70%, 22%, .5);
+
+    --shadow-link-focus: 0px 6px 4px -3px hsla(200, 90%, 40%, .5);
+
+    --shadow-input-hover: none;
+    --shadow-input-focus: 0px 5px 10px -3px hsla(200, 90%, 40%, .3);
+    --shadow-input-checked: none;
+
+    --shadow-buttonPrimary-hover: 0px 10px 4px -8px hsla(0, 0%, 0%, .5);
+    --shadow-buttonPrimary-active: none;
+    --shadow-buttonPrimary-focus: 0px 0px 6px 2px hsl(200, 90%, 40%);
+
+    --shadow-buttonSecondary-hover: 0px 10px 4px -8px hsla(0, 0%, 0%, .2);
+    --shadow-buttonSecondary-active: none;
+    --shadow-buttonSecondary-focus: 0px 0px 6px 2px hsla(200, 90%, 40%, .8);
+
+    --shadow-buttonDanger-hover: 0px 10px 4px -8px hsla(0, 0%, 0%, .25);
+    --shadow-buttonDanger-active: none;
+    --shadow-buttonDanger-focus: 0px 0px 6px 2px hsla(6, 55%, 60%);
 }
 
-/* .snipcart-overwrite #snipcart-header #snipcart-title {
-    color: #50bcd0;
-    background: url('logo.png') no-repeat 0 center;
-    padding-left: 60px;
-} */
+
+
+/* Formspree */
+
 
 form.formspree {
     display: flex;
@@ -1163,37 +1196,7 @@ margin-top: 150px;
         z-index: 90;
         margin-top: 20px;
     }
-    button.snipcart-checkout {
-        background-color: rgba(82, 82, 82, 0);
-        border: solid .5px rgb(167, 167, 167);
-        color: #555555;
-        font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        text-align: center;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        width: 100%;
-    }
     
-    button.snipcart-checkout:hover {
-        background-color: rgba(82, 82, 82, 0);
-        border: solid .5px lime;
-        color: lime;
-        font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        text-align: center;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        width: 100%;
-    }
     /* .animated-gif-box{
         width: 70%;
         height: auto;
@@ -1819,37 +1822,7 @@ form.formspree {
         z-index: 90;
         margin-top: 20px;
     }
-    button.snipcart-checkout {
-        background-color: rgba(82, 82, 82, 0.644);
-        border: solid .5px rgb(167, 167, 167);
-        color: #dddddd;
-        font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        text-align: center;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        width: 100%;
-    }
-    
-    button.snipcart-checkout:hover {
-        background-color: rgba(82, 82, 82, 0.781);
-        border: solid .5px lime;
-        color: lime;
-        font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        text-align: center;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        width: 100%;
-    }
+
     .animated-gif-box{
         /* width: 150%;
         height: auto;
