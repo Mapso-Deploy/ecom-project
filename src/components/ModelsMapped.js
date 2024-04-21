@@ -54,6 +54,7 @@ export default function Model(props) {
                     data-item-id={product.id}
                     data-item-price={product.price}
                     data-item-description={product.description}
+                    data-item-url={`/products/${product.id}`}
                     // data-item-image={product.image}
                     data-item-name={product.name}
                     data-item-custom1-name={product.custom1Name}
