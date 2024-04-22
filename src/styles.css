@@ -959,7 +959,6 @@ margin-top: 150px;
 
 .btn{
     border: none;
-    --bs-btn-hover-color: lime;
 }
 
 .btn:click{
@@ -970,11 +969,7 @@ margin-top: 150px;
 .btn:hover{
     border: none;
     color: lime;
-}
-
-.btn:active{
-    border: none;
-    color: lime;
+    color:var(--hover-color) !important
 }
 
 .btn:disabled{
