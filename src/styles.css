@@ -955,6 +955,32 @@ margin-top: 150px;
 }
 
 
+/* Pagination */
+
+.btn{
+    border: none;
+    --bs-btn-hover-color: lime;
+}
+
+.btn:click{
+    border: none;
+    color: lime;
+}
+
+.btn:hover{
+    border: none;
+    color: lime;
+}
+
+.btn:active{
+    border: none;
+    color: lime;
+}
+
+.btn:disabled{
+    display: none;
+}
+
 
 
 
@@ -1645,7 +1671,7 @@ form.formspree {
       justify-content: left;
       align-items: center;
         margin: auto;
-        margin-top: 200px;
+        margin-top: 100px;
         overflow: scroll;
     }
 
