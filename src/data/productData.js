@@ -10,6 +10,7 @@ export const productData = [{
     "https://i.ibb.co/PYFZWnD/5c2cda69a97bc40295eb832a.png"],
     custom1Name: "Size",
     options: "XS | S | M | L | XL | XXL",
+    url:'/products',
     crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 },
 {
@@ -25,6 +26,7 @@ export const productData = [{
     "https://example.com/image3.jpg"],
     custom1Name: "Size",
     options: "XS | S | M | L | XL | XXL",
+    url:'/products',
     crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 },
 {
@@ -40,6 +42,7 @@ export const productData = [{
     "https://example.com/image3.jpg"],
     custom1Name: "Size",
     options: "XS | S | M | L | XL | XXL",
+    url:'/products',
     crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 },
 {
@@ -55,6 +58,7 @@ export const productData = [{
     "https://example.com/image3.jpg"],
     custom1Name: "Size",
     options: "XS | S | M | L | XL | XXL",
+    url:'/products',
     crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 },
 {
@@ -70,5 +74,6 @@ export const productData = [{
     "https://example.com/image3.jpg"],
     custom1Name: "Size",
     options: "XS | S | M | L | XL | XXL",
+    url:'/products',
     crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 }]
