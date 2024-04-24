@@ -1,8 +1,8 @@
 [
   {
     "id": "0",
-    "name":  "Dysto Hoodie",
-    "price": 220,
+    "name": "Dysto Hoodie",
+    "price": 220.00,
     "customFields": [
       {
         "name": "Size",
@@ -17,8 +17,8 @@
   },
   {
     "id": "1",
-    "name":  "Dysto Cargos",
-    "price": 350,
+    "name": "Dysto Cargos",
+    "price": 350.00,
     "customFields": [
       {
         "name": "Size",
