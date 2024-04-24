@@ -67,11 +67,13 @@ const ProductDetail = () => {
                     data-item-id={product.id}
                     data-item-price={product.price}
                     data-item-description={product.description}
-                    data-item-url={`https://mapso.co/products/${product.id}`}  // Make sure this is an absolute URL
+                    // data-item-url={`https://mapso.co/products/${product.id}`}  // Make sure this is an absolute URL
                     // data-item-image={product.image}
                     data-item-name={product.name}
                     data-item-custom1-name={product.custom1Name}
-                    data-item-custom1-options={product.options} >
+                    data-item-custom1-options={product.custom1Options}
+                    data-item-custom2-name={product.custom2Name}
+                    data-item-custom2-options={product.custom2Options} >
                     Add to cart
                     </button> 
                    <p class="divider">|</p>

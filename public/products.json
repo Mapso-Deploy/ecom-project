@@ -1,22 +1,32 @@
 [
   {
     "id": "0",
+    "name":  "Dysto Hoodie",
     "price": 70.00,
     "customFields": [
       {
         "name": "Size",
         "options": "XS | S | M | L | XL | XXL"
+      },
+      {
+        "name": "Color",
+        "options": "Grey (Striped)"
       }
     ],
     "url": "https://mapso.co/products.json"
   },
   {
     "id": "1",
+    "name":  "Dysto Cargos",
     "price": 110.00,
     "customFields": [
       {
         "name": "Size",
-        "options": "XS | S | M | L | XL | XXL"
+        "options": "28 | 30 | 32 | 34 | 36 | 38"
+      },
+      {
+        "name": "Color",
+        "options": "Black"
       }
     ],
     "url": "https://mapso.co/products.json"
