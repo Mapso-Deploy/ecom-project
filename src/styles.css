@@ -170,7 +170,7 @@ height: 110vh;
   justify-content: center;
   align-items: center;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 350px;
     overflow: hidden;
 }
 
@@ -1036,11 +1036,11 @@ margin-top: 150px;
         left: 50%;
         transform: translate(-50%, -50%); */
         display: flex;
-      justify-content: left;
+      justify-content: center;
       align-items: center;
         margin: auto;
-        margin-top: 100px;
-        padding-left: 50px;
+        margin-top: 250px;
+        /* padding-left: 50px; */
         overflow: hidden;
     }
 

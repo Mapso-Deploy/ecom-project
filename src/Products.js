@@ -43,8 +43,8 @@ function handlePrevious() {
         <ModelsMapped products={productData.slice(startIndex, startIndex + showCount)}/>
         <div className="row">
             <div className="col-md-12 text-center p-4">
-                <button className="btn" disabled={disablePrev} onClick={() => handlePrevious()} style={{'--hover-color':'lime'}}>Previous</button>
-                <button className="btn" disabled={disableNext} onClick={() => handleNext()} style={{'--hover-color':'lime'}}>Next</button>
+                <button className="btn" disabled={disablePrev} onClick={() => handlePrevious()} style={{'--hover-color':'lime', display:'none'}}>Previous</button>
+                <button className="btn" disabled={disableNext} onClick={() => handleNext()} style={{'--hover-color':'lime', display:'none'}}>Next</button>
             </div>
         </div>
         </>
