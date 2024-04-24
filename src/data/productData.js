@@ -12,7 +12,7 @@ export const productData = [{
     custom1Options: "XS | S | M | L | XL | XXL",
     custom2Name: "Color",
     custom2Options: "Grey (Striped)",
-    url:'/products',
+    url:'https://mapso.co/products.json',
     crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 },
 {
@@ -30,6 +30,6 @@ export const productData = [{
     custom1Options: "28 | 30 | 32 | 34 | 36 | 38",
     custom2Name: "Color",
     custom2Options: "Black",
-    url:'/products',
+    url:'https://mapso.co/products.json',
     crypto: "https://commerce.coinbase.com/checkout/8be76dd9-aaf7-4044-97c9-ec9c4c21868d"
 }]

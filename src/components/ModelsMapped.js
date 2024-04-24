@@ -55,6 +55,7 @@ export default function Model(props) {
                     data-item-price={product.price}
                     data-item-description={product.description}
                     // data-item-url={`https://mapso.co/products/${product.id}`}  // Make sure this is an absolute URL
+                    data-item-url={product.url}
                     // data-item-image={product.image}
                     data-item-name={product.name}
                     data-item-custom1-name={product.custom1Name}
