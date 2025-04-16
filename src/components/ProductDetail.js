@@ -29,13 +29,10 @@ const ProductDetail = () => {
 
   return (
     
-    <div className="product-detail-container-new">
+    <div className="product-detail-container-new" style={{ overflowY: 'auto', height: '100vh' }}>
     <NavbarComp/>
     <div className="product-detail-container">
-      <div className="product-content">
-      <Carousel className="product-carousel" fade={true} style={{height: '100%'}}>
-        {carouselItems}
-      </Carousel>
+      <div className="product-content" style={{ justifyContent: 'center', maxWidth: '900px', margin: '150px auto 0' }}>
         <model-viewer
           src={product.image}
           alt={`3D model of ${product.name}`}
@@ -84,6 +81,12 @@ const ProductDetail = () => {
                     </span>
                 </div>
         </div>
+      </div>
+      {/* Moved the desktop carousel to the bottom of the page */}
+      <div style={{ marginTop: '50px', marginBottom: '50px' }}>
+        <Carousel className="product-carousel" fade={true} style={{height: '100%'}}>
+          {carouselItems}
+        </Carousel>
       </div>
       <Carousel className="product-carousel-mobile" fade={true} style={{height: '100%'}}>
         {carouselItems}

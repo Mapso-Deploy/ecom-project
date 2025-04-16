@@ -835,6 +835,7 @@ form.formspree {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
+    padding-left: 100px;
   }
   
   .product-title {
@@ -844,18 +845,14 @@ form.formspree {
   }
   
   .product-content {
-    /* display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 2rem; */
     display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
-justify-content: center;
-align-items: flex-start;
-align-content: flex-start;
-z-index: 1;
-margin-top: 150px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    z-index: 1;
+    margin-top: 150px;
   }
   
   .product-3d-model {
@@ -865,10 +862,13 @@ margin-top: 150px;
   }
   
 .product-carousel {
-  width: 60%; /* Increase width */
-  height: 1%; /* Increase height */
-  margin-left: -20%; /* Offset to the left side of the page */
-  margin-right: -20%;
+  width: 80%; /* Wider for better visibility */
+  height: auto; /* Auto height for proper scaling */
+  margin: 50px auto 0; /* Center with top margin */
+  min-width: 300px; /* Prevent carousel from getting too small */
+  display: block; /* Ensure block display */
+  clear: both; /* Clear any floats */
+  position: relative; /* Establish positioning context */
 }
 
 .product-carousel .carousel-item img {
@@ -881,6 +881,7 @@ margin-top: 150px;
     flex: 1;
     margin-top: 70px;
     padding-right: 120px;
+    min-width: 250px; /* Prevent details from getting too narrow */
   }
   
   .product-price {
@@ -920,6 +921,16 @@ margin-top: 150px;
 .product-carousel-mobile{
     display: none;
 }
+
+/* Prevent buy buttons from getting squished */
+.buy-buttons-product-details {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    white-space: nowrap;
+    min-width: 200px;
+}
+
 .buy-button-product-details{
     background-color:grey;
     border: none;
@@ -935,6 +946,8 @@ margin-top: 150px;
     transition: all .2s ease-in-out;
     display: inline;
     width: 30%;
+    min-width: 100px; /* Prevent button from getting too narrow */
+    white-space: nowrap; /* Keep text on one line */
 }
 
 .buy-button-product-details:hover{
@@ -952,6 +965,34 @@ margin-top: 150px;
     transition: all .2s ease-in-out;
     display: inline;
     width: 30%;
+    min-width: 100px; /* Prevent button from getting too narrow */
+    white-space: nowrap; /* Keep text on one line */
+}
+
+/* Add a media query to handle mid-size screens before mobile breakpoint */
+@media only screen and (max-width: 1000px) and (min-width: 769px) {
+  .product-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .product-carousel {
+    width: 90%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .product-details {
+    width: 90%;
+    padding-right: 0;
+    margin-top: 30px;
+  }
+  
+  .buy-button-product-details, 
+  .buy-button-product-details:hover {
+    width: auto;
+    min-width: 120px;
+  }
 }
 
 
