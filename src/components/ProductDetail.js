@@ -32,7 +32,12 @@ const ProductDetail = () => {
     <div className="product-detail-container-new" style={{ overflowY: 'auto', height: '100vh' }}>
     <NavbarComp/>
     <div className="product-detail-container">
-      <div className="product-content" style={{ justifyContent: 'center', maxWidth: '900px', margin: '150px auto 0' }}>
+      <div className="product-content" style={{ 
+        justifyContent: 'center', 
+        maxWidth: '1000px', 
+        margin: '150px auto 0',
+        padding: '0 20px' // Add balanced padding 
+      }}>
         <model-viewer
           src={product.image}
           alt={`3D model of ${product.name}`}

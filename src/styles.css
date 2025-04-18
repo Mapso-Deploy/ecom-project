@@ -969,8 +969,8 @@ form.formspree {
     white-space: nowrap; /* Keep text on one line */
 }
 
-/* Add a media query to handle mid-size screens before mobile breakpoint */
-@media only screen and (max-width: 1000px) and (min-width: 769px) {
+/* Update this to keep desktop view until 770px */
+@media only screen and (max-width: 770px) {
   .product-content {
     flex-direction: column;
     align-items: center;
