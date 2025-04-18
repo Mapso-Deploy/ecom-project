@@ -835,7 +835,7 @@ form.formspree {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
-    padding-left: 100px;
+    /* padding-left: 100px; */
   }
   
   .product-title {
