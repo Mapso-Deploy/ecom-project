@@ -880,8 +880,9 @@ form.formspree {
   .product-details {
     flex: 1;
     margin-top: 70px;
-    padding-right: 120px;
-    min-width: 250px; /* Prevent details from getting too narrow */
+    padding-right: 50px;
+    padding: 20px;
+    min-width: 250px;
   }
   
   .product-price {
@@ -1513,8 +1514,12 @@ form.formspree {
     100% { opacity: 1; }
   }
 
-   /* Product details page  */
-   .product-detail-container {
+
+
+
+
+/* Product details page  */
+.product-detail-container {
     max-width: max-content;
     max-height: auto;
     overflow-y: scroll;
