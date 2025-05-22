@@ -30,3 +30,7 @@ specstory/
 .cursor/
 cursor/
 .cursor/rules/
+
+# other
+click_drag_fix.patch
+cursor_mapso_website_(broken_rotate)_copy.txt
