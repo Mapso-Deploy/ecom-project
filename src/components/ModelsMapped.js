@@ -1,23 +1,26 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'; // Import Link
-import { Link, useHistory } from 'react-router-dom'; // Import Link
+// import { Link, useHistory } from 'react-router-dom'; // Import Link // Keep useHistory for now
+import { useHistory } from 'react-router-dom'; // Keep for now to avoid breaking other parts if any
 
 
-export default function Model(props) {
-
-
-    const history = useHistory(); // Use history to programmatically navigate
+export default function Model(props) { // Component name is Model, filename is ModelsMapped
+    const history = useHistory(); // Still used by the Link for now, will be removed carefully
     let clickStart = 0; // Track when the mouse is pressed
 
     const handleMouseDown = () => {
         clickStart = new Date().getTime(); // Record time when mouse is pressed
     };
 
-    const handleMouseUp = (productId) => {
+    const handleMouseUp = (product) => { // Changed to pass the whole product
         const clickDuration = new Date().getTime() - clickStart; // Calculate click duration
         if (clickDuration < 200) { // If the duration is less than 200 milliseconds, treat as a click
-            history.push(`/products/${productId}`); // Navigate to product details
+            // history.push(`/products/${productId}`); // OLD: Navigate to product details
+            if (props.onProductClick) { // NEW: Call the callback to open modal
+                props.onProductClick(product);
+            }
         }
+        // If it was a drag (clickDuration >= 200), do nothing, model-viewer handles rotation
     };
 
 
@@ -38,16 +41,17 @@ export default function Model(props) {
             poster={product.poster} 
             style={{ '--poster-color': 'transparent' }}
             loading="eager" auto-rotate
-            onMouseDown={handleMouseDown}
-            onMouseUp={() => handleMouseUp(product.id)}
+            onMouseDown={handleMouseDown} // Keep this
+            onMouseUp={() => handleMouseUp(product)} // Pass the full product object
             >
                 <div class="progress-bar hide" slot="progress-bar">
                 <div class="update-bar"></div>
                 </div>
             </model-viewer>
-            <Link to={`/products/${product.id}`} className="product-info-link"> {/* Wrap product name with Link */}
-            <p className="product-info" style = {{ whiteSpace: "pre" }}>{product.name} {'    '} ${product.price}</p>
-            </Link>
+            {/* Modified Link to use onProductClick for consistency */}
+            <div onClick={() => props.onProductClick ? props.onProductClick(product) : history.push(`/products/${product.id}`)} className="product-info-link" style={{cursor: 'pointer'}}>
+              <p className="product-info" style = {{ whiteSpace: "pre" }}>{product.name} {'    '} ${product.price}</p>
+            </div>
             <div className="buy-buttons">
                 <span>
                     <button class="buy-button-new snipcart-add-item"

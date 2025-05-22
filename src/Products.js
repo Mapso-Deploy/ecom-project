@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComp from "./components/NavbarComp.js";
 import ModelsMapped from "./components/ModelsMapped.js";
 import { productData } from "./data/productData.js";
+import Modal from './components/Modal';
+import ProductDetail from './components/ProductDetail';
 
 
 export default function Products() {
@@ -13,6 +15,29 @@ const showCount = (window.screen.width >= 1280) ? 8 : 2;
 const [startIndex, setStartIndex] = useState(0);
 const [disablePrev, setDisablePrev] = useState(true);
 const [disableNext, setDisableNext] = useState(false);
+
+const [isModalOpen, setIsModalOpen] = useState(false);
+const [selectedProduct, setSelectedProduct] = useState(null);
+
+const handleOpenModal = (product) => {
+  setSelectedProduct(product);
+  setIsModalOpen(true);
+  // Attempt to notify Snipcart that content has changed when modal opens
+  if (window.Snipcart && typeof window.Snipcart.events.trigger === 'function') {
+    try {
+      window.Snipcart.events.trigger('content.changed');
+      // You might also try or add: window.Snipcart.store.dispatch('cart.hydrate');
+      // console.log('Snipcart content.changed triggered');
+    } catch (e) {
+      console.error("Error triggering Snipcart content.changed event:", e);
+    }
+  }
+};
+
+const handleCloseModal = () => {
+  setIsModalOpen(false);
+  setSelectedProduct(null);
+};
 
 useEffect(() => {
     console.log("useEffect", productData.length, startIndex, productData.length < startIndex + showCount);
@@ -40,13 +65,19 @@ function handlePrevious() {
     return (
         <>
         <NavbarComp/>
-        <ModelsMapped products={productData.slice(startIndex, startIndex + showCount)}/>
+        <ModelsMapped products={productData.slice(startIndex, startIndex + showCount)} onProductClick={handleOpenModal} />
         <div className="row">
             <div className="col-md-12 text-center p-4">
                 <button className="btn" disabled={disablePrev} onClick={() => handlePrevious()} style={{'--hover-color':'lime', display:'none'}}>Previous</button>
                 <button className="btn" disabled={disableNext} onClick={() => handleNext()} style={{'--hover-color':'lime', display:'none'}}>Next</button>
             </div>
         </div>
+
+        {selectedProduct && (
+          <Modal show={isModalOpen} onClose={handleCloseModal}>
+            <ProductDetail key={selectedProduct.id} product={selectedProduct} />
+          </Modal>
+        )}
         </>
     )
 }
