@@ -9,7 +9,12 @@
 html, body {
     max-width: 100%;
     height: 100vh;
-    background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
+    /* background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212)); */
+    background-image: url('../src/clear-pale-cement-stucco-pattern.jpg');
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Keep the background fixed during scroll */
     font-family: PragmaticaW01-ExtendedBook !important;
     scrollbar-width: none;
     overflow: hidden;
@@ -551,8 +556,8 @@ h6{
 
 button.snipcart-checkout {
     background-color: rgba(82, 82, 82, 0);
-    border: solid .5px rgb(167, 167, 167);
-    color: #555555;
+    border: solid .5px hsl(0, 8%, 78%); /* Blush-gray border on hover */
+    color: hsl(0, 8%, 78%); /* Blush-gray text on hover */
     font-family: PragmaticaW01-ExtendedBook;
     font-size: .8rem;
     padding-right: 10px;
@@ -567,8 +572,8 @@ button.snipcart-checkout {
 
 button.snipcart-checkout:hover {
     background-color: rgba(82, 82, 82, 0);
-    border: solid .5px lime;
-    color: lime;
+    border: solid .5px hsl(0, 8%, 78%); /* Blush-gray border on hover */
+    color: hsl(0, 8%, 78%); /* Blush-gray text on hover */
     font-family: PragmaticaW01-ExtendedBook;
     font-size: .8rem;
     padding-right: 10px;
@@ -585,48 +590,44 @@ button.snipcart-checkout:hover {
     /* ----------------- 
         Colors
     ----------------- */
-    --color-default: lime;
-    --color-alt: hsl(0, 0%, 50%);
-    --color-icon: lime;
-    --color-success: hsl(144, 50%, 55%);
-    --color-error: hsl(6, 55%, 60%);
+    --color-default: hsl(0, 0%, 20%); /* Dark gray text */
+    --color-alt: hsl(0, 0%, 40%); /* Medium gray secondary text */
+    --color-icon: hsl(0, 0%, 35%); /* Darker gray for icons, matching links */
+    --color-success: hsl(144, 50%, 55%); /* Keeping Snipcart default success green */
+    --color-error: hsl(6, 55%, 60%); /* Keeping Snipcart default error red */
 
-    --color-link: hsl(0, 0%, 82%);
-    --color-link-hover: lime;
-    --color-link-active: var(--color-link);
-    --color-link-focus: var(--color-link);
+    --color-link: hsl(0, 0%, 35%); /* Darker gray for links */
+    --color-link-hover: hsl(0, 8%, 78%); /* Blush-gray for link hover */
+    --color-link-active: var(--color-link-hover);
+    --color-link-focus: var(--color-link-hover);
 
-    --color-input: var(--color-default);
+    --color-input: hsl(0, 0%, 20%); /* Dark gray input text */
     --color-input-hover: var(--color-input);
     --color-input-focus: var(--color-input);
     --color-input-checked: var(--color-input);
     --color-input-disabled: var(--color-alt);
     --color-input-error: var(--color-error);
-    --color-inputLabel: var(--color-default);
+    --color-inputLabel: hsl(0, 0%, 20%); /* Dark gray label text */
     --color-inputLabel-hover: var(--color-inputLabel);
     --color-inputLabel-focus: var(--color-inputLabel);
     --color-inputIcon: var(--color-alt);
-    --color-inputIcon-hover: var(--color-default);
+    --color-inputIcon-hover: hsl(0, 8%, 78%); /* Blush-gray icon hover */
     --color-inputIcon-focus: var(--color-inputIcon);
-    --color-inputIcon-checked: var(--color-default);
+    --color-inputIcon-checked: hsl(0, 8%, 78%); /* Blush-gray icon checked */
     --color-inputIcon-error: var(--color-error);
     --color-inputPlaceholder: var(--color-alt);
 
-    --color-buttonPrimary: var(--color-default);
-    --color-buttonPrimary-hover: grey;
+    --color-buttonPrimary: hsl(0, 0%, 100%); /* White text on primary buttons */
+    --color-buttonPrimary-hover: hsl(0, 0%, 100%);
     --color-buttonPrimary-active: var(--color-buttonPrimary);
     --color-buttonPrimary-focus: var(--color-buttonPrimary);
     --color-buttonPrimary-disabled: var(--color-alt);
     --color-buttonPrimary-success: var(--color-buttonPrimary);
     --color-buttonPrimary-error: var(--color-buttonPrimary);
 
-    --color-buttonSecondary: var(--color-icon);
-    --color-buttonSecondary-hover: hsl(200, 90%, 50%);
+    --color-buttonSecondary: hsl(0, 8%, 78%); /* Blush-gray text for secondary buttons */
+    --color-buttonSecondary-hover: hsl(0, 0%, 20%); /* Dark gray text on hover */
     --color-buttonSecondary-active: var(--color-buttonSecondary);
-    --color-buttonSecondary-focus: var(--color-buttonSecondary);
-    --color-buttonSecondary-disabled: hsl(210, 10%, 25%);
-    --color-buttonSecondary-success: var(--color-success);
-    --color-buttonSecondary-error: var(--color-error);
 
     --color-buttonDanger: var(--color-error);
     --color-buttonDanger-hover: hsl(6, 55%, 70%);
@@ -651,10 +652,10 @@ button.snipcart-checkout:hover {
     --borderColor-link-active: currentColor;
     --borderColor-link-focus: currentColor;
 
-    --borderColor-input: hsla(0, 0%, 100%, 10%);
-    --borderColor-input-hover: rgb(96, 96, 96);
-    --borderColor-input-focus: var(--borderColor-input-hover);
-    --borderColor-input-checked: var(--borderColor-input-hover);
+    --borderColor-input: hsl(0, 0%, 80%); /* Light-medium gray input border */
+    --borderColor-input-hover: hsl(0, 0%, 70%); /* Slightly darker gray on hover */
+    --borderColor-input-focus: hsl(0, 8%, 78%); /* Blush-gray for focused input border */
+    --borderColor-input-checked: var(--borderColor-input-focus);
     --borderColor-input-disabled: hsl(210, 10%, 20%);
     --borderColor-input-error: var(--borderColor-error);
 
@@ -679,44 +680,42 @@ button.snipcart-checkout:hover {
     /* ----------------- 
         Background colors
     ----------------- */
-    --bgColor-default: grey;
-    --bgColor-alt: rgb(105, 105, 105);
-    --bgColor-success: rgb(115, 115, 115);
-    --bgColor-error: hsl(0, 0%, 43%);
-    --bgColor-info: hsl(0, 0%, 23%);
+    --bgColor-default: hsl(0, 0%, 100%); /* White for content areas within modal */
+    --bgColor-alt: hsl(0, 0%, 96%); /* Very light gray for alternative backgrounds if needed */
+    --bgColor-success: rgb(230, 245, 230); /* Light green success background */
+    --bgColor-error: hsl(0, 80%, 95%); /* Light red error background */
+    --bgColor-info: hsl(200, 70%, 95%); /* Light blue info background */
 
-    --bgColor-modal: hsl(0, 0%, 24%);
-    --bgColor-modalVeil: hsla(0, 0%, 33%, 0.75);
+    --bgColor-modal: hsl(0, 0%, 93%); /* Very light gray modal background */
+    --bgColor-modalVeil: hsla(0, 0%, 60%, 0.5); /* Lighter veil */
 
     --bgColor-link: none;
-    --bgColor-link-hover: none;
+    --bgColor-link-hover: hsl(0, 8%, 90%); /* Very light blush-gray for link hover background */
     --bgColor-link-active: none;
-    --bgColor-link-focus: hsl(210, 55%, 10%);
 
-    --bgColor-input: rgb(108, 108, 108);
+    --bgColor-input: hsl(0, 0%, 100%); /* White input background */
     --bgColor-input-hover: var(--bgColor-input);
     --bgColor-input-focus: var(--bgColor-input);
-    --bgColor-input-checked: var(--borderColor-input-hover);
-    --bgColor-input-disabled: hsl(210, 10%, 14%);
+    --bgColor-input-checked: var(--borderColor-input-focus); /* Using blush-gray to indicate checked, could be subtle */
+    --bgColor-input-disabled: hsl(0, 0%, 90%);
     --bgColor-input-error: var(--bgColor-input);
     --bgColor-input-autofill: hsl(210, 60%, 15%);
 
-    --bgColor-buttonPrimary: hwb(227 6% 6%);
-    --bgColor-buttonPrimary-hover: lime;
-    --bgColor-buttonPrimary-active: var(--bgColor-buttonPrimary);
+    --bgColor-buttonPrimary: hsl(0, 8%, 78%); /* Blush-gray primary button */
+    --bgColor-buttonPrimary-hover: hsl(0, 8%, 70%); /* Slightly darker blush-gray on hover */
+    --bgColor-buttonPrimary-active: var(--bgColor-buttonPrimary-hover);
     --bgColor-buttonPrimary-focus: var(--bgColor-buttonPrimary);
-    --bgColor-buttonPrimary-disabled: hsl(210, 10%, 25%);
-    --bgColor-buttonPrimary-success: hsl(144, 66%, 30%);
-    --bgColor-buttonPrimary-error: hsl(6, 60%, 35%);
+    --bgColor-buttonPrimary-disabled: hsl(0, 0%, 85%);
+    --bgColor-buttonPrimary-success: hsl(144, 66%, 70%); /* Lighter success green for button */
+    --bgColor-buttonPrimary-error: hsl(6, 60%, 75%); /* Lighter error red for button */
 
-    /* --bgColor-buttonSecondary: var(--bgColor-info); */
-    --bgColor-buttonSecondary: rgb(157, 157, 157);
-    --bgColor-buttonSecondary-hover: lime;
-    --bgColor-buttonSecondary-active: var(--bgColor-buttonSecondary);
+    --bgColor-buttonSecondary: hsl(0, 0%, 85%); /* Light gray secondary button */
+    --bgColor-buttonSecondary-hover: hsl(0, 8%, 78%); /* Blush-gray on hover */
+    --bgColor-buttonSecondary-active: var(--bgColor-buttonSecondary-hover);
     --bgColor-buttonSecondary-focus: var(--bgColor-buttonSecondary);
-    --bgColor-buttonSecondary-disabled: hsl(210, 10%, 9%);
-    --bgColor-buttonSecondary-success: var(--bgColor-success);
-    --bgColor-buttonSecondary-error: var(--bgColor-error);
+    --bgColor-buttonSecondary-disabled: hsl(0, 0%, 80%);
+    --bgColor-buttonSecondary-success: hsl(144, 66%, 70%);
+    --bgColor-buttonSecondary-error: hsl(6, 60%, 75%);
 
     --bgColor-buttonDanger: var(--bgColor-error);
     --bgColor-buttonDanger-hover: hsl(6, 50%, 18%);
@@ -1046,7 +1045,12 @@ form.formspree {
     html, body {
         max-width: 100%;
         height: 100vh;
-        background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
+        /* Original background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212)); */
+        background-image: url('../src/clear-pale-cement-stucco-pattern.jpg'); /* MAPSO Background Enhancement */
+        background-size: cover; /* Cover the entire area */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-attachment: fixed; /* Keep the background fixed during scroll */
     }
     
     .model {
@@ -1305,7 +1309,12 @@ form.formspree {
         width: 100vw;
         max-width: 100%;
         max-height: 100vh;
-        background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
+        /* Original background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212)); */
+        background-image: url('../src/clear-pale-cement-stucco-pattern.jpg'); /* MAPSO Background Enhancement */
+        background-size: cover; /* Cover the entire area */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-attachment: fixed; /* Keep the background fixed during scroll */
         overflow: hidden;
     }
 
@@ -1352,9 +1361,12 @@ form.formspree {
     body {
         max-width: 100%;
         max-height: 100vh;
-        background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
-        /* overflow: hidden;
-        position: fixed; */
+        /* Original background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212)); */
+        background-image: url('../src/clear-pale-cement-stucco-pattern.jpg'); /* MAPSO Background Enhancement */
+        background-size: cover; /* Cover the entire area */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-attachment: fixed; /* Keep the background fixed during scroll */
         overflow-y: scroll;
     }
 
@@ -1572,7 +1584,6 @@ z-index: 1;
     width: 100%; /* Increase width */
     height: 100%; /* Increase height */
     margin-bottom: 80px;
-    margin-top: 50px;
   }
 
 .product-carousel .carousel-item img {
@@ -1587,442 +1598,6 @@ z-index: 1;
     padding: 0px;
     margin: 0px;
     margin-bottom: 20px;
-  }
-  .buy-button-product-details{
-    background-color:grey;
-    border: none;
-    color: lime;
-    font-family: PragmaticaW01-ExtendedBook;
-    font-size: 1rem;
-    padding: 5px;
-    margin-right: 30px;
-    text-align: center;
-    align-items: center;
-    text-decoration: none;
-    transition: all .2s ease-in-out;
-    display: inline;
-    width: 70%;
-}
-
-.buy-button-product-details:hover{
-    background-color:lime;
-    border: none;
-    color: grey;
-    font-family: PragmaticaW01-ExtendedBook;
-    font-size: 1rem;
-    padding: 5px;
-    margin-right: 30px;
-    text-align: center;
-    align-items: center;
-    text-decoration: none;
-    transition: all .2s ease-in-out;
-    display: inline;
-    width: 70%;
-}
-
-form.formspree {
-    margin-top: 150px;
-    padding: 15px;
-    z-index: 0;
-}
-
-
-
-}
-@media only screen and (max-width: 425px){
-	/*Small smartphones [325px -> 425px]*/
-
-    div.ms-auto.px-5.navbar-nav {
-        background-color: lightgrey;
-        color: rgba(0,0,0,.55);
-        z-index: 1000;
-    }
-
-    .Top-Nav{
-        z-index: 1000;
-    }
-
-    .my-account{
-        padding: 10px;
-    }
-    .my-account-light{
-        padding: 10px;
-    }
-    a.Nav-Link-Light{
-        color: rgba(0,0,0,.55);
-    }
-    a.Nav-Link-Light:hover{
-        color: lime;
-    }
-    a.Nav-Link-Light:active{
-        color: lime;
-    }
-    .cart-button {
-        background-color: lightgrey;
-        padding: 10px;
-        border: none;
-    }
-    .cart-button:hover {
-        background-color: lightgrey;
-        padding: 10px;
-        color: lime;
-    }
-    
-
-    body {
-        max-width: 100%;
-        max-height: 100vh;
-        background: linear-gradient(to bottom right, rgb(240, 240, 240), rgb(212, 212, 212));
-        /* overflow: hidden;
-        position: fixed; */
-        overflow-y: scroll;
-    }
-    
-    .model {
-        height: 28vh;
-        margin-left: -50px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .models-mapped{
-        display: inline-grid; 
-      grid-auto-rows: min-content; 
-      grid-template-columns: min-content min-content min-content min-content; 
-      gap: 0px 0px;
-      place-self: center;
-      place-items: center;
-      justify-content: center;
-      align-items: center;
-      padding-left: 80px;
-      padding-right: 20px;
-    }
-    
-    .models-mapped-container{
-        /* position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%); */
-      /* position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); */
-        display: flex;
-      justify-content: left;
-      align-items: center;
-        margin: auto;
-        margin-top: 100px;
-        overflow: scroll;
-    }
-
-    /* .Title {
-        margin: auto;
-        align-items: left;
-        justify-content: left;
-    } */
-
-
-    p.product-info{
-        margin-right: 50px;
-        text-align: center;
-            }
-
-
-    p.divider {
-        display: inline;
-        width: 5%;
-        margin-left: -15px;
-    }
-    
-    .Center {
-        margin-left: -1px;
-        justify-content: left;
-        align-items: left;
-        align-content: left;
-    }
-
-    .buy-button-new {
-        background-color: #a7898900;
-        border: none;
-        color: #000;
-        font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        margin-left: -45px;
-        text-align: left;
-        align-items: left;
-        justify-content: left;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        display: inline;
-        width: 40%;
-    }
-    
-    .buy-button-new:hover {
-        background-color: #30303000;
-        border: none;
-        color: lime;
-        font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        margin-left: -45px;
-        text-align: left;
-        align-items: left;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        display: inline;
-        width: 40%;
-    }
-    
-    .btc-buy-button-new {
-        background-color: #ff9a164f;
-        border: none;
-        color: #000;
-        font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        width: 18px;
-        height: 18px;
-        margin-left: 15px;
-        padding-left: 0px;
-        border-radius: 35px;
-        text-align: center;
-        align-items: center;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        display: inline;
-    }
-    
-    .btc-buy-button-new:hover {
-        background-color: #fd9917ab;
-        border: none;
-        color: #000;
-        font-family: PragmaticaW01-ExtendedBook;
-        font-size: .8rem;
-        width: 18px;
-        height: 18px;
-        margin-left: 5px;
-        border-radius: 40px;
-        text-align: center;
-        align-items: center;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        display: inline;
-    }
-    
-    
-    .blog {
-        height: 132vh;
-        width: 100vw;
-        position: absolute;
-        top: -30vh;
-        left: 0;
-        overflow: hidden;
-    }
-    
-    .iframe{
-        position:relative; 
-      top:-10vh;
-      border:0;
-    width:100vw;
-    height: 150vh;
-    }
-
-
-
-    .model-container1::-webkit-scrollbar {
-        display: none;
-      }
-
-
-      form.formspree {
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-        margin-top: 25px;
-        padding: 15px;
-    }
-    
-    .formspree button {
-        background-color: grey;
-        color: lime;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        font-family: PragmaticaW01-ExtendedBook, sans-serif;
-        font-size: .8rem;
-        margin-top: 20px;
-        width: 100%;
-    }
-    
-    .formspree button:hover {
-        background-color: lime;
-        color: grey;
-    }
-    
-    .formspree input {
-        background-color: lightgrey;
-        color: rgb(51, 51, 51);
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        font-family: PragmaticaW01-ExtendedBook, sans-serif;
-        font-size: .8rem;
-        width: 100%;
-    }
-    
-    .formspree textarea {
-        background-color: lightgrey;
-        color: rgb(51, 51, 51);
-        border: none;
-        border-radius: 5px;
-        font-family: PragmaticaW01-ExtendedBook, sans-serif;
-        font-size: .8rem;
-        width: 100%;
-    }
-    
-    .formspree h2 {
-        font-family: PragmaticaW01-ExtendedBook, sans-serif;
-        z-index: 90;
-    }
-    
-    .formspree label {
-        font-family: PragmaticaW01-ExtendedBook, sans-serif;
-        z-index: 90;
-        margin-top: 20px;
-    }
-
-    .animated-gif-box{
-        /* width: 150%;
-        height: auto;
-        display: 'flex';  
-        justify-content:'center'; 
-        align-items: center;  */
-        display: none;
-      }
-      .animated-gif-box2{
-        /* width: 150%;
-        height: auto;
-        display: 'flex';  
-        justify-content:'center'; 
-        align-items: center;  */
-        display: none;
-      }
-
-      .mobile-logo{
-        width: 40%;
-        height: auto;
-        display: 'flex';  
-        justify-content:'center'; 
-        align-items: center; 
-      }
-      .mobile-logo-box{
-        display: flex;  
-        justify-content:'center'; 
-        align-items:'center';
-        animation: fadeIn 5s;
-  -webkit-animation: fadeIn 5s;
-  -moz-animation: fadeIn 5s;
-  -o-animation: fadeIn 5s;
-  -ms-animation: fadeIn 5s;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-  @-moz-keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  
-  @-webkit-keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  
-  @-o-keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  
-  @-ms-keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-
-
-
-
-/* Product details page  */
-.product-detail-container {
-    max-width: max-content;
-    max-height: auto;
-    overflow-y: scroll;
-  }
-  
-  .product-detail-container-new {
-    max-width: max-content;
-    max-height: auto;
-    overflow-y: scroll;
-  }
-
-  .product-title {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  
-  .product-content {
-    /* display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 2rem; */
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-align-content: flex-start;
-z-index: 1;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    padding: 0%;
-    margin-top: 50px;
-  }
-  
-  .product-3d-model {
-    width: 800px;
-    height: 1200px;
-    z-index: '1';
-    display: none;
-  }
-  
-.product-carousel {
-  width: 60%; /* Increase width */
-  height: 1%; /* Increase height */
-  margin-left: -20%; /* Offset to the left side of the page */
-  margin-right: -20%;
-  display: none;
-}
-
-.product-carousel-mobile {
-    display: block;
-    width: 100%; /* Increase width */
-    height: 100%; /* Increase height */
-    margin-bottom: 70px;
-  }
-
-.product-carousel .carousel-item img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%; /* Make images cover the full carousel item */
-}
-  
-  .product-details {
-    flex: 1;
-    /* margin-top: -50%vh; */
-    padding: 0px;
-    margin: 0px;
-    margin-bottom: 30px;
-    margin-top: 30px;
   }
   .buy-button-product-details{
     background-color:grey;
