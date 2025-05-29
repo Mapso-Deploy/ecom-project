@@ -2079,3 +2079,22 @@ z-index: 1;
 
 
 }
+
+/* Additional Snipcart UI fixes for MAPSO design */
+.snipcart-item-quantity__quantity {
+    background-color: transparent !important;
+}
+
+.snipcart-button-icon.is-danger {
+    background-color: transparent !important;
+}
+
+.snipcart-summary-fees__notice {
+    display: none !important;
+}
+
+.snipcart-cart__footer {
+    background-color: rgb(105, 105, 105) !important;
+    padding: 25px 20px !important;
+    margin-top: 0 !important;
+}
