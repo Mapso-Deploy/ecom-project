@@ -6,6 +6,7 @@ import Contact from "./Contact";
 import Explore from "./Explore";
 import Blog from "./Blog";
 import ProductDetail from "./components/ProductDetail";
+import StagewiseIntegration from "./components/StagewiseIntegration";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import NavbarComp from "./components/NavbarComp.js";
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <Router>
     <div>
+      <StagewiseIntegration />
       {/* <NavbarComp/> */}
      <Switch>
       <Route exact path="/" component={Landing} />
