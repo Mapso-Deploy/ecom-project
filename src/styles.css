@@ -1786,6 +1786,20 @@ z-index: 1;
     background-color: lightgrey !important;
 }
 
+/* Frosty glass modal effect */
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+}
+
 /* Mobile navigation improvements */
 @media only screen and (max-width: 768px) {
     div.ms-auto.px-5.navbar-nav {
