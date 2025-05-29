@@ -316,7 +316,7 @@ height: 110vh;
 .buy-button-new:hover {
     background-color: #30303000;
     border: none;
-    color: lime;
+    color: #4cffa0;
     font-family: PragmaticaW01-ExtendedBook;
     font-size: .8rem;
     padding: 5px;
@@ -530,11 +530,11 @@ h6{
 }
 
 .Nav-Link:hover, .Nav-Link:focus, .Nav-Link:active {
-    color: lime;
+    color: #4cffa0;
 }
 
 .Nav-Link-Light:hover, .Nav-Link:focus, .Nav-Link:active {
-    color: lime;
+    color: #4cffa0;
 }
 
 
@@ -572,8 +572,8 @@ button.snipcart-checkout {
 
 button.snipcart-checkout:hover {
     background-color: rgba(82, 82, 82, 0);
-    border: solid .5px lime;
-    color: lime;
+    border: solid .5px #4cffa0;
+    color: #4cffa0;
     font-family: PragmaticaW01-ExtendedBook;
     font-size: .8rem;
     padding-right: 10px;
@@ -590,14 +590,14 @@ button.snipcart-checkout:hover {
     /* ----------------- 
         Colors
     ----------------- */
-    --color-default: lime;
+    --color-default: #4cffa0;
     --color-alt: hsl(0, 0%, 50%);
-    --color-icon: lime;
+    --color-icon: #4cffa0;
     --color-success: hsl(144, 50%, 55%);
     --color-error: hsl(6, 55%, 60%);
 
     --color-link: hsl(0, 0%, 82%);
-    --color-link-hover: lime;
+    --color-link-hover: #4cffa0;
     --color-link-active: var(--color-link);
     --color-link-focus: var(--color-link);
 
@@ -707,7 +707,7 @@ button.snipcart-checkout:hover {
     --bgColor-input-autofill: hsl(210, 60%, 15%);
 
     --bgColor-buttonPrimary: hwb(227 6% 6%);
-    --bgColor-buttonPrimary-hover: lime;
+    --bgColor-buttonPrimary-hover: #4cffa0;
     --bgColor-buttonPrimary-active: var(--bgColor-buttonPrimary);
     --bgColor-buttonPrimary-focus: var(--bgColor-buttonPrimary);
     --bgColor-buttonPrimary-disabled: hsl(210, 10%, 25%);
@@ -716,7 +716,7 @@ button.snipcart-checkout:hover {
 
     /* --bgColor-buttonSecondary: var(--bgColor-info); */
     --bgColor-buttonSecondary: rgb(157, 157, 157);
-    --bgColor-buttonSecondary-hover: lime;
+    --bgColor-buttonSecondary-hover: #4cffa0;
     --bgColor-buttonSecondary-active: var(--bgColor-buttonSecondary);
     --bgColor-buttonSecondary-focus: var(--bgColor-buttonSecondary);
     --bgColor-buttonSecondary-disabled: hsl(210, 10%, 9%);
@@ -732,7 +732,7 @@ button.snipcart-checkout:hover {
     --bgColor-buttonDanger-error: hsl(6, 60%, 35%);
 
     --bgColor-badge: hsl(0, 0%, 28%);
-    --bgColor-badge-active: lime;
+    --bgColor-badge-active: #4cffa0;
     --bgColor-badge-disabled: hsl(210, 10%, 11%);
 
     /* ----------------- 
@@ -778,7 +778,7 @@ form.formspree {
 
 .formspree button {
     background-color: grey;
-    color: lime;
+    color: #4cffa0;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -789,7 +789,7 @@ form.formspree {
 }
 
 .formspree button:hover {
-    background-color: lime;
+    background-color: #4cffa0;
     color: grey;
 }
 
@@ -921,7 +921,7 @@ form.formspree {
 
   a.product-info-link:hover{
     text-decoration: none;
-    color: lime;
+    color: #4cffa0;
         }
 .product-carousel-mobile{
     display: none;
@@ -939,7 +939,7 @@ form.formspree {
 .buy-button-product-details{
     background-color:grey;
     border: none;
-    color: lime;
+    color: #4cffa0;
     font-family: PragmaticaW01-ExtendedBook;
     font-size: .8rem;
     padding: 5px;
@@ -956,7 +956,7 @@ form.formspree {
 }
 
 .buy-button-product-details:hover{
-    background-color: lime;
+    background-color: #4cffa0;
     border: none;
     color:grey;
     font-family: PragmaticaW01-ExtendedBook;
@@ -1009,12 +1009,12 @@ form.formspree {
 
 .btn:click{
     border: none;
-    color: lime;
+    color: #4cffa0;
 }
 
 .btn:hover{
     border: none;
-    color: lime;
+    color: #4cffa0;
     color:var(--hover-color) !important
 }
 
@@ -1154,7 +1154,7 @@ form.formspree {
     .buy-button-new:hover {
         background-color: #30303000;
         border: none;
-        color: lime;
+        color: #4cffa0;
         font-family: PragmaticaW01-ExtendedBook;
         font-size: .8rem;
         margin-left: -45px;
@@ -1221,7 +1221,7 @@ form.formspree {
     
     .formspree button {
         background-color: grey;
-        color: lime;
+        color: #4cffa0;
         padding: 10px;
         border: none;
         border-radius: 5px;
@@ -1232,7 +1232,7 @@ form.formspree {
     }
     
     .formspree button:hover {
-        background-color: lime;
+        background-color: #4cffa0;
         color: grey;
     }
     
@@ -1347,10 +1347,10 @@ form.formspree {
         color: rgba(0,0,0,.55);
     }
     a.Nav-Link-Light:hover{
-        color: lime;
+        color: #4cffa0;
     }
     a.Nav-Link-Light:active{
-        color: lime;
+        color: #4cffa0;
     }
     .cart-button {
         background-color: lightgrey;
@@ -1360,7 +1360,7 @@ form.formspree {
     .cart-button:hover {
         background-color: lightgrey;
         padding: 10px;
-        color: lime;
+        color: #4cffa0;
     }
 
 
@@ -1609,7 +1609,7 @@ z-index: 1;
   .buy-button-product-details{
     background-color:grey;
     border: none;
-    color: lime;
+    color: #4cffa0;
     font-family: PragmaticaW01-ExtendedBook;
     font-size: 1rem;
     padding: 5px;
@@ -1623,7 +1623,7 @@ z-index: 1;
 }
 
 .buy-button-product-details:hover{
-    background-color:lime;
+    background-color:#4cffa0;
     border: none;
     color: grey;
     font-family: PragmaticaW01-ExtendedBook;
@@ -1670,10 +1670,10 @@ form.formspree {
         color: rgba(0,0,0,.55);
     }
     a.Nav-Link-Light:hover{
-        color: lime;
+        color: #4cffa0;
     }
     a.Nav-Link-Light:active{
-        color: lime;
+        color: #4cffa0;
     }
     .cart-button {
         background-color: lightgrey;
@@ -1683,7 +1683,7 @@ form.formspree {
     .cart-button:hover {
         background-color: lightgrey;
         padding: 10px;
-        color: lime;
+        color: #4cffa0;
     }
     
 
@@ -1781,7 +1781,7 @@ form.formspree {
     .buy-button-new:hover {
         background-color: #30303000;
         border: none;
-        color: lime;
+        color: #4cffa0;
         font-family: PragmaticaW01-ExtendedBook;
         font-size: .8rem;
         margin-left: -45px;
@@ -1863,7 +1863,7 @@ form.formspree {
     
     .formspree button {
         background-color: grey;
-        color: lime;
+        color: #4cffa0;
         padding: 10px;
         border: none;
         border-radius: 5px;
@@ -1874,7 +1874,7 @@ form.formspree {
     }
     
     .formspree button:hover {
-        background-color: lime;
+        background-color: #4cffa0;
         color: grey;
     }
     
@@ -2048,7 +2048,7 @@ z-index: 1;
   .buy-button-product-details{
     background-color:grey;
     border: none;
-    color: lime;
+    color: #4cffa0;
     font-family: PragmaticaW01-ExtendedBook;
     font-size: 1rem;
     padding: 5px;
@@ -2062,7 +2062,7 @@ z-index: 1;
 }
 
 .buy-button-product-details:hover{
-    background-color:lime;
+    background-color:#4cffa0;
     border: none;
     color: grey;
     font-family: PragmaticaW01-ExtendedBook;
