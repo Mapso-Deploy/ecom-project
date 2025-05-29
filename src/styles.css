@@ -406,14 +406,32 @@ p.divider {
 
 
 
-.Top-Nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 10;
+.Top-Nav, 
+.Top-Nav-Light {
+    position: fixed !important;
+    top: 15px !important;
+    left: 15px !important;
+    right: 15px !important;
+    z-index: 10 !important;
+    width: calc(100vw - 30px) !important;
+    max-width: calc(100vw - 30px) !important;
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
 }
 
+/* Override Bootstrap container behavior in floating navbar */
+.Top-Nav .container,
+.Top-Nav-Light .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin: 0 !important;
+}
 
 .navbar-light .navbar-toggler {
     color: rgba(0,0,0,.55);
@@ -524,11 +542,13 @@ h6{
 .Nav-Link {
     text-decoration: none;
     color: inherit;
+    /* color: rgb(177, 177, 177); */
 }
 
 .Nav-Link-Light {
     text-decoration: none;
-    color: lightgray;
+    /* color: lightgray; */
+    color: rgb(130, 130, 130);
 }
 
 .Nav-Link:hover, .Nav-Link:focus, .Nav-Link:active {
@@ -1363,15 +1383,16 @@ form.formspree {
         color: #4cffa0;
     }
     .cart-button {
-        background-color: rgba(211, 211, 211, 0.9) !important;
-        border: none !important;
-        padding: 10px;
-        border-radius: 8px;
-        margin-top: 5px;
-        margin-right: 15px;
+        background-color: rgba(255, 255, 255, 0.75) !important;
+        backdrop-filter: blur(20px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.4) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        padding: 8px 12px !important;
     }
     .cart-button:hover {
-        background-color: rgba(211, 211, 211, 0.9) !important;
+        background-color: rgba(255, 255, 255, 0.75) !important;
         color: #4cffa0;
     }
 
@@ -1815,7 +1836,7 @@ z-index: 1;
     }
 
     .cart-button {
-        background-color: rgba(211, 211, 211, 0.9) !important;
+        background-color: rgba(255, 255, 255, 0.75) !important;
         border: none !important;
         padding: 10px;
         border-radius: 8px;
@@ -1824,7 +1845,7 @@ z-index: 1;
     }
 
     .cart-button:hover {
-        background-color: rgba(211, 211, 211, 0.9) !important;
+        background-color: rgba(255, 255, 255, 0.75) !important;
         color: #4cffa0;
     }
 
@@ -1838,3 +1859,16 @@ z-index: 1;
         position: relative !important;
     }
 }
+
+/* Cart button floating design to match nav */
+.cart-button {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    padding: 8px 12px !important;
+}
+
+/* Pagination */
