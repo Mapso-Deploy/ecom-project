@@ -1350,15 +1350,15 @@ form.formspree {
 
 
     div.ms-auto.px-5.navbar-nav {
-        background-color: rgba(211, 211, 211, 0.9) !important;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        /* background-color: rgba(255, 255, 255, 0.75) !important; */
+        /* backdrop-filter: blur(10px); */
+        /* -webkit-backdrop-filter: blur(10px); */
         color: rgba(0,0,0,.55);
         z-index: 1000;
-        border-radius: 8px;
-        margin-top: 10px;
-        margin-right: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        /* border-radius: 8px; */
+        /* margin-top: 10px; */
+        /* margin-right: 15px; */
+        /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
     }
 
     .Top-Nav{
@@ -1384,12 +1384,15 @@ form.formspree {
     }
     .cart-button {
         background-color: rgba(255, 255, 255, 0.75) !important;
-        backdrop-filter: blur(20px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+        backdrop-filter: blur(10px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(10px) saturate(180%) !important;
         border: 1px solid rgba(255, 255, 255, 0.4) !important;
         border-radius: 12px !important;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
         padding: 8px 12px !important;
+        margin-top: 10px;
+        margin-right: 15px;
+        margin-bottom: 10px;
     }
     .cart-button:hover {
         background-color: rgba(255, 255, 255, 0.75) !important;
@@ -1824,15 +1827,15 @@ z-index: 1;
 /* Mobile navigation improvements */
 @media only screen and (max-width: 768px) {
     div.ms-auto.px-5.navbar-nav {
-        background-color: rgba(211, 211, 211, 0.9) !important;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        /* background-color: rgba(255, 255, 255, 0.75) !important; */
+        /* backdrop-filter: blur(10px); */
+        /* -webkit-backdrop-filter: blur(10px); */
         color: rgba(0,0,0,.55);
         z-index: 1000;
-        border-radius: 8px;
-        margin-top: 10px;
-        margin-right: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        /* border-radius: 8px; */
+        /* margin-top: 10px; */
+        /* margin-right: 15px; */
+        /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
     }
 
     .cart-button {
@@ -1840,8 +1843,11 @@ z-index: 1;
         border: none !important;
         padding: 10px;
         border-radius: 8px;
-        margin-top: 5px;
+        margin-top: 10px;
         margin-right: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
 
     .cart-button:hover {
