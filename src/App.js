@@ -1,6 +1,7 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "./Landing";
 import Products from "./Products";
+import ProductsTest from "./ProductsTest"; // Three.js test implementation
 import About from "./About";
 import Contact from "./Contact";
 import Explore from "./Explore";
@@ -16,15 +17,16 @@ function App() {
     <div>
       <StagewiseIntegration />
       {/* <NavbarComp/> */}
-     <Switch>
-      <Route exact path="/" component={Landing} />
-      <Route exact path="/products" component={Products} />
-      <Route exact path="/explore" component={Explore} />
-      <Route exact path="/blog" component={Blog} />
-      <Route path="/about" component={About} />
-      <Route path="/contact" component={Contact} />
-      <Route exact path="/products/:productId" component={ProductDetail} />
-     </Switch>
+     <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/products-test" element={<ProductsTest />} />
+      <Route path="/explore" element={<Explore />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/products/:productId" element={<ProductDetail />} />
+     </Routes>
     </div>
     </Router>
   );

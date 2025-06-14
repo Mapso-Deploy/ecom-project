@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { productData } from '../data/productData'; // Path to your productData
 import '@google/model-viewer';
-import { Carousel, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComp from "./NavbarComp.js";
 
@@ -15,7 +15,6 @@ const ProductDetail = ({ product: productProp, isModal = false, onBack }) => {
   const [product, setProduct] = useState(null);
   const [isSnipcartReady, setIsSnipcartReady] = useState(false);
   const [buttonText, setButtonText] = useState('Add to Cart');
-  const [debugMessage, setDebugMessage] = useState('Initializing...');
   const [show3DModel, setShow3DModel] = useState(true);
   const [isMobileView, setIsMobileView] = useState(window.innerWidth < MOBILE_BREAKPOINT);
 
@@ -47,11 +46,9 @@ const ProductDetail = ({ product: productProp, isModal = false, onBack }) => {
       console.log('[ProductDetail] Snipcart API (cart.items.add) is ready.');
       setIsSnipcartReady(true);
       setButtonText('Add to Cart');
-      setDebugMessage('Snipcart API (cart.items.add) ready.');
       return true;
     }
     console.log('[ProductDetail] Snipcart API (cart.items.add) not yet ready. Current window.Snipcart:', window.Snipcart);
-    setDebugMessage('Snipcart API (cart.items.add) not ready. Current window.Snipcart.api: ' + JSON.stringify(window.Snipcart ? window.Snipcart.api : null));
     return false;
   }, []);
 
@@ -72,7 +69,6 @@ const ProductDetail = ({ product: productProp, isModal = false, onBack }) => {
       if (!checkSnipcartApi()) {
         setButtonText('Cart loading... (Snipcart API (cart.items.add) still not found after timeout.)');
         console.error('[ProductDetail] Snipcart API (cart.items.add) still not found after timeout. Current window.Snipcart:', JSON.stringify(window.Snipcart));
-        setDebugMessage('Snipcart API (cart.items.add) still not found after timeout. Current window.Snipcart: ' + JSON.stringify(window.Snipcart));
       }
     }, 7000);
     return () => {
@@ -89,17 +85,14 @@ const ProductDetail = ({ product: productProp, isModal = false, onBack }) => {
   const handleAddToCart = async () => {
     if (!product) {
       console.error("Product data is not available.");
-      setDebugMessage("Error: Product data missing.");
       return;
     }
     if (!isSnipcartReady) {
       console.error("Snipcart API (cart.items.add) is not ready.");
-      setDebugMessage("Error: Snipcart API (cart.items.add) not ready. Cannot add to cart.");
       checkSnipcartApi();
       return;
     }
     setButtonText('Adding to Cart...');
-    setDebugMessage(`Attempting to add ${product.name} to cart...`);
     try {
       console.log(`[ProductDetail] Adding item:`, {
         id: product.id.toString(),
@@ -121,12 +114,10 @@ const ProductDetail = ({ product: productProp, isModal = false, onBack }) => {
       });
       console.log(`[ProductDetail] ${product.name} added to cart successfully.`);
       setButtonText('Added!');
-      setDebugMessage(`${product.name} added to cart!`);
       setTimeout(() => setButtonText('Add to Cart'), 2000);
     } catch (error) {
       console.error('[ProductDetail] Snipcart.api.cart.items.add error:', error);
       setButtonText('Error Adding');
-      setDebugMessage(`Snipcart.api.cart.items.add error: ${error.message}. Check console. Product URL: ${product.url || `${window.location.origin}/products/${product.id}`}`);
       setTimeout(() => {
         setButtonText('Add to Cart');
         checkSnipcartApi();
@@ -199,7 +190,7 @@ const ProductDetail = ({ product: productProp, isModal = false, onBack }) => {
                   <img 
                     key={index} 
                     src={image} 
-                    alt={`Product gallery image ${index + 1}`} 
+                    alt={`Product gallery ${index + 1}`} 
                     style={{ 
                         width: '100%', 
                         height: 'auto', 

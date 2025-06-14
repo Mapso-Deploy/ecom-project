@@ -3,7 +3,7 @@ export const productData = [{
     name: "Dysto Hoodie",
     price: "220",
     description: "Product: Dysto Hoodie. Medium-bodied sourced terry, constructed from scratch/ hand sewn. Premium-quality. Oversized.",
-    image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
+    image: "/3_D_Trial_Product_ac19ec0ede.glb",
     poster:"https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fposter.png?v=1627186159279",
     images: [ // Add an images array
     "https://i.ibb.co/s6bhDzs/5c2cda56a97bc40295eb8328.png",
@@ -20,7 +20,7 @@ export const productData = [{
     name: "Dysto Cargos",
     price: "350",
     description: "Product: Dysto flared snow cargos. Heavy-bodied sourced vinyl with a duck-canvas texture, constructed from scratch/ hand sewn. Premium-quality.",
-    image: "https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fproduct.glb?v=1627186147544",
+    image: "/3_D_Trial_Product_ac19ec0ede.glb",
     poster:"https://cdn.glitch.com/f341fe61-4868-4d79-bad9-1a5804bea407%2Fposter.png?v=1627186159279",
     images: [ // Add an images array
     "https://example.com/image1.jpg",

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
 export default function Landing() {
   const [isDesktopLogoHovered, setIsDesktopLogoHovered] = useState(false);
   const [isMobileLogoHovered, setIsMobileLogoHovered] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const staticLogo = "https://cdn.glitch.global/f341fe61-4868-4d79-bad9-1a5804bea407/Mapso%20(Energy)%204.png?v=1713580027089"; // Path to the static image of the logo
   const animatedLogo = "https://cdn.glitch.global/f341fe61-4868-4d79-bad9-1a5804bea407/Mapso%20(Energy)%204.gif?v=1713577237481"; // Path to the animated GIF
@@ -13,13 +13,13 @@ export default function Landing() {
   const mobileAnimatedLogo = "https://cdn.glitch.global/f341fe61-4868-4d79-bad9-1a5804bea407/Mapso%20(Energy)%204.gif?v=1713577237481"; // Animated version for mobile logo
 
   const handleDesktopLogoClick = () => {
-    history.push('/Products');
+    navigate('/Products');
   };
 
   const handleMobileLogoClick = () => {
     setIsMobileLogoHovered(true);
     setTimeout(() => {
-      history.push('/Products');
+      navigate('/Products');
     }, 2100); // Delay in milliseconds before navigating
   };
 

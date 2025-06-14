@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import '@google/model-viewer';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComp from "./components/NavbarComp.js";
-import ModelsMapped from "./components/ModelsMapped.js";
+import ModelsMappedThree from "./components/ModelsMappedThree.js";
 import { productData } from "./data/productData.js";
 import Modal from './components/Modal';
-import ProductDetail from './components/ProductDetail';
+import ProductDetailThree from './components/ProductDetailThree';
 
 
 export default function Products() {
@@ -65,7 +64,7 @@ function handlePrevious() {
     return (
         <>
         <NavbarComp/>
-        <ModelsMapped products={productData.slice(startIndex, startIndex + showCount)} onProductClick={handleOpenModal} />
+        <ModelsMappedThree products={productData.slice(startIndex, startIndex + showCount)} onProductClick={handleOpenModal} />
         <div className="row">
             <div className="col-md-12 text-center p-4">
                 <button className="btn" disabled={disablePrev} onClick={() => handlePrevious()} style={{'--hover-color':'#4cffa0', display:'none'}}>Previous</button>
@@ -75,7 +74,7 @@ function handlePrevious() {
 
         {selectedProduct && (
           <Modal show={isModalOpen} onClose={handleCloseModal}>
-            <ProductDetail key={selectedProduct.id} product={selectedProduct} />
+            <ProductDetailThree key={selectedProduct.id} product={selectedProduct} />
           </Modal>
         )}
         </>

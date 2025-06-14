@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { StagewiseToolbar } from '@stagewise/toolbar-react';
 
 const StagewiseIntegration = () => {
@@ -19,26 +19,13 @@ const StagewiseIntegration = () => {
         plugins: []
       };
 
-      // Create a separate React root for the toolbar
-      const root = ReactDOM.createRoot ? 
-        ReactDOM.createRoot(stagewiseContainer) : 
-        null;
-
-      if (root) {
-        // For React 18+
-        root.render(<StagewiseToolbar config={stagewiseConfig} />);
-      } else {
-        // Fallback for React 17
-        ReactDOM.render(<StagewiseToolbar config={stagewiseConfig} />, stagewiseContainer);
-      }
+      // Create a React root for the toolbar (React 18)
+      const root = createRoot(stagewiseContainer);
+      root.render(<StagewiseToolbar config={stagewiseConfig} />);
 
       // Cleanup function
       return () => {
-        if (root) {
-          root.unmount();
-        } else {
-          ReactDOM.unmountComponentAtNode(stagewiseContainer);
-        }
+        root.unmount();
         if (stagewiseContainer && stagewiseContainer.parentNode) {
           stagewiseContainer.parentNode.removeChild(stagewiseContainer);
         }
