@@ -34,9 +34,9 @@ const Model = ({ url, rotationData, onPointerDown, onPointerUp, onPointerMove })
         scene.rotation.set(0, 0, 0);
         scene.position.set(0, 0, 0);
         
-        // Force model to face forward - no automatic detection
-        scene.rotation.set(0, 0, 0); // Always face forward toward camera
-        console.log('MODEL: Set to face forward (Z-axis toward camera)');
+        // Force model to face forward - CORRECTED front-facing orientation
+        scene.rotation.set(0, Math.PI/2, 0); // Rotate 90° around Y-axis to face front
+        console.log('MODEL: Set to face forward (front toward camera)');
         
         // Additional check: if the model center is way off, it might need different handling
         if (Math.abs(center.y) > size.y * 0.5) {

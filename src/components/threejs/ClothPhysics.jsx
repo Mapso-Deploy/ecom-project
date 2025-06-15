@@ -14,11 +14,13 @@ const ClothPhysics = ({
   const isInitialized = useRef(false);
   const timeRef = useRef(0);
   
-  // 🎯 NATURAL PHYSICS - Simplified and Realistic System
+  // 🎯 ENHANCED PHYSICS SYSTEM - With Overshoot and Realistic Direction
   const smoothedTwist = useRef(0);              // Current twist effect
   const twistMomentum = useRef(0);              // Momentum after stopping
   const twistDirection = useRef(0);             // Current twist direction
   const lastActiveTime = useRef(0);             // For natural settling
+  const overshootAmount = useRef(0);            // NEW: Overshoot for realistic inertia
+  const lastSpeed = useRef(0);                  // NEW: Track speed changes for overshoot
   
   // Initialize physics when mesh is available
   useEffect(() => {
@@ -55,64 +57,106 @@ const ClothPhysics = ({
   useFrame((state, delta) => {
     if (!isInitialized.current || !targetMesh.current || !originalVertices.current) return;
     
-    timeRef.current += delta;
+    // 🎯 ENHANCED FRAME RATE STABILIZATION - Better glitch prevention
+    const targetDelta = 1/60; // Target 60fps
+    const maxDelta = 1/30; // Never allow below 30fps equivalent
+    const minDelta = 1/120; // Never allow above 120fps equivalent
+
+    // Triple-layer delta smoothing
+    const clampedDelta = Math.max(minDelta, Math.min(delta, maxDelta));
+    const smoothDelta1 = THREE.MathUtils.lerp(clampedDelta, targetDelta, 0.2);
+    const smoothDelta2 = THREE.MathUtils.lerp(clampedDelta, smoothDelta1, 0.4);
+    const finalSmoothDelta = THREE.MathUtils.lerp(clampedDelta, smoothDelta2, 0.6);
+
+    timeRef.current += finalSmoothDelta;
     const { speed = 0, direction = 0, isMoving = false } = rotationData;
     
-    // 🌬️ ENHANCED BASE WIND SYSTEM - More visible idle movement  
-    let baseWind = 0.25; // INCREASED from 0.12 to 0.25 for visible idle waves
+    // 🌬️ ENHANCED BASE WIND SYSTEM - Increased idle visibility
+    let baseWind = 0.35; // INCREASED from 0.25 to 0.35 for more visible idle waves
     let activeWind = 0;
     
-    // 🌪️ ULTRA-GRADUAL TWIST CALCULATION - Flows from draped state
+    // 🌪️ ENHANCED TWIST CALCULATION - More twist, no stretching
     let targetTwist = 0;
     
     if (isMoving && Math.abs(speed) > 0.001) {
-      // Build twist gradually based on rotation speed
-      activeWind = Math.abs(speed) * 0.6 * intensity; // REDUCED from 0.8 to 0.6 for smoother buildup
+      activeWind = Math.abs(speed) * 0.6 * intensity;
       
-      // 🎯 SUBTLE TWIST BUILDUP - Starts from draped state  
-      const speedThreshold = 0.02; // Minimum speed before twist begins
-      const adjustedSpeed = Math.max(0, Math.abs(speed) - speedThreshold); // Only twist after threshold
-      const maxTwist = 0.8; // REDUCED maximum twist from 1.2 to 0.8
-      const rawTwist = direction * adjustedSpeed * 0.15; // MUCH smaller base twist (0.25 → 0.15)
+      // 🎯 ENHANCED TWIST LIMITS - More visible twist
+      const speedThreshold = 0.015;
+      const maxAllowedSpeed = 0.12; // INCREASED from 0.08 to 0.12 for more twist
+      const clampedSpeed = Math.min(Math.abs(speed), maxAllowedSpeed);
+      const adjustedSpeed = Math.max(0, clampedSpeed - speedThreshold);
+      const maxTwist = 0.6; // INCREASED from 0.35 to 0.6 for more visible twist
+      
+      // 🔄 REALISTIC DIRECTION LOGIC
+      const realisticDirection = -direction;
+      const rawTwist = realisticDirection * adjustedSpeed * 0.15; // INCREASED from 0.08 to 0.15
       targetTwist = Math.sign(rawTwist) * Math.min(Math.abs(rawTwist), maxTwist);
       
-      twistDirection.current = direction;
+      // 🎯 OVERSHOOT DETECTION
+      const speedChange = Math.abs(speed - lastSpeed.current);
+      if (speedChange > 0.05) {
+        overshootAmount.current = Math.abs(targetTwist) * 0.4;
+      }
+      
+      twistDirection.current = realisticDirection;
       lastActiveTime.current = timeRef.current;
+      lastSpeed.current = speed;
     } else {
-      // When stopped, add momentum but decay it
-      twistMomentum.current *= 0.92; // SLOWER momentum decay (0.88 → 0.92) for smoother transitions
-      if (Math.abs(twistMomentum.current) < 0.002) { // Lower threshold for smoother end
+      twistMomentum.current *= 0.96;
+      overshootAmount.current *= 0.88;
+      
+      if (Math.abs(twistMomentum.current) < 0.0008) {
         twistMomentum.current = 0;
+      }
+      if (Math.abs(overshootAmount.current) < 0.001) {
+        overshootAmount.current = 0;
       }
     }
     
-    // 🌪️ ULTRA-SMOOTH TWIST BUILDUP - Eliminates all glitching
-    const buildupSpeed = isMoving ? 0.5 : 0.25; // EVEN SLOWER buildup (0.8 → 0.5) and release (0.4 → 0.25)
-    const twistLerp = Math.min(delta * buildupSpeed, 0.15); // MUCH SMALLER max step (0.3 → 0.15)
-    
-    // Apply momentum when stopping
-    const totalTargetTwist = targetTwist + twistMomentum.current;
-    
-    // Smooth interpolation with natural feel
-    smoothedTwist.current = THREE.MathUtils.lerp(
-      smoothedTwist.current,
-      totalTargetTwist,
-      twistLerp
-    );
-    
-    // Store momentum when transitioning from active to idle
-    if (!isMoving && Math.abs(targetTwist) < 0.01 && Math.abs(smoothedTwist.current) > 0.02) {
-      twistMomentum.current = smoothedTwist.current * 0.4; // Less momentum carryover
+    // 🌪️ ULTRA-STABLE INTERPOLATION - Enhanced frame rate dampening
+    const targetFrameTime = 1/60;
+    const frameRatio = smoothDelta1 / targetFrameTime;
+
+    // 🎯 ADAPTIVE DAMPENING - Much more aggressive during rotation
+    const baseDampening = isMoving ? 0.15 : 0.08; // Much slower during rotation
+    const rotationIntensityDampening = Math.abs(speed) * 0.5; // Additional dampening based on rotation speed
+    const totalDampening = baseDampening - rotationIntensityDampening; // More rotation = more dampening
+    const adaptiveDampening = Math.max(totalDampening, 0.02); // Minimum dampening threshold
+
+    const frameAdjustedLerp = Math.min(frameRatio * adaptiveDampening, 0.02); // Much smaller max step
+
+    // 🎯 FIVE-STAGE ULTRA-SMOOTH INTERPOLATION - Eliminates ALL glitches
+    const overshootSign = Math.sign(smoothedTwist.current) * -1;
+    const overshootEffect = overshootAmount.current * overshootSign;
+    const totalTargetTwist = targetTwist + twistMomentum.current + overshootEffect;
+
+    // Five-stage progressive smoothing for absolute stability
+    const stage1 = THREE.MathUtils.lerp(smoothedTwist.current, totalTargetTwist, frameAdjustedLerp);
+    const stage2 = THREE.MathUtils.lerp(smoothedTwist.current, stage1, 0.3); // Much slower
+    const stage3 = THREE.MathUtils.lerp(smoothedTwist.current, stage2, 0.5);
+    const stage4 = THREE.MathUtils.lerp(smoothedTwist.current, stage3, 0.7);
+    smoothedTwist.current = THREE.MathUtils.lerp(smoothedTwist.current, stage4, 0.85);
+
+    // 🎯 VELOCITY-BASED DAMPENING - Additional smoothing for fast movements
+    if (isMoving && Math.abs(speed) > 0.02) {
+      // Extra dampening during fast rotation
+      const velocityDampening = Math.min(Math.abs(speed) * 2, 0.8); // Higher speed = more dampening
+      const dampedTarget = THREE.MathUtils.lerp(smoothedTwist.current, totalTargetTwist, 0.01); // Very slow
+      smoothedTwist.current = THREE.MathUtils.lerp(smoothedTwist.current, dampedTarget, 1 - velocityDampening);
     }
     
-    // 🎯 FINAL WIND STRENGTH
-    const totalWind = baseWind + activeWind;
+    // Store momentum when transitioning
+    if (!isMoving && Math.abs(targetTwist) < 0.008 && Math.abs(smoothedTwist.current) > 0.015) {
+      twistMomentum.current = smoothedTwist.current * 0.5;
+    }
     
+    const totalWind = baseWind + activeWind;
     const positionAttribute = targetMesh.current.geometry.attributes.position;
     const vertices = positionAttribute.array;
     const vertexCount = positionAttribute.count;
     
-    // Apply natural fabric movement to all vertices
+    // Apply enhanced fabric movement
     for (let i = 0; i < vertexCount; i++) {
       const i3 = i * 3;
       
@@ -120,81 +164,102 @@ const ClothPhysics = ({
       const origY = originalVertices.current[i3 + 1];
       const origZ = originalVertices.current[i3 + 2];
       
-      // 📐 HEIGHT-BASED PHYSICS - Natural hanging behavior
+      // 📐 REAL FABRIC PHYSICS - Top anchored, middle controlled, bottom free
       const heightFactor = Math.max(0, Math.min(1, (origY + 3) / 6));
       
-      // 🔒 RIGID ANCHORING - Top stays put, bottom flows
-      const anchorStrength = heightFactor * 0.98; // 98% anchoring at top
-      const flowScale = 1.0 - anchorStrength; // Bottom has most flow
+      // 🎯 REALISTIC MOVEMENT DISTRIBUTION - Top < Middle < Bottom
+      // Top (heightFactor = 1): Almost no movement
+      // Middle (heightFactor = 0.5): Moderate movement  
+      // Bottom (heightFactor = 0): Maximum movement
+      const topAnchor = Math.pow(heightFactor, 0.5) * 0.99; // Top heavily anchored
+      const middleRestriction = heightFactor * 0.7; // Middle has more restriction than bottom
+      const bottomFreedom = (1 - heightFactor) * (1 - heightFactor); // Bottom has exponential freedom
       
-      // ⏰ WAVE TIMING - Synchronized with twist
-      const time1 = timeRef.current * 2.0 + origY * 1.2; 
-      const time2 = timeRef.current * 1.6 + origZ * 1.0;
-      const time3 = timeRef.current * 1.8 + origX * 0.8;
+      // Final movement scales: Top minimal, Middle moderate, Bottom maximum
+      const waveScale = (1.0 - topAnchor) * (1.0 + bottomFreedom); // Bottom moves more than middle
+      const twistScale = (1.0 - middleRestriction) * (1.0 + bottomFreedom * 1.5); // Bottom twists most
       
-      // 🌊 ENHANCED FABRIC WAVES - More visible idle movement
-      const waveX = Math.sin(time1) * 0.15 * totalWind * flowScale; // INCREASED from 0.08 to 0.15
-      const waveY = Math.sin(time2 + Math.PI/4) * 0.08 * totalWind * flowScale; // INCREASED from 0.04 to 0.08
-      const waveZ = Math.cos(time3) * 0.12 * totalWind * flowScale; // INCREASED from 0.06 to 0.12
+      // ⏰ FRAME-STABLE WAVE TIMING
+      const stableTime = timeRef.current;
+      const time1 = stableTime * 2.0 + origY * 1.2;
+      const time2 = stableTime * 1.6 + origZ * 1.0;
+      const time3 = stableTime * 1.8 + origX * 0.8;
       
-      // 🌪️ NATURAL TWIST BLENDING - Flows with idle waves  
-      const twistDelay = (1 - heightFactor) * 0.3;
-      const twistPhase = timeRef.current * 1.2 - twistDelay;
+      // 🌊 NATURAL FABRIC WAVES - Bottom extends most
+      const waveX = Math.sin(time1) * 0.18 * totalWind * waveScale;
+      const waveY = Math.sin(time2 + Math.PI/4) * 0.10 * totalWind * waveScale;
+      const waveZ = Math.cos(time3) * 0.14 * totalWind * waveScale;
       
-      // 🎯 FIXED DIRECTION LOGIC - Keep sign through entire calculation
-      const rawTwistIntensity = smoothedTwist.current; // Keep the sign!
-      const maxTwistMagnitude = 0.6; 
+      // 🌪️ RADIAL CORE-BASED TWIST - Like real hanging fabric
+      const rawTwistIntensity = smoothedTwist.current;
+      const maxTwistMagnitude = 0.5;
       const clampedTwistIntensity = Math.sign(rawTwistIntensity) * Math.min(Math.abs(rawTwistIntensity), maxTwistMagnitude);
       
-      // 🎯 NATURAL TWIST RESISTANCE - Gravity affects lower parts more
-      const twistGravity = (1 - heightFactor) * 0.6;
-      const twistResistance = 1.0 - twistGravity;
+      let twistX = 0, twistZ = 0;
       
-      // 🌪️ CORRECTED NATURAL TWIST - Proper directional behavior
-      const twistMagnitude = Math.abs(clampedTwistIntensity);
-      const twistSign = Math.sign(clampedTwistIntensity);
-      
-      // Simplified, natural twist calculation
-      let twistX, twistZ;
-      
-      // Natural fabric twist - bottom follows top rotation direction
-      if (twistMagnitude > 0.001) {
-        // Use simple, predictable trigonometry
-        const rotationAngle = twistPhase + (clampedTwistIntensity * 3.0); // Natural rotation progression
+      if (Math.abs(clampedTwistIntensity) > 0.0008) {
+        // 🎯 CORE-BASED RADIAL TWIST - Fabric rotates around central Y-axis
+        const distanceFromCore = Math.sqrt(origX * origX + origZ * origZ); // Distance from center
         
-        // Right rotation (positive direction)
-        if (twistSign > 0) {
-          twistX = Math.cos(rotationAngle) * twistMagnitude * 0.03 * flowScale * twistResistance;
-          twistZ = Math.sin(rotationAngle) * twistMagnitude * 0.03 * flowScale * twistResistance;
-        } 
-        // Left rotation (negative direction) - naturally opposite
-        else {
-          twistX = Math.cos(-rotationAngle + Math.PI) * twistMagnitude * 0.03 * flowScale * twistResistance;
-          twistZ = Math.sin(-rotationAngle + Math.PI) * twistMagnitude * 0.03 * flowScale * twistResistance;
+        if (distanceFromCore > 0.001) { // Avoid division by zero
+          // Calculate twist angle - bottom twists more than middle
+          const twistAngleMultiplier = (1 - heightFactor) * (1 - heightFactor); // Exponential for bottom
+          const maxTwistAngle = clampedTwistIntensity * 0.8 * twistAngleMultiplier; // Bottom gets most twist
+          
+          // 🎯 RADIAL ROTATION AROUND CENTRAL AXIS
+          // Get current angle from center
+          const currentAngle = Math.atan2(origZ, origX);
+          
+          // Apply twist rotation around Y-axis (vertical center line)
+          const newAngle = currentAngle + maxTwistAngle;
+          
+          // 🚫 CORE ANCHORING - Keep distance from center (no stretching)
+          const targetX = Math.cos(newAngle) * distanceFromCore;
+          const targetZ = Math.sin(newAngle) * distanceFromCore;
+          
+          // Calculate twist displacement
+          twistX = (targetX - origX) * twistScale;
+          twistZ = (targetZ - origZ) * twistScale;
+          
+          // 🎯 STRICT ANTI-STRETCH CONTROL - Maintain original distances
+          const originalCoreDistance = distanceFromCore;
+          const newCoreDistance = Math.sqrt((origX + twistX) * (origX + twistX) + (origZ + twistZ) * (origZ + twistZ));
+          
+          // If twist would change distance from core, scale it back
+          if (Math.abs(newCoreDistance - originalCoreDistance) > originalCoreDistance * 0.02) { // 2% tolerance
+            const correctionFactor = originalCoreDistance / newCoreDistance;
+            twistX *= correctionFactor;
+            twistZ *= correctionFactor;
+          }
+          
+          // 🎯 ADDITIONAL SAFETY - Limit maximum displacement
+          const maxDisplacement = distanceFromCore * 0.3; // Max 30% of distance from core
+          const currentDisplacement = Math.sqrt(twistX * twistX + twistZ * twistZ);
+          if (currentDisplacement > maxDisplacement) {
+            const limitFactor = maxDisplacement / currentDisplacement;
+            twistX *= limitFactor;
+            twistZ *= limitFactor;
+          }
         }
-      } else {
-        // No twist when intensity is near zero
-        twistX = 0;
-        twistZ = 0;
       }
       
-      // ⬇️ ENHANCED GRAVITY - Much heavier fabric
-      const baseGravity = (1 - heightFactor) * 0.4; // Strong base gravity
-      const twistGravityPull = Math.abs(clampedTwistIntensity) * (1 - heightFactor) * 0.2; // Extra gravity during twist
+      // ⬇️ ENHANCED GRAVITY - Heavier fabric
+      const baseGravity = (1 - heightFactor) * 0.4;
+      const twistGravityPull = Math.abs(clampedTwistIntensity) * (1 - heightFactor) * 0.2;
       const totalGravity = baseGravity + twistGravityPull;
       
-      // 🎯 FINAL VERTEX POSITIONING - Natural and controlled
+      // 🎯 FINAL NATURAL VERTEX POSITIONING
       vertices[i3] = origX + waveX + twistX;
-      vertices[i3 + 1] = origY + waveY - totalGravity; // Heavy fabric draping
+      vertices[i3 + 1] = origY + waveY - totalGravity;
       vertices[i3 + 2] = origZ + waveZ + twistZ;
     }
     
-    // Update the geometry
+    // Update geometry
     positionAttribute.needsUpdate = true;
     targetMesh.current.geometry.computeVertexNormals();
     
     // Debug logging
-    if (debug && timeRef.current % 2 < delta) {
+    if (debug && timeRef.current % 2 < smoothDelta1) {
       console.log('NATURAL PHYSICS:', {
         target: targetTwist.toFixed(3),
         smoothed: smoothedTwist.current.toFixed(3),
