@@ -183,9 +183,11 @@ const ProductDetailThree = ({ product: productProp, isModal = false, onBack }) =
                   src={product.image}
                   alt={`3D model of ${product.name}`}
                   poster={product.poster}
-                  autoRotate={true}
+                  autoRotate={false}
                   loading="eager"
                   className="product-3d-model-three"
+                  enableClothPhysics={true}
+                  clothIntensity={2.0}
                   style={{ 
                     width: '100%', 
                     height: '100%', 

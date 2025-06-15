@@ -21,11 +21,11 @@ const StagewiseIntegration = () => {
 
       // Create a React root for the toolbar (React 18)
       const root = createRoot(stagewiseContainer);
-      root.render(<StagewiseToolbar config={stagewiseConfig} />);
+        root.render(<StagewiseToolbar config={stagewiseConfig} />);
 
       // Cleanup function
       return () => {
-        root.unmount();
+          root.unmount();
         if (stagewiseContainer && stagewiseContainer.parentNode) {
           stagewiseContainer.parentNode.removeChild(stagewiseContainer);
         }
