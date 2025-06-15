@@ -297,29 +297,6 @@ const ThreeModel = ({
           onRotationData={handleRotationData}
         />
       </Canvas>
-      
-      {/* Debug info for physics-based cloth */}
-      <div className="rotation-debug" style={{ 
-        position: 'absolute', 
-        top: '10px', 
-        left: '10px', 
-        background: 'rgba(0,0,0,0.7)', 
-        color: 'white', 
-        padding: '10px', 
-        borderRadius: '5px',
-        fontSize: '12px',
-        fontFamily: 'monospace',
-        pointerEvents: 'none', // Allow mouse events to pass through
-        zIndex: 1000 // Ensure it's on top but not blocking interactions
-      }}>
-        <p>PHYSICS CLOTH DEBUG:</p>
-        <p>Speed: {rotationData.speed?.toFixed(3) || '0.000'}</p>
-        <p>Direction: {rotationData.direction === 1 ? 'Clockwise' : rotationData.direction === -1 ? 'Counter-clockwise' : 'None'}</p>
-        <p>Moving: {rotationData.isMoving ? 'YES' : 'No'}</p>
-        <p>Intensity: {(rotationData.intensity * 100)?.toFixed(1) || '0.0'}%</p>
-        <p>Acceleration: {rotationData.acceleration?.toFixed(3) || '0.000'}</p>
-        <p>Physics: Rapier Enabled</p>
-      </div>
     </div>
   );
 };
