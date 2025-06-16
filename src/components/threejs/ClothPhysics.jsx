@@ -22,6 +22,14 @@ const ClothPhysics = ({
   const overshootAmount = useRef(0);            // NEW: Overshoot for realistic inertia
   const lastSpeed = useRef(0);                  // NEW: Track speed changes for overshoot
   
+  // Add kinetic energy tracking at the top of the physics system
+  const kineticEnergy = useRef(0);           // Raw kinetic energy storage
+  const energyDecayTimer = useRef(0);        // Timer for energy preservation
+  const lastRotationVelocity = useRef(0);    // Track velocity for energy calculation
+  const oscillationPhase = useRef(0);        // Track oscillation cycle
+  const restoreForce = useRef(0);           // Force pulling back to rest state
+  const oscillationVelocity = useRef(0);     // Velocity of oscillation
+  
   // Initialize physics when mesh is available
   useEffect(() => {
     if (!meshRef?.current) return;
@@ -75,46 +83,129 @@ const ClothPhysics = ({
     let baseWind = 0.32; // INCREASED: From 0.25 to 0.32 for more visible idle movement
     let activeWind = 0;
     
-    // 🌪️ GEOMETRICALLY CONSTRAINED TWIST CALCULATION
+    // 🌪️ ENHANCED TWIST CALCULATION - Fixed transition and energy preservation
     let targetTwist = 0;
-    
+
     if (isMoving && Math.abs(speed) > 0.001) {
-      activeWind = Math.abs(speed) * 0.4 * intensity; // REDUCED: From 0.6 to 0.4
+      activeWind = Math.abs(speed) * 0.4 * intensity;
       
-      // 🎯 CAMERA-AWARE TWIST LIMITS - Based on viewing frustum geometry
+      // �� FIXED TWIST LIMITS
       const speedThreshold = 0.015;
-      const maxAllowedSpeed = 0.08; // REDUCED: From 0.12 to 0.08 for stability
+      const maxAllowedSpeed = 0.06;
       const clampedSpeed = Math.min(Math.abs(speed), maxAllowedSpeed);
       const adjustedSpeed = Math.max(0, clampedSpeed - speedThreshold);
       
-      // CALCULATED: Maximum twist that keeps vertices in optimal viewing zone
-      // Camera at Z=8.5, FOV=45°, optimal viewing width at model ≈ 3.0
-      const maxTwist = 0.35; // REDUCED: From 0.6 to 0.35 for camera-safe bounds
+      const maxTwist = 0.25;
       
-      // 🔄 REALISTIC DIRECTION LOGIC (preserved)
+      // 🔄 REALISTIC DIRECTION LOGIC
       const realisticDirection = direction;
-      const rawTwist = realisticDirection * adjustedSpeed * 0.1; // REDUCED: From 0.15 to 0.1
+      const rawTwist = realisticDirection * adjustedSpeed * 0.15;
       targetTwist = Math.sign(rawTwist) * Math.min(Math.abs(rawTwist), maxTwist);
       
-      // 🎯 CONTROLLED OVERSHOOT - Reduced for stability
+      // 🎯 CONTINUOUS ENERGY ACCUMULATION - Build up energy for oscillation
+      const currentVelocity = Math.abs(speed);
+      
+      // ACCUMULATE energy over time instead of overwriting
+      const instantEnergy = Math.pow(currentVelocity, 1.4) * 0.8; // INCREASED power and multiplier
+      kineticEnergy.current = Math.max(kineticEnergy.current * 0.98, instantEnergy); // BETTER preservation
+      
+      // 🎯 IMPROVED MOMENTUM CAPTURE - Don't overwrite, accumulate
+      const momentumCapture = targetTwist * currentVelocity * 12.0; // INCREASED capture strength
+      const newVelocity = momentumCapture * Math.sign(rawTwist);
+      
+      // BLEND instead of overwrite to build up momentum
+      oscillationVelocity.current = oscillationVelocity.current * 0.85 + newVelocity * 0.15;
+      
+      // 🎯 TRANSITION PREPARATION - Set up for smooth handoff
+      energyDecayTimer.current = 0;
+      restoreForce.current = 0;
+      lastRotationVelocity.current = currentVelocity;
+      
+      // Store the FINAL twist state for transition
+      const finalTwistState = targetTwist;
+      
+      // Controlled overshoot
       const speedChange = Math.abs(speed - lastSpeed.current);
-      if (speedChange > 0.08) { // INCREASED threshold
-        overshootAmount.current = Math.abs(targetTwist) * 0.25; // REDUCED from 0.4
+      if (speedChange > 0.06) {
+        overshootAmount.current = Math.abs(targetTwist) * 0.2;
       }
       
       twistDirection.current = realisticDirection;
       lastActiveTime.current = timeRef.current;
       lastSpeed.current = speed;
-    } else {
-      // FASTER settling for better control
-      twistMomentum.current *= 0.94; // INCREASED decay from 0.96
-      overshootAmount.current *= 0.85; // INCREASED decay from 0.88
       
-      if (Math.abs(twistMomentum.current) < 0.001) { // INCREASED threshold
-        twistMomentum.current = 0;
+    } else {
+      // 🎯 TRANSITION & OSCILLATION SYSTEM - Smooth handoff from rotation
+      
+      const transitionTime = 0.3; // 300ms transition period
+      const timeSinceStop = timeRef.current - lastActiveTime.current;
+      const isInTransition = timeSinceStop < transitionTime;
+      
+      energyDecayTimer.current += finalSmoothDelta;
+      
+      if (isInTransition) {
+        // 🔄 TRANSITION PHASE - Smooth handoff from active rotation to oscillation
+        const transitionProgress = timeSinceStop / transitionTime;
+        const transitionCurve = 1 - Math.pow(transitionProgress, 2); // Quadratic ease-out
+        
+        // BOOST initial oscillation energy during transition
+        const boostFactor = 1.5 + (1 - transitionProgress) * 2.0; // Extra energy at start
+        kineticEnergy.current = Math.max(kineticEnergy.current, 0.4 * boostFactor);
+        
+        // Initialize oscillation position from current twist
+        if (timeSinceStop < finalSmoothDelta * 2) { // First few frames
+          oscillationPhase.current = smoothedTwist.current; // Start from current position
+        }
       }
-      if (Math.abs(overshootAmount.current) < 0.002) { // INCREASED threshold
-        overshootAmount.current = 0;
+      
+      // 🌊 ENHANCED OSCILLATION SYSTEM
+      const dt = finalSmoothDelta;
+      
+      // STRONGER spring force for visible oscillation
+      const currentTwistPosition = oscillationPhase.current;
+      const springConstant = 25.0; // INCREASED: Much stronger spring
+      restoreForce.current = -currentTwistPosition * springConstant;
+      
+      // Apply forces to oscillation velocity
+      oscillationVelocity.current += restoreForce.current * dt;
+      
+      // LESS damping for better oscillation
+      const dampingCoefficient = isInTransition ? 0.95 : 0.85; // Less damping during transition
+      oscillationVelocity.current *= Math.pow(dampingCoefficient, dt * 60);
+      
+      // Update oscillation position
+      oscillationPhase.current += oscillationVelocity.current * dt;
+      
+      // MUCH SLOWER energy decay
+      const energyDecayRate = isInTransition ? 0.9995 : 0.997; // Almost no decay during transition
+      kineticEnergy.current *= Math.pow(energyDecayRate, dt * 60);
+      
+      // 🎯 VISIBLE OSCILLATION MOTION
+      const hasSignificantOscillation = Math.abs(oscillationVelocity.current) > 0.008; // REDUCED threshold
+      
+      if (hasSignificantOscillation || isInTransition) {
+        // DIRECT oscillation effect with AMPLIFICATION
+        const energyAmplifier = Math.max(kineticEnergy.current, 0.35); // INCREASED base energy
+        targetTwist = oscillationPhase.current * energyAmplifier;
+        
+        // DIRECT assignment for maximum energy preservation
+        smoothedTwist.current = targetTwist;
+      } else {
+        // Gentle decay when oscillation is done
+        targetTwist = oscillationPhase.current * Math.max(kineticEnergy.current, 0.1);
+        smoothedTwist.current = THREE.MathUtils.lerp(smoothedTwist.current, targetTwist, 0.12);
+      }
+      
+      // INCREASED oscillation limits
+      const maxOscillationTwist = 1.0; // INCREASED: Allow larger visible oscillations
+      smoothedTwist.current = Math.max(-maxOscillationTwist, Math.min(maxOscillationTwist, smoothedTwist.current));
+      
+      // Stop oscillation only when truly minimal
+      if (!isInTransition && Math.abs(kineticEnergy.current) < 0.008 && Math.abs(oscillationVelocity.current) < 0.015) {
+        kineticEnergy.current = 0;
+        oscillationVelocity.current = 0;
+        oscillationPhase.current *= 0.92; // Gradual position decay
+        smoothedTwist.current *= 0.95;
       }
     }
     
@@ -130,36 +221,15 @@ const ClothPhysics = ({
 
     const frameAdjustedLerp = Math.min(frameRatio * adaptiveDampening, 0.015); // REDUCED max step
 
-    // 🎯 ENHANCED ULTRA-SMOOTH INTERPOLATION
-    const overshootSign = Math.sign(smoothedTwist.current) * -1;
-    const overshootEffect = overshootAmount.current * overshootSign;
-    const totalTargetTwist = targetTwist + twistMomentum.current + overshootEffect;
+    // 🎯 NO ADDITIONAL SMOOTHING - Let oscillation work directly
+    // (Remove all the old smoothing logic that was interfering)
 
-    // MORE CONSERVATIVE smoothing progression
-    const stage1 = THREE.MathUtils.lerp(smoothedTwist.current, totalTargetTwist, frameAdjustedLerp);
-    const stage2 = THREE.MathUtils.lerp(smoothedTwist.current, stage1, 0.25); // REDUCED from 0.3
-    const stage3 = THREE.MathUtils.lerp(smoothedTwist.current, stage2, 0.4); // REDUCED from 0.5
-    const stage4 = THREE.MathUtils.lerp(smoothedTwist.current, stage3, 0.6); // REDUCED from 0.7
-    smoothedTwist.current = THREE.MathUtils.lerp(smoothedTwist.current, stage4, 0.8); // REDUCED from 0.85
-
-    // 🎯 ENHANCED VELOCITY-BASED DAMPENING
-    if (isMoving && Math.abs(speed) > 0.015) { // REDUCED threshold
-      const velocityDampening = Math.min(Math.abs(speed) * 3, 0.9); // INCREASED multiplier
-      const dampedTarget = THREE.MathUtils.lerp(smoothedTwist.current, totalTargetTwist, 0.005); // REDUCED from 0.01
-      smoothedTwist.current = THREE.MathUtils.lerp(smoothedTwist.current, dampedTarget, 1 - velocityDampening);
-    }
-    
-    // Store momentum when transitioning
-    if (!isMoving && Math.abs(targetTwist) < 0.01 && Math.abs(smoothedTwist.current) > 0.02) {
-      twistMomentum.current = smoothedTwist.current * 0.4; // REDUCED from 0.5
-    }
-    
     const totalWind = baseWind + activeWind;
     const positionAttribute = targetMesh.current.geometry.attributes.position;
     const vertices = positionAttribute.array;
     const vertexCount = positionAttribute.count;
-    
-    // Apply enhanced fabric movement with GEOMETRIC CAMERA CONSTRAINTS
+
+    // Apply enhanced fabric movement with AXIS TETHERING for high velocity
     for (let i = 0; i < vertexCount; i++) {
       const i3 = i * 3;
       
@@ -170,14 +240,19 @@ const ClothPhysics = ({
       // 📐 PRESERVED FABRIC PHYSICS - Top anchored, middle controlled, bottom free
       const heightFactor = Math.max(0, Math.min(1, (origY + 3) / 6));
       
-      // 🎯 CONTROLLED MOVEMENT DISTRIBUTION - Reduced exponential scaling
-      const topAnchor = Math.pow(heightFactor, 0.6) * 0.995; // INCREASED exponent for more anchoring
-      const middleRestriction = heightFactor * 0.75; // INCREASED restriction
-      const bottomFreedom = (1 - heightFactor) * (1 - heightFactor) * 0.8; // REDUCED by 0.8 factor
+      // 🎯 ENHANCED AXIS TETHERING - Keep high velocity twists centered
+      const axisDistance = Math.sqrt(origX * origX + origZ * origZ);
+      const maxAxisDistance = 2.0; // Maximum distance from center axis
+      const axisTetheringStrength = Math.min(axisDistance / maxAxisDistance, 1.0); // Stronger tethering for outer vertices
       
-      // REDUCED movement scales for camera stability
-      const waveScale = (1.0 - topAnchor) * (1.0 + bottomFreedom * 0.8); // REDUCED multiplier
-      const twistScale = (1.0 - middleRestriction) * (1.0 + bottomFreedom * 1.2); // REDUCED from 1.5
+      // 🎯 CONTROLLED MOVEMENT DISTRIBUTION with AXIS TETHERING
+      const topAnchor = Math.pow(heightFactor, 0.6) * 0.995;
+      const middleRestriction = heightFactor * 0.75 + axisTetheringStrength * 0.2; // ADD axis tethering
+      const bottomFreedom = (1 - heightFactor) * (1 - heightFactor) * 0.8 * (1 - axisTetheringStrength * 0.3); // REDUCE freedom for outer vertices
+      
+      // AXIS-AWARE movement scales
+      const waveScale = (1.0 - topAnchor) * (1.0 + bottomFreedom * 0.8);
+      const twistScale = (1.0 - middleRestriction) * (1.0 + bottomFreedom * 1.2) * (1 - axisTetheringStrength * 0.4); // REDUCE twist for outer vertices
       
       // ⏰ ENHANCED WAVE TIMING - More dynamic idle movement
       const stableTime = timeRef.current;
@@ -186,27 +261,41 @@ const ClothPhysics = ({
       const time3 = stableTime * 1.8 + origX * 0.8;
       
       // Add subtle secondary wave for richer idle animation
-      const idleEnhancement = isMoving ? 0 : 0.15; // Only enhance when idle
+      const idleEnhancement = isMoving ? 0 : 0.15;
       const secondaryWave = Math.sin(stableTime * 0.8 + origX * 0.3) * idleEnhancement;
       
-      // 🌊 ENHANCED IDLE FABRIC WAVES - More prominent when stationary
+      // 🌊 ENHANCED IDLE FABRIC WAVES
       const waveX = Math.sin(time1) * 0.14 * totalWind * waveScale + secondaryWave * waveScale;
       const waveY = Math.sin(time2 + Math.PI/4) * 0.08 * totalWind * waveScale + secondaryWave * 0.5 * waveScale;
       const waveZ = Math.cos(time3) * 0.11 * totalWind * waveScale + secondaryWave * 0.7 * waveScale;
       
-      // 🌪️ GEOMETRICALLY CONSTRAINED TWIST
+      // 🌪️ OSCILLATION-AWARE TWIST PROCESSING - Different rules for oscillation vs active twist
       const rawTwistIntensity = smoothedTwist.current;
-      const maxTwistMagnitude = 0.4; // REDUCED from 0.5
+      
+      // 🎯 DIFFERENTIATE: Active twist vs Oscillation
+      const isOscillating = !isMoving && Math.abs(oscillationVelocity.current) > 0.01;
+      const isInTransition = !isMoving && (timeRef.current - lastActiveTime.current) < 0.5;
+      
+      // DIFFERENT LIMITS: Oscillation gets higher limits for visibility
+      const maxTwistMagnitude = isOscillating || isInTransition ? 0.8 : 0.4; // HIGHER limit for oscillation
+      
       const clampedTwistIntensity = Math.sign(rawTwistIntensity) * Math.min(Math.abs(rawTwistIntensity), maxTwistMagnitude);
       
       let twistX = 0, twistZ = 0;
       
-      if (Math.abs(clampedTwistIntensity) > 0.001) { // INCREASED threshold
+      if (Math.abs(clampedTwistIntensity) > 0.001) {
         const distanceFromCore = Math.sqrt(origX * origX + origZ * origZ);
         
         if (distanceFromCore > 0.001) {
-          const twistAngleMultiplier = (1 - heightFactor) * (1 - heightFactor) * 0.8; // REDUCED by 0.8
-          const maxTwistAngle = clampedTwistIntensity * 0.6 * twistAngleMultiplier; // REDUCED from 0.8
+          const twistAngleMultiplier = (1 - heightFactor) * (1 - heightFactor) * 0.8;
+          
+          // 🎯 OSCILLATION-AWARE SCALING
+          const axisTetherFactor = 1 - (axisTetheringStrength * 0.6);
+          const baseAngle = clampedTwistIntensity * 0.25 * twistAngleMultiplier * axisTetherFactor;
+          
+          // BOOST oscillation effect for visibility
+          const oscillationMultiplier = isOscillating ? 1.8 : 1.0; // AMPLIFY oscillation
+          const maxTwistAngle = baseAngle * oscillationMultiplier;
           
           const currentAngle = Math.atan2(origZ, origX);
           const newAngle = currentAngle + maxTwistAngle;
@@ -217,29 +306,40 @@ const ClothPhysics = ({
           twistX = (targetX - origX) * twistScale;
           twistZ = (targetZ - origZ) * twistScale;
           
-          // 🎯 PRECISE CAMERA FRUSTUM CONSTRAINTS
-          // Calculate optimal viewing bounds based on camera setup:
-          // Camera: position=[0,0,8.5], FOV=45°, near=0.5
-          // At model distance (≈8.5), visible width = 2 * 8.5 * tan(22.5°) ≈ 7.0
-          // Safe zone should be smaller to prevent edge distortion
+          // 🎯 AXIS TETHERING - Only during active twist, not oscillation
+          if (!isOscillating) {
+            const highVelocityThreshold = 0.4;
+            if (Math.abs(clampedTwistIntensity) > highVelocityThreshold) {
+              const pullBackStrength = (Math.abs(clampedTwistIntensity) - highVelocityThreshold) * 2.0;
+              const centerPullX = -origX * pullBackStrength * axisTetheringStrength * 0.3;
+              const centerPullZ = -origZ * pullBackStrength * axisTetheringStrength * 0.3;
+              
+              twistX += centerPullX;
+              twistZ += centerPullZ;
+            }
+          }
           
-          const cameraDistance = 8.5; // Camera Z position
-          const fovRad = (45 * Math.PI) / 180; // FOV in radians
-          const viewportHalfWidth = cameraDistance * Math.tan(fovRad / 2) * 0.7; // 70% of full width for safety
-          const viewportHalfDepth = cameraDistance * 0.15; // 15% depth range for Z movement
+          // 🎯 RELAXED CONSTRAINTS FOR OSCILLATION
+          const cameraDistance = 8.5;
+          const fovRad = (45 * Math.PI) / 180;
+          const baseViewportWidth = cameraDistance * Math.tan(fovRad / 2) * 0.7;
+          const baseViewportDepth = cameraDistance * 0.15;
           
-          // Calculate final position
+          // EXPANDED bounds for oscillation visibility
+          const oscillationExpansion = isOscillating ? 1.4 : 1.0; // 40% more room for oscillation
+          const viewportHalfWidth = baseViewportWidth * oscillationExpansion;
+          const viewportHalfDepth = baseViewportDepth * oscillationExpansion;
+          
           const finalX = origX + waveX + twistX;
           const finalZ = origZ + waveZ + twistZ;
           
-          // GEOMETRIC CONSTRAINTS based on camera frustum
-          const maxXBound = viewportHalfWidth; // ≈ 2.45 (much tighter than previous 2.5)
-          const maxZBound = viewportHalfDepth; // ≈ 1.28 (much tighter than previous 2.0)
-          const minZBound = -viewportHalfDepth; // ≈ -1.28 (tighter than previous -1.5)
+          const maxXBound = viewportHalfWidth;
+          const maxZBound = viewportHalfDepth;
+          const minZBound = -viewportHalfDepth;
           
           let constraintFactor = 1.0;
           
-          // ENHANCED bounds checking with proper geometry
+          // GENTLE constraints for oscillation
           if (Math.abs(finalX) > maxXBound) {
             constraintFactor = Math.min(constraintFactor, maxXBound / Math.abs(finalX));
           }
@@ -250,39 +350,48 @@ const ClothPhysics = ({
             constraintFactor = Math.min(constraintFactor, Math.abs(minZBound) / Math.abs(finalZ));
           }
           
-          // Apply geometric constraints
+          // RELAXED constraint application for oscillation
           if (constraintFactor < 1.0) {
-            twistX *= constraintFactor;
-            twistZ *= constraintFactor;
+            const constraintStrength = isOscillating ? 0.7 : 1.0; // GENTLER constraints during oscillation
+            const effectiveConstraint = 1.0 - (1.0 - constraintFactor) * constraintStrength;
+            twistX *= effectiveConstraint;
+            twistZ *= effectiveConstraint;
           }
           
-          // 🎯 PRESERVED ANTI-STRETCH CONTROL (exact same logic)
+          // 🎯 RELAXED ANTI-STRETCH for oscillation
           const originalCoreDistance = distanceFromCore;
           const newCoreDistance = Math.sqrt((origX + twistX) * (origX + twistX) + (origZ + twistZ) * (origZ + twistZ));
           
-          if (Math.abs(newCoreDistance - originalCoreDistance) > originalCoreDistance * 0.015) { // TIGHTENED tolerance
+          const stretchTolerance = isOscillating ? 0.03 : 0.015; // DOUBLE tolerance for oscillation
+          if (Math.abs(newCoreDistance - originalCoreDistance) > originalCoreDistance * stretchTolerance) {
             const correctionFactor = originalCoreDistance / newCoreDistance;
-            twistX *= correctionFactor;
-            twistZ *= correctionFactor;
+            const correctionStrength = isOscillating ? 0.6 : 1.0; // GENTLER correction during oscillation
+            const effectiveCorrection = 1.0 - (1.0 - correctionFactor) * correctionStrength;
+            twistX *= effectiveCorrection;
+            twistZ *= effectiveCorrection;
           }
           
-          // 🎯 ENHANCED DISPLACEMENT LIMITS - More conservative
-          const maxDisplacement = distanceFromCore * 0.25; // REDUCED from 0.3
+          // 🎯 RELAXED DISPLACEMENT LIMITS for oscillation
+          const baseMaxDisplacement = distanceFromCore * 0.25;
+          const maxDisplacement = isOscillating ? baseMaxDisplacement * 1.6 : baseMaxDisplacement; // 60% more displacement for oscillation
+          
           const currentDisplacement = Math.sqrt(twistX * twistX + twistZ * twistZ);
           if (currentDisplacement > maxDisplacement) {
             const limitFactor = maxDisplacement / currentDisplacement;
-            twistX *= limitFactor;
-            twistZ *= limitFactor;
+            const limitStrength = isOscillating ? 0.8 : 1.0; // GENTLER limits during oscillation
+            const effectiveLimit = 1.0 - (1.0 - limitFactor) * limitStrength;
+            twistX *= effectiveLimit;
+            twistZ *= effectiveLimit;
           }
         }
       }
       
-      // ⬇️ PRESERVED GRAVITY - Heavier fabric
+      // ⬇️ PRESERVED GRAVITY
       const baseGravity = (1 - heightFactor) * 0.4;
       const twistGravityPull = Math.abs(clampedTwistIntensity) * (1 - heightFactor) * 0.2;
       const totalGravity = baseGravity + twistGravityPull;
       
-      // 🎯 FINAL CONSTRAINED VERTEX POSITIONING
+      // 🎯 FINAL VERTEX POSITIONING
       vertices[i3] = origX + waveX + twistX;
       vertices[i3 + 1] = origY + waveY - totalGravity;
       vertices[i3 + 2] = origZ + waveZ + twistZ;
