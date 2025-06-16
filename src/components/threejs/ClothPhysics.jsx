@@ -88,9 +88,9 @@ const ClothPhysics = ({
       const adjustedSpeed = Math.max(0, clampedSpeed - speedThreshold);
       const maxTwist = 0.6; // INCREASED from 0.35 to 0.6 for more visible twist
       
-      // 🔄 REALISTIC DIRECTION LOGIC
-      const realisticDirection = -direction;
-      const rawTwist = realisticDirection * adjustedSpeed * 0.15; // INCREASED from 0.08 to 0.15
+      // 🔄 REALISTIC DIRECTION LOGIC - FIXED: Fabric should be pulled in rotation direction
+      const realisticDirection = direction; // FIXED: Remove the negative sign so fabric follows rotation naturally
+      const rawTwist = realisticDirection * adjustedSpeed * 0.15;
       targetTwist = Math.sign(rawTwist) * Math.min(Math.abs(rawTwist), maxTwist);
       
       // 🎯 OVERSHOOT DETECTION
