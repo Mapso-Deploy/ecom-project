@@ -141,7 +141,7 @@ const EnhancedControls = ({ controlsRef, onRotationData }) => {
         });
       }
       
-      // Create SIMPLIFIED but working rotation data
+      // Create CONTROLLED rotation data with better speed limiting
       const rotationData = {
         speed: Math.abs(angularVelocity),
         velocity: angularVelocity,
@@ -149,7 +149,7 @@ const EnhancedControls = ({ controlsRef, onRotationData }) => {
         direction: angularVelocity > 0 ? 1 : -1,
         angle: currentRotation,
         isMoving: isMoving,
-        intensity: Math.min(Math.abs(angularVelocity) * 3, 10) // Higher intensity
+        intensity: Math.min(Math.abs(angularVelocity) * 2.5, 6) // REDUCED: From 3→10 to 2.5→6 for stability
       };
       
       // Send data to physics
@@ -170,10 +170,10 @@ const EnhancedControls = ({ controlsRef, onRotationData }) => {
       enablePan={false}
       minPolarAngle={Math.PI / 2}
       maxPolarAngle={Math.PI / 2}
-      rotateSpeed={1.0}
-      minDistance={4}
+      rotateSpeed={0.8}
+      minDistance={5}
       maxDistance={12}
-      dampingFactor={0.05}
+      dampingFactor={0.08}
       enableDamping={true}
     />
   );
@@ -250,9 +250,9 @@ const ThreeModel = ({
       <Canvas
         className="three-model-canvas"
         camera={{ 
-          position: [0, 0, 7], 
-          fov: 50,
-          near: 0.1,
+          position: [0, 0, 8.5],
+          fov: 45,
+          near: 0.5,
           far: 1000
         }}
         gl={{ 
