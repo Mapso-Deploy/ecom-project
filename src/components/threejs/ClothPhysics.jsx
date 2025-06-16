@@ -221,7 +221,40 @@ const ClothPhysics = ({
           twistX = (targetX - origX) * twistScale;
           twistZ = (targetZ - origZ) * twistScale;
           
-          // 🎯 STRICT ANTI-STRETCH CONTROL - Maintain original distances
+          // 🎯 ENHANCED CAMERA BOUNDS PROTECTION - Prevent fabric from leaving frame or getting too close
+          
+          // Calculate final position for X and Z coordinates only
+          const finalX = origX + waveX + twistX;
+          const finalZ = origZ + waveZ + twistZ;
+          
+          // Define camera-safe bounds (prevent fabric from getting too close or leaving frame)
+          const maxXBound = 2.5;  // Don't let fabric get too far left/right
+          const maxZBound = 2.0;  // Don't let fabric get too close to camera (positive Z)
+          const minZBound = -1.5; // Don't let fabric get too far from camera (negative Z)
+          
+          // Check if final position would be outside safe bounds
+          let constraintFactor = 1.0;
+          
+          // X bounds check
+          if (Math.abs(finalX) > maxXBound) {
+            constraintFactor = Math.min(constraintFactor, maxXBound / Math.abs(finalX));
+          }
+          
+          // Z bounds check (most important for camera distortion)
+          if (finalZ > maxZBound) {
+            constraintFactor = Math.min(constraintFactor, maxZBound / finalZ);
+          } else if (finalZ < minZBound) {
+            constraintFactor = Math.min(constraintFactor, Math.abs(minZBound) / Math.abs(finalZ));
+          }
+          
+          // Apply constraints if needed
+          if (constraintFactor < 1.0) {
+            // Scale back the twist displacement to keep within bounds
+            twistX *= constraintFactor;
+            twistZ *= constraintFactor;
+          }
+          
+          // 🎯 STRICT ANTI-STRETCH CONTROL - Maintain original distances (existing logic)
           const originalCoreDistance = distanceFromCore;
           const newCoreDistance = Math.sqrt((origX + twistX) * (origX + twistX) + (origZ + twistZ) * (origZ + twistZ));
           
